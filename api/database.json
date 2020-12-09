@@ -1,0 +1,44 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "bob",
+            "email": "bob@email.com",
+            "password": "blabla",
+            "zip": 37203
+        },
+        {
+            "email": "ken@email.com",
+            "password": "blabla",
+            "zip": 96950,
+            "name": "Ken",
+            "id": 2
+        }
+    ],
+    "plants": [
+        {
+            "id": 1,
+            "userId": 1,
+            "petName": "Fred",
+            "imageURL": "https://bs.floristic.org/image/o/41209423ff14232d85b05a4f6ff7d267cd161905",
+            "trefleId": 538258
+        }
+    ],
+    "trefleData": [
+        {
+            "id": 538258,
+            "commonName": "Stonecrop ",
+            "scientificName": "Echeveria quitensis"
+        }
+    ],
+    "careEvents": [
+        {
+            "id": 1,
+            "plantId": 1,
+            "date": "2020-12-21",
+            "water": true,
+            "complete": false,
+            "notes": "Fred is in trouble!"
+        }
+    ]
+}
