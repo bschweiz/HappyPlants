@@ -4,12 +4,11 @@ import { TrefleCard } from "./TrefleCard"
 
 
 export const TrefleList = () => {
-    let fuzzyName = "aloe"
 
     const { fuzzyResultArray, getPlantByFuzzy } = useContext(TrefleContext)
 
     useEffect(() => {
-        getPlantByFuzzy(fuzzyName)
+        getPlantByFuzzy("aloe")
         }, [])
         
     useEffect(() => {
