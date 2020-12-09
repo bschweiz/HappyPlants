@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from "react-router-dom";
+import { HappyPlants } from './HappyPlants.js';
 import './index.css';
-import {HappyPlants} from './HappyPlants.js';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <HappyPlants />
+    <Router>
+      <HappyPlants />
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );

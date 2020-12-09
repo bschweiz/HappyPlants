@@ -1,16 +1,28 @@
 import React from "react"
-import { TrefleProvider } from './components/plant/TrefleProvider'
-import { TrefleList } from './components/plant/TrefleList'
-import { TrefleForm } from "./components/plant/TrefleForm"
+import { Route, Redirect } from "react-router-dom"
+import { ApplicationViews } from "./components/ApplicationViews"
+// import { NavBar } from "./nav/NavBar"
+import { Login } from "./components/auth/Login"
+import { Register } from "./components/auth/Register"
 
-// TrefleProvider()
 
 export const HappyPlants = () => (
   <>
-  <TrefleProvider>
-      <TrefleForm />
-      <TrefleList />
-  </TrefleProvider>
+    <Route render={() => {
+      if (localStorage.getItem("app_user_id")) {
+        return (
+          <>
+            <Route render={props => <ApplicationViews {...props} />} />
+          </>
+        )} else {
+          return <Redirect to="/login" />
+        }
+      
+    }}/>
+
+    <Route path="/login" render={props => <Login {...props} />} />
+    <Route path="/register" render={props => <Register {...props} />} />
   </>
 )
+
 
