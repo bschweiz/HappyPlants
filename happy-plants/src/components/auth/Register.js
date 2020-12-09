@@ -33,7 +33,7 @@ export const Register = (props) => {
                             body: JSON.stringify({
                                 email: email.current.value,
                                 password: password.current.value,
-                                zip: zip.current.value,
+                                zip: parseInt(zip.current.value),
                                 name: `${userName.current.value}` 
                             })
                         })
@@ -69,7 +69,7 @@ export const Register = (props) => {
             </dialog>
 
             <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Please Register for Application Name</h1>
+                <h1 className="h3 mb-3 font-weight-normal">Please Register for Happy Plants App</h1>
                 <fieldset>
                     <label htmlFor="userName"> First Name </label>
                     <input ref={userName} type="text" name="userName" className="form-control" placeholder="First name" required autoFocus />
