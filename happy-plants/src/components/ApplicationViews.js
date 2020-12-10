@@ -1,18 +1,23 @@
 import React from "react"
 import { Route } from "react-router-dom"
 
-import { TrefleProvider } from './plant/TrefleProvider'
-import { TrefleList } from './plant/TrefleList'
-import { TrefleForm } from "./plant/TrefleForm"
+import { TrefleProvider } from './trefle/TrefleProvider'
+import { TrefleList } from './trefle/TrefleList'
+import { TrefleForm } from "./trefle/TrefleForm"
+import { PlantProvider } from "./plant/PlantProvider"
+import { PlantForm } from "./plant/PlantForm"
 
 export const ApplicationViews = (props) => {
     return (
         <>
-            <TrefleProvider>
-                <Route path="/">
-                    <TrefleForm />
+            <PlantProvider>
+                <Route path="/plants">
+                    <PlantForm />
                 </Route>
-                <Route path="/">
+            </PlantProvider>
+            <TrefleProvider>
+                <Route path="/search">
+                    <TrefleForm />
                     <TrefleList />
                 </Route>
             </TrefleProvider>

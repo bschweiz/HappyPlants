@@ -1,4 +1,4 @@
-import React, {useState, useContext, useEffect} from 'react'
+import React, { useContext, useEffect} from 'react'
 import { TrefleContext } from "./TrefleProvider";
 import { TrefleCard } from "./TrefleCard"
 
@@ -8,7 +8,7 @@ export const TrefleList = () => {
     const { fuzzyResultArray, getPlantByFuzzy } = useContext(TrefleContext)
 
     useEffect(() => {
-        getPlantByFuzzy("aloe")
+        getPlantByFuzzy()
         }, [])
         
     useEffect(() => {
@@ -22,5 +22,5 @@ export const TrefleList = () => {
         fuzzyResultArray.map(pla => <TrefleCard key={pla.id} plant={pla} />)
     }
     </div>
-    } else {return <div>no array data yet</div>}
+    } else {return <div>Enter a plant name</div>}
     }
