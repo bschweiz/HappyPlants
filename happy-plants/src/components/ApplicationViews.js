@@ -19,11 +19,13 @@ export const ApplicationViews = (props) => {
                     <PlantForm />
                 </Route>
             </PlantProvider>
-            <EventProvider>
-                <Route path="/events">
-                    <EventList />
-                </Route>
-            </EventProvider>
+            <PlantProvider>
+                <EventProvider>
+                    <Route path="/events">
+                        <EventList />
+                    </Route>
+                </EventProvider>
+            </PlantProvider>
             <TrefleProvider>
                 <Route path="/search">
                     <TrefleForm />
