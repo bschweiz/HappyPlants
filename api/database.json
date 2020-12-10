@@ -38,7 +38,7 @@
             "scientificName": "Echeveria quitensis"
         }
     ],
-    "careEvents": [
+    "events": [
         {
             "id": 1,
             "plantId": 1,
