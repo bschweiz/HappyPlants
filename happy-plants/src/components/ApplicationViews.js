@@ -9,23 +9,28 @@ import { PlantForm } from "./plant/PlantForm"
 import { PlantList } from "./plant/PlantList"
 import { EventProvider } from "./event/EventProvider"
 import { EventList } from "./event/EventList"
+import { WeatherProvider } from "./weather/WeatherProvider"
+import { WeatherList } from "./weather/WeatherList"
 
 export const ApplicationViews = (props) => {
     return (
         <>
+            <WeatherProvider>
+                <WeatherList />
+            </WeatherProvider>
             <PlantProvider>
                 <Route path="/plants">
                     <PlantList />
                     <PlantForm />
                 </Route>
             </PlantProvider>
-            <PlantProvider>
-                <EventProvider>
+            <EventProvider>
+                <PlantProvider>
                     <Route path="/events">
                         <EventList />
                     </Route>
-                </EventProvider>
-            </PlantProvider>
+                </PlantProvider>
+            </EventProvider>
             <TrefleProvider>
                 <Route path="/search">
                     <TrefleForm />
