@@ -1,7 +1,7 @@
 import React from "react"
 import { Route, Redirect } from "react-router-dom"
 import { ApplicationViews } from "./components/ApplicationViews"
-import { NavBar } from ".components/nav/NavBar"
+import { NavBar } from "./components/nav/NavBar"
 import { Login } from "./components/auth/Login"
 import { Register } from "./components/auth/Register"
 

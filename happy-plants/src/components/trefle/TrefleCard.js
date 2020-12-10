@@ -7,7 +7,7 @@ export const TrefleCard = ({plant}) => (
         <h2>Trefle ID # {plant.id}</h2>
         <h3 className="common__name">{plant.common_name}</h3>
         <div className="scientific__name">{plant.scientific_name}</div>
-        <img src={plant.image_url} />
+        <img src={plant.image_url} alt={plant.slug}/>
     </section>
 )
 
