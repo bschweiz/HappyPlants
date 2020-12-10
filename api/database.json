@@ -22,12 +22,6 @@
             "petName": "Fred",
             "imageURL": "https://bs.floristic.org/image/o/41209423ff14232d85b05a4f6ff7d267cd161905",
             "trefleId": 538258
-        },
-        {
-            "petName": "bob",
-            "commonName": "aloe vera",
-            "userId": 2,
-            "id": 2
         }
     ],
     "trefleData": [

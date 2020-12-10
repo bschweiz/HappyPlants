@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useEffect } from "react"
+import React, { useContext, useRef } from "react"
 // import {TrefleContext} from "./trefle/TrefleProvider"
 import {PlantContext} from "./PlantProvider"
 
@@ -7,16 +7,16 @@ export const PlantForm = (props) => {
 
     const petName = useRef(null)
     const commonName = useRef(null)
-    // const scienceName = useRef(null)
+    const scienceName = useRef(null)
 
     const constructNewPlant= () => {
         
-        // const scientificName = scienceName.current.value
+        // const scientificName = 
     
             addPlant({
                 petName: petName.current.value,
                 commonName: commonName.current.value,
-                // scientificName,
+                scientificName: scienceName.current.value,
                 userId: parseInt(localStorage.getItem("app_user_id"))   
             })
             .then(() => props.history.push("/plants"))
@@ -37,12 +37,12 @@ export const PlantForm = (props) => {
                     <input type="text" id="plantCommonName" ref={commonName} required autoFocus className="form-control" placeholder="Plant common name" />
                 </div>
             </fieldset>
-            {/* <fieldset>
+            <fieldset>
                 <div className="form-group">
                     <label htmlFor="plantScientificName">Scientific name: </label>
-                    <input type="text" id="plantScientificName" ref={scientificName} required autoFocus className="form-control" placeholder="Plant scientific name" />
+                    <input type="text" id="plantScientificName" ref={scienceName} required autoFocus className="form-control" placeholder="Plant scientific name" />
                 </div>
-            </fieldset> */}
+            </fieldset>
             
             <button type="submit"
                 onClick={evt => {
