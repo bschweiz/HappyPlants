@@ -9,7 +9,7 @@ My own personal desire to create such an app grew out of an incident recently wh
 I want to use the App as an opportunity to create a project whose styling I find truly impeccable. All my previous projects have looked OK, but I would love to make an app that I think actually looks nice rather than just acceptable. I want to make a rich-looking app with images from user uploads and an API. I want to build something that looks and feels smooth and professional to use. I believe that React will be the key to neatly handling/sharing/rendering the various data tables for these plant objects.
 
 ## ERD v1.0
-![](./HappyPlantsERDV2.png)
+![](./HappyPlantsERDV3.png)
 
 ## Sitemap v1.0
 ![](./HappyPlantsSitemap.png)
