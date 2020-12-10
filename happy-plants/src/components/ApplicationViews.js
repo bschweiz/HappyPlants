@@ -7,6 +7,8 @@ import { TrefleForm } from "./trefle/TrefleForm"
 import { PlantProvider } from "./plant/PlantProvider"
 import { PlantForm } from "./plant/PlantForm"
 import { PlantList } from "./plant/PlantList"
+import { EventProvider } from "./event/EventProvider"
+import { EventList } from "./event/EventList"
 
 export const ApplicationViews = (props) => {
     return (
@@ -17,6 +19,11 @@ export const ApplicationViews = (props) => {
                     <PlantForm />
                 </Route>
             </PlantProvider>
+            <EventProvider>
+                <Route path="/events">
+                    <EventList />
+                </Route>
+            </EventProvider>
             <TrefleProvider>
                 <Route path="/search">
                     <TrefleForm />
