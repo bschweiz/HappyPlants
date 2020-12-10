@@ -1,5 +1,6 @@
 import React, { useContext, useEffect} from 'react'
 import { WeatherContext } from "./WeatherProvider";
+import {WeatherCard} from "./WeatherCard"
 
 export const WeatherList = () => {
 
@@ -14,11 +15,11 @@ export const WeatherList = () => {
         console.log(weatherData)
         }, [weatherData])
         
-    // if (fuzzyResultArray.length) {    
-    // return <div className="trefle_results">
-    // {
-    //     fuzzyResultArray.map(pla => <WeatherCard key={pla.id} plant={pla} />)
-    // }
-    // </div>
-    // } else {return <div>Enter a plant name</div>}
+    if (weatherData.length) {    
+    return <div className="weather_results">
+    {
+        weatherData.map(dayWeather => <WeatherCard key={dayWeather.id} dayWeather={dayWeather} />)
+    }
+    </div>
+    } else {return <div>waiting on weather</div>}
     }

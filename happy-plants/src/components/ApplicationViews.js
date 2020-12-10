@@ -16,7 +16,9 @@ export const ApplicationViews = (props) => {
     return (
         <>
             <WeatherProvider>
-                <WeatherList />
+                <Route path="/">
+                    <WeatherList />
+                </Route>
             </WeatherProvider>
             <PlantProvider>
                 <Route path="/plants">
