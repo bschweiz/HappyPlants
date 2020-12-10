@@ -2,8 +2,8 @@
     "users": [
         {
             "id": 1,
-            "name": "bob",
-            "email": "bob@email.com",
+            "name": "Ben",
+            "email": "Ben@email.com",
             "password": "blabla",
             "zip": 37203
         },
@@ -24,11 +24,11 @@
             "trefleId": 538258
         },
         {
-            "petName": "bob",
-            "commonName": "aloe",
-            "scientificName": "aloe vera",
-            "userId": 2,
-            "id": 2
+            "id": 2,
+            "userId": 1,
+            "petName": "Bruce",
+            "imageURL": "https://bs.floristic.org/image/o/150830968cf7c89570250e103c0b734b8b6a1baa",
+            "trefleId": 103921
         }
     ],
     "trefleData": [
@@ -46,6 +46,14 @@
             "water": true,
             "complete": false,
             "notes": "Fred is in trouble!"
+        },
+        {
+            "id": 2,
+            "plantId": 2,
+            "date": "2020-12-22",
+            "water": false,
+            "complete": false,
+            "notes": "I should also check on Bruce."
         }
     ]
 }
