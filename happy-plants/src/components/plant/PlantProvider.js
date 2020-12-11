@@ -11,6 +11,7 @@ export const PlantContext = React.createContext()
  */
 export const PlantProvider = (props) => {
     const [plants, setPlants] = useState([])
+    const [names, setNames] = useState([])
 
     const getPlantData = () => {
         return fetch("http://localhost:8088/plants")
@@ -29,6 +30,12 @@ export const PlantProvider = (props) => {
             .then(getPlantData)
     }
 
+    const getPlantNames = () => {
+        return fetch(`http://localhost:8088/trefles`)
+        .then(res => res.json())
+        .then(setNames)
+    }
+
     /*
         You return a context provider which has the
         `customers` state, the `addPlant` function,
@@ -37,7 +44,7 @@ export const PlantProvider = (props) => {
     */
     return (
         <PlantContext.Provider value={{
-            plants, addPlantData, getPlantData
+            plants, addPlantData, getPlantData, getPlantNames, names
         }}>
             {props.children}
         </PlantContext.Provider>
