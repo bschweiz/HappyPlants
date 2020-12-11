@@ -2,6 +2,7 @@ import React, { useContext, useEffect} from 'react'
 import { WeatherContext } from "./WeatherProvider";
 import {WeatherCard} from "./WeatherCard"
 
+
 export const WeatherList = () => {
 
     const { weatherData, getWeather } = useContext(WeatherContext)
@@ -11,15 +12,15 @@ export const WeatherList = () => {
         }, [])
         
     useEffect(() => {
-        console.log("test to see if the array of results came back")
-        console.log(weatherData)
+        console.log("test to see if the array of results came back", weatherData.list)
         }, [weatherData])
-        
-    if (weatherData.length) {    
+    
+    // if (weatherData.length) {
     return <div className="weather_results">
+    
     {
-        weatherData.map(dayWeather => <WeatherCard key={dayWeather.id} dayWeather={dayWeather} />)
+        Object.values(weatherData).map(dayWeather => <WeatherCard key={dayWeather.id} dayWeather={dayWeather} />)
     }
     </div>
-    } else {return <div>waiting on weather</div>}
+    // } else {return <div>waiting on weather</div>}
     }
