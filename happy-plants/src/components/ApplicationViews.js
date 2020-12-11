@@ -11,6 +11,7 @@ import { EventProvider } from "./event/EventProvider"
 import { EventList } from "./event/EventList"
 import { WeatherProvider } from "./weather/WeatherProvider"
 import { WeatherList } from "./weather/WeatherList"
+import { PlantCard } from "./plant/PlantCard"
 
 export const ApplicationViews = (props) => {
     return (
@@ -36,7 +37,7 @@ export const ApplicationViews = (props) => {
             </EventProvider>
             <TrefleProvider>
                 <PlantProvider>
-                    <Route path="/search">
+                    <Route path="/addplant">
                         <PlantForm />
                         <TrefleForm />
                         <TrefleList />

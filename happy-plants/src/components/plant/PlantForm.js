@@ -56,7 +56,7 @@ export const PlantForm = (props) => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="plantTrefleId">Trefle ID: </label>
-                    <input type="text" id="plantTrefleId" ref={TrefleId} required autoFocus className="form-control" placeholder="image URL goes here" />
+                    <input type="text" id="plantTrefleId" ref={TrefleId} required autoFocus className="form-control" placeholder="trefle ID goes here" />
                 </div>
             </fieldset>
             

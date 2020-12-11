@@ -3,20 +3,35 @@ import {PlantContext} from "./PlantProvider"
 import {PlantCard} from "./PlantCard"
 
 export const PlantList = () => {
-    const { getPlantData, plants, getPlantNames, names } = useContext(PlantContext)
+    const { getPlantData, plants } = useContext(PlantContext)
     // const { }
     const [ filteredPlants, setFiltered ] = useState([])
+
     useEffect(() => {
-        getPlantData().then(getPlantNames)
+        getPlantData()
     }, [])
 
     useEffect (()=> {
-        console.log(plants)
-        // debugger
+
         const subset = plants.filter(p => p.userId === parseInt(localStorage.getItem("app_user_id")))
-        // add logic for filtering matching trefle data table objects
+        // const namedSubset = subset.map(p => {
+
+        //     const match = names.find(n => n.id === p.trefleId)
+            
+        //     const updatedPlant = {
+        //         ...p,
+        //         commonName: match.commonName,
+        //         scientificName: match.scientificName,
+
+        //     }
+        //     return updatedPlant
+
+        // })
+        // console.log(namedSubset)
         setFiltered(subset)
-        console.log(subset)
+
+
+        // add logic for filtering matching trefle data table objects
     }, [plants])
 
     return (
