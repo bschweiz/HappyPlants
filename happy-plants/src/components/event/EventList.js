@@ -4,13 +4,13 @@ import { PlantContext}  from "../plant/PlantProvider"
 import { EventCard } from './EventCard'
 
 export const EventList = () => {
-    const { getPlants, plants } = useContext(PlantContext)
+    const { getPlantData, plants } = useContext(PlantContext)
     const { getEvents, events } = useContext(EventContext)
     console.log(plants)
     // const [ filteredEvents, setFiltered ] = useState([])
     
     useEffect(() => {
-        getEvents().then(getPlants)
+        getEvents().then(getPlantData)
     }, [])
 
     if (events.length && plants.length) {

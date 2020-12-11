@@ -16,15 +16,16 @@ export const ApplicationViews = (props) => {
     return (
         <>
             <WeatherProvider>
-                <Route path="/">
+                <Route exact path="/">
                     <WeatherList />
                 </Route>
             </WeatherProvider>
             <PlantProvider>
-                <Route path="/plants">
-                    <PlantList />
-                    <PlantForm />
-                </Route>
+                <TrefleProvider>
+                    <Route path="/plants">
+                        <PlantList />
+                    </Route>
+                </TrefleProvider>
             </PlantProvider>
             <EventProvider>
                 <PlantProvider>
@@ -34,10 +35,13 @@ export const ApplicationViews = (props) => {
                 </PlantProvider>
             </EventProvider>
             <TrefleProvider>
-                <Route path="/search">
-                    <TrefleForm />
-                    <TrefleList />
-                </Route>
+                <PlantProvider>
+                    <Route path="/search">
+                        <PlantForm />
+                        <TrefleForm />
+                        <TrefleList />
+                    </Route>
+                </PlantProvider>
             </TrefleProvider>
         </>
     )

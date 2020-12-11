@@ -1,12 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react'
 import {PlantContext} from "./PlantProvider"
+import {TrefleContext} from "../trefle/TrefleProvider"
 import {PlantCard} from "./PlantCard"
 
 export const PlantList = ({history}) => {
-    const { getPlants, plants } = useContext(PlantContext)
+    const { getPlantData, plants } = useContext(PlantContext)
+    // const { }
     const [ filteredPlants, setFiltered ] = useState([])
     useEffect(() => {
-        getPlants()
+        getPlantData()
     }, [])
 
     useEffect (()=> {

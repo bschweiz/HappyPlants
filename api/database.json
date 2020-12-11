@@ -1,59 +1,76 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "name": "Ben",
-            "email": "Ben@email.com",
-            "password": "blabla",
-            "zip": 37203
-        },
-        {
-            "email": "ken@email.com",
-            "password": "blabla",
-            "zip": 96950,
-            "name": "Ken",
-            "id": 2
-        }
-    ],
-    "plants": [
-        {
-            "id": 1,
-            "userId": 1,
-            "petName": "Fred",
-            "imageURL": "https://bs.floristic.org/image/o/41209423ff14232d85b05a4f6ff7d267cd161905",
-            "trefleId": 538258
-        },
-        {
-            "id": 2,
-            "userId": 1,
-            "petName": "Bruce",
-            "imageURL": "https://bs.floristic.org/image/o/150830968cf7c89570250e103c0b734b8b6a1baa",
-            "trefleId": 103921
-        }
-    ],
-    "trefleData": [
-        {
-            "id": 538258,
-            "commonName": "Stonecrop ",
-            "scientificName": "Echeveria quitensis"
-        }
-    ],
-    "events": [
-        {
-            "id": 1,
-            "plantId": 1,
-            "date": "2020-12-21",
-            "water": true,
-            "complete": false,
-            "notes": "Fred is in trouble!"
-        },
-        {
-            "id": 2,
-            "plantId": 2,
-            "date": "2020-12-22",
-            "water": false,
-            "complete": false,
-            "notes": "I should also check on Bruce."
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "name": "Ben",
+      "email": "Ben@email.com",
+      "password": "blabla",
+      "zip": 37203
+    },
+    {
+      "email": "ken@email.com",
+      "password": "blabla",
+      "zip": 96950,
+      "name": "Ken",
+      "id": 2
+    }
+  ],
+  "plants": [
+    {
+      "id": 1,
+      "userId": 1,
+      "petName": "Fred",
+      "imageURL": "https://bs.floristic.org/image/o/41209423ff14232d85b05a4f6ff7d267cd161905",
+      "trefleId": 538258
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "petName": "Bruce",
+      "imageURL": "https://bs.floristic.org/image/o/150830968cf7c89570250e103c0b734b8b6a1baa",
+      "trefleId": 103921
+    },
+    {
+      "userId": 1,
+      "petName": "Snake",
+      "imageURL": "https://bs.floristic.org/image/o/0a864ad583d95ce8e7b1af5cfddded16db142d3f",
+      "trefleId": 1258091,
+      "id": 3
+    }
+  ],
+  "trefles": [
+    {
+      "id": 538258,
+      "commonName": "Stonecrop ",
+      "scientificName": "Echeveria quitensis"
+    },
+    {
+      "id":1258091,
+      "commonName": "who cares",
+      "scientificName": "seomthing cool"
+    },
+    {
+      "id": 103921,
+      "commonName": "planttt ",
+      "scientificName": "Thrid option"
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "plantId": 1,
+      "date": "2020-12-21",
+      "water": true,
+      "complete": false,
+      "notes": "Fred is in trouble!"
+    },
+    {
+      "id": 2,
+      "plantId": 2,
+      "date": "2020-12-22",
+      "water": false,
+      "complete": false,
+      "notes": "I should also check on Bruce."
+    }
+  ]
 }
