@@ -9,6 +9,6 @@ export const WeatherCard = ({api}) => (
         <h4 className="weatherCard__high">High: ${((api.temp.max-273.15)*(9/5)+32).toFixed(1)}&#8457;</h4>
         <h4 className="weatherCard__low">Low: ${((api.temp.min-273.15)*(9/5)+32).toFixed(1)}&#8457;</h4>
         <h4 className="weatherCard__humidity">Humidity: ${api.humidity}&#37;</h4> */}
-        <h4 className="weatherCard__uvi">UV Index: ${api}</h4>
+        <h4 className="weatherCard__uvi">Time of Weather: {api}</h4>
     </div>
 )

@@ -1,26 +1,33 @@
-import React, { useContext, useEffect} from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { WeatherContext } from "./WeatherProvider";
-import {WeatherCard} from "./WeatherCard"
-
+import { WeatherCard } from "./WeatherCard"
 
 export const WeatherList = () => {
 
     const { weatherData, getWeather } = useContext(WeatherContext)
+    // const [ weather, setWeather] = useState([])
 
     useEffect(() => {
         getWeather()
-        }, [])
-        
+    }, [])
+
     useEffect(() => {
         console.log("test to see if the array of results came back", weatherData.list)
-        }, [weatherData])
+        weatherRender()
+    }, [weatherData])
+
+    const weatherRender = () => { 
+    if (weatherData.length) {
+        let weatherList = weatherData.list
+        console.log(weatherList)
+        return <div className="weather_results">
+            {
+                weatherList.map(dayWeatherObj => <WeatherCard key={dayWeatherObj.id} dayWeatherObj={dayWeatherObj} />)
+            }
+        </div>
+
+    } else { return <div> </div> }}
     
-    // if (weatherData.length) {
-    return <div className="weather_results">
-    
-    {
-        Object.values(weatherData).map(dayWeather => <WeatherCard key={dayWeather.id} dayWeather={dayWeather} />)
-    }
-    </div>
-    // } else {return <div>waiting on weather</div>}
-    }
+    return <div></div>
+}
+
