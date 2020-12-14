@@ -18,15 +18,20 @@ export const EventList = () => {
         console.log("user plants", userPlants)
         
         const subsetEvents = userPlants.map(p => {
-            const matchingEvent = events.find(e => e.plantId === p.id)
-            return matchingEvent
-        })
+            const matchingEventArray = events.filter(e => e.plantId === p.id)
+            return matchingEventArray}
+        )
+        let stuff = []
+        const taco = (subsetEvents) => {
+            return subsetEvents.map(a => a.forEach(e => stuff.push(e)))
+        }
+        taco(subsetEvents)
+        console.log("subset Events, should be 3 of them: Fred, Snake, Mary", subsetEvents, stuff)
         
-        console.log("subset Events, should be 3 of them: Fred, Snake, Mary", subsetEvents)
-        setFilteredEvents(subsetEvents)
+        setFilteredEvents(stuff)
     }, [plants])
 
-    if (events.length && plants.length) { console.log(filteredEvents)
+    if (events.length && plants.length) {console.log(filteredEvents)
         return (
             <div className="events">
                 {
