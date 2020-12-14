@@ -11,14 +11,15 @@ export const PlantContext = React.createContext()
  */
 export const PlantProvider = (props) => {
     const [plants, setPlants] = useState([])
+    const [names, setNames] = useState([])
 
-    const getPlants = () => {
+    const getPlantData = () => {
         return fetch("http://localhost:8088/plants")
             .then(res => res.json())
             .then(setPlants)
     }
 
-    const addPlant = plant => {
+    const addPlantData= plant => {
         return fetch("http://localhost:8088/plants", {
             method: "POST",
             headers: {
@@ -26,7 +27,13 @@ export const PlantProvider = (props) => {
             },
             body: JSON.stringify(plant)
         })
-            .then(getPlants)
+            .then(getPlantData)
+    }
+
+    const getPlantNames = () => {
+        return fetch(`http://localhost:8088/trefles`)
+        .then(res => res.json())
+        .then(setNames)
     }
 
     /*
@@ -37,7 +44,7 @@ export const PlantProvider = (props) => {
     */
     return (
         <PlantContext.Provider value={{
-            plants, addPlant, getPlants
+            plants, addPlantData, getPlantData, getPlantNames, names
         }}>
             {props.children}
         </PlantContext.Provider>

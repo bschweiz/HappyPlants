@@ -1,4 +1,4 @@
-import React, {useState} from 'react' 
+import React, { useState } from 'react'
 
 export const EventContext = React.createContext()
 
@@ -11,11 +11,22 @@ export const EventProvider = (props) => {
             .then(setEvents)
     }
 
+    const addEvent= plant => {
+        return fetch("http://localhost:8088/events", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(plant)
+        })
+            .then(getEvents)
+    }
+
     // will add addEvent later
 
     return (
-        <EventContext.Provider value = {{
-            events, getEvents
+        <EventContext.Provider value={{
+            events, getEvents, addEvent
         }}>
             {props.children}
         </EventContext.Provider>

@@ -18,6 +18,8 @@ export const TrefleProvider = (props) => {
 
     }
 
+    
+
     return (
         <TrefleContext.Provider value={{
             fuzzyResultArray, getPlantByFuzzy

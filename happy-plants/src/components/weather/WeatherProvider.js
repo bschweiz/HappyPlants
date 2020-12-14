@@ -13,7 +13,6 @@ export const WeatherProvider = (props) => {
     const getWeather = () => {
         return fetch(`http://api.openweathermap.org/data/2.5/forecast?zip=${zip},us&exclude=hourly,minutely,current&appid=${keys.weatherKey}`)
             .then(res => res.json())
-            // .then(res => res.list)
             .then( parsedWeather => {
                 setWeather(parsedWeather)
                 // console.log(parsedWeather)
