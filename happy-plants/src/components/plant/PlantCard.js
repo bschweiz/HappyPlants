@@ -22,6 +22,7 @@ export const PlantCard = ({ plant }) => {
             <div>{matchNames.commonName}</div>
             <div>{matchNames.scientificName}</div>
             <button>Edit Plant</button>
+            <button>Delete Plant</button>
         </section>
     )
 }} 

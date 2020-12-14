@@ -7,5 +7,7 @@ export const EventCard = ({ event }) => (
         <div>
             {event.water ? "Yes, check to make sure soil is dry" : "No, should not need watering, but check in-case"}
         </div>
+        <button>Edit Event</button>
+        <button>Delete Event</button>
     </section>
 )
