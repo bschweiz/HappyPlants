@@ -2,16 +2,16 @@ import React from "react"
 import { Route } from "react-router-dom"
 
 import { TrefleProvider } from './trefle/TrefleProvider'
-import { TrefleList } from './trefle/TrefleList'
 import { TrefleForm } from "./trefle/TrefleForm"
+import { TrefleList } from './trefle/TrefleList'
 import { PlantProvider } from "./plant/PlantProvider"
 import { PlantForm } from "./plant/PlantForm"
 import { PlantList } from "./plant/PlantList"
 import { EventProvider } from "./event/EventProvider"
+import { EventForm } from "./event/EventForm"
 import { EventList } from "./event/EventList"
 import { WeatherProvider } from "./weather/WeatherProvider"
 import { WeatherList } from "./weather/WeatherList"
-import { PlantCard } from "./plant/PlantCard"
 
 export const ApplicationViews = (props) => {
     return (
@@ -33,6 +33,9 @@ export const ApplicationViews = (props) => {
                     <Route exact path="/events">
                         <EventList />
                     </Route>
+                    <Route exact path="/addevent" render={
+                        props => <EventForm {...props}/>
+                        }/>
                 </PlantProvider>
             </EventProvider>
             <TrefleProvider>

@@ -13,17 +13,13 @@ export const PlantForm = (props) => {
 
     const constructNewPlant= () => {
         
-        // const scientificName = 
     
             addPlantData({
                 userId: parseInt(localStorage.getItem("app_user_id")),   
                 petName: petName.current.value,
-                // commonName: commonName.current.value,
-                // scientificName: scienceName.current.value,
                 imageURL: imageURL.current.value,
                 trefleId: parseInt(TrefleId.current.value)
             })
-            // .then(() => props.history.push("/plants"))
         
     }
     return (

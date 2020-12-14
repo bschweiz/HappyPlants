@@ -83,6 +83,70 @@
       "water": false,
       "complete": false,
       "notes": "I should check on Bruce."
+    },
+    {
+      "id": 3,
+      "plantId": 3,
+      "date": "2020-12-23",
+      "water": true,
+      "complete": false,
+      "notes": "I should check on Snake."
+    },
+    {
+      "id": 4,
+      "plantId": 4,
+      "date": "2020-12-24",
+      "water": false,
+      "complete": false,
+      "notes": "I should check on Mary, maybe a spritz."
+    },
+    {
+      "plantId": 1,
+      "date": "2020-12-24",
+      "water": false,
+      "complete": true,
+      "notes": "check on his new roots",
+      "id": 5
+    },
+    {
+      "plantId": 1,
+      "date": "2020-12-15",
+      "water": true,
+      "complete": true,
+      "notes": "check on his new roots 2x",
+      "id": 6
+    },
+    {
+      "plantId": 1,
+      "date": "2020-12-14",
+      "water": true,
+      "complete": true,
+      "notes": "I just checked on Fred",
+      "id": 7
+    },
+    {
+      "plantId": 1,
+      "date": "2020-12-13",
+      "water": true,
+      "complete": true,
+      "notes": "I just checked on Fred yesterday",
+      "id": 8
+    },
+    {
+      "plantId": 1,
+      "date": "2020-12-25",
+      "water": true,
+      "complete": true,
+      "notes": "sing a christmas song for Fred",
+      "id": 9
+    },
+    {
+      "plantId": 1,
+      "date": "2020-12-24",
+      "water": true,
+      "complete": true,
+      "notes": "christmas eve (no radios clicked)",
+      "id": 10
     }
   ]
 }

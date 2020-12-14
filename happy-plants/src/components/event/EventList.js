@@ -14,12 +14,15 @@ export const EventList = () => {
     
     useEffect (()=> {
         const userPlants = plants.filter(p => p.userId === parseInt(localStorage.getItem("app_user_id")))
+        // debugger
         console.log("user plants", userPlants)
-        const subsetEvents = events.map(e => {userPlants.find(p => p.id === e.plantId)})
-        // const subsetEvents = events.filter(e => { e.plantId === p.id})
-        //     const matchEvent = userPlants.find(p => p.id === e.plantId)
-        //     return matchEvent
-        console.log("subset Events, should be 1 ovf them", subsetEvents)
+        
+        const subsetEvents = userPlants.map(p => {
+            const matchingEvent = events.find(e => e.plantId === p.id)
+            return matchingEvent
+        })
+        
+        console.log("subset Events, should be 3 of them: Fred, Snake, Mary", subsetEvents)
         setFilteredEvents(subsetEvents)
     }, [plants])
 
