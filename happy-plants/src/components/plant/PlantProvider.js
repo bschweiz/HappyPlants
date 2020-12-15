@@ -28,6 +28,14 @@ export const PlantProvider = (props) => {
             body: JSON.stringify(plant)
         })
             .then(getPlantData)
+        
+    }
+
+    const releasePlant = id => {
+        return fetch(`http://localhost:8088/plants/${id}`, {
+            method: "DELETE"
+        })
+            .then(getPlantData)
     }
 
     const getPlantNames = () => {
@@ -36,6 +44,16 @@ export const PlantProvider = (props) => {
         .then(setNames)
     }
 
+    const addTrefleNames = nameSet => {
+        return fetch("http://localhost:8088/trefles", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(nameSet)
+        })
+            .then(getPlantNames)
+    }
     /*
         You return a context provider which has the
         `customers` state, the `addPlant` function,
@@ -44,7 +62,7 @@ export const PlantProvider = (props) => {
     */
     return (
         <PlantContext.Provider value={{
-            plants, addPlantData, getPlantData, getPlantNames, names
+            plants, addPlantData, getPlantData, releasePlant, getPlantNames, names, addTrefleNames
         }}>
             {props.children}
         </PlantContext.Provider>

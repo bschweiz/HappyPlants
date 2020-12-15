@@ -31,18 +31,18 @@
       "trefleId": 103921
     },
     {
-      "userId": 1,
-      "petName": "Snake",
-      "imageURL": "https://bs.floristic.org/image/o/0a864ad583d95ce8e7b1af5cfddded16db142d3f",
       "trefleId": 1258091,
-      "id": 3
+      "userId": 1,
+      "petName": "stevie",
+      "imageURL": "https://bs.floristic.org/image/o/0a864ad583d95ce8e7b1af5cfddded16db142d3f",
+      "id": 5
     },
     {
+      "trefleId": 130506,
       "userId": 1,
-      "petName": "Mary",
-      "imageURL": "https://bs.floristic.org/image/o/2d84d9e058ef190dcaa5cbe4de88f66f1d080764",
-      "trefleId": 154631,
-      "id": 4
+      "petName": "Snake",
+      "imageURL": "https://bs.floristic.org/image/o/3b39ae0843fb6bacb96cee2d7342bb84144311d5",
+      "id": 6
     }
   ],
   "trefles": [
@@ -52,30 +52,27 @@
       "scientificName": "Echeveria quitensis"
     },
     {
-      "id": 1258091,
-      "commonName": "African bow Hemp",
-      "scientificName": "seomthing cool"
-    },
-    {
       "id": 103921,
-      "commonName": "planttt 3",
+      "commonName": "plant 3",
       "scientificName": "Thrid option"
     },
     {
       "id": 154631,
-      "commonName": "planttt 4",
-      "scientificName": "4th option"
+      "commonName": "Prayer Plant",
+      "scientificName": "Maranta leuconeura"
+    },
+    {
+      "id": 1258091,
+      "commonName": "African bowstring-hemp",
+      "scientificName": "Dracaena trifasciata"
+    },
+    {
+      "id": 130506,
+      "commonName": "Male fern",
+      "scientificName": "Dryopteris filix-mas"
     }
   ],
   "events": [
-    {
-      "id": 1,
-      "plantId": 1,
-      "date": "2020-12-21",
-      "water": true,
-      "complete": false,
-      "notes": "Fred is in trouble!"
-    },
     {
       "id": 2,
       "plantId": 2,
@@ -83,38 +80,6 @@
       "water": false,
       "complete": false,
       "notes": "I should check on Bruce."
-    },
-    {
-      "id": 3,
-      "plantId": 3,
-      "date": "2020-12-23",
-      "water": true,
-      "complete": false,
-      "notes": "I should check on Snake."
-    },
-    {
-      "id": 4,
-      "plantId": 4,
-      "date": "2020-12-24",
-      "water": false,
-      "complete": false,
-      "notes": "I should check on Mary, maybe a spritz."
-    },
-    {
-      "plantId": 1,
-      "date": "2020-12-24",
-      "water": false,
-      "complete": true,
-      "notes": "check on his new roots",
-      "id": 5
-    },
-    {
-      "plantId": 1,
-      "date": "2020-12-15",
-      "water": true,
-      "complete": true,
-      "notes": "check on his new roots 2x",
-      "id": 6
     },
     {
       "plantId": 1,
@@ -134,19 +99,11 @@
     },
     {
       "plantId": 1,
-      "date": "2020-12-25",
-      "water": true,
+      "date": "2020-12-14",
+      "water": "on",
       "complete": true,
-      "notes": "sing a christmas song for Fred",
+      "notes": "nothing selected",
       "id": 9
-    },
-    {
-      "plantId": 1,
-      "date": "2020-12-24",
-      "water": true,
-      "complete": true,
-      "notes": "christmas eve (no radios clicked)",
-      "id": 10
     }
   ]
 }

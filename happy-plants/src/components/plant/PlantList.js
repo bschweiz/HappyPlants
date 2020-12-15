@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import {PlantContext} from "./PlantProvider"
 import {PlantCard} from "./PlantCard"
 
-export const PlantList = () => {
+export const PlantList = (props) => {
     const { getPlantData, plants } = useContext(PlantContext)
     // const { }
     const [ filteredPlants, setFiltered ] = useState([])
@@ -14,20 +14,6 @@ export const PlantList = () => {
     useEffect (()=> {
 
         const subset = plants.filter(p => p.userId === parseInt(localStorage.getItem("app_user_id")))
-        // const namedSubset = subset.map(p => {
-
-        //     const match = names.find(n => n.id === p.trefleId)
-            
-        //     const updatedPlant = {
-        //         ...p,
-        //         commonName: match.commonName,
-        //         scientificName: match.scientificName,
-
-        //     }
-        //     return updatedPlant
-
-        // })
-        // console.log(namedSubset)
         setFiltered(subset)
 
 
@@ -40,7 +26,7 @@ export const PlantList = () => {
             <div className="plants">
                 {
                     filteredPlants.map(p => {
-                        return <PlantCard key={p.id} plant={p} />
+                        return <PlantCard key={p.id} plant={p} props={props}/>
                     })
                 }
             </div>

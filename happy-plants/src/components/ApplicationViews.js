@@ -21,32 +21,30 @@ export const ApplicationViews = (props) => {
                     <WeatherList />
                 </Route>
             </WeatherProvider>
-            <PlantProvider>
-                <TrefleProvider>
-                    <Route exact path="/plants">
-                        <PlantList />
-                    </Route>
-                </TrefleProvider>
-            </PlantProvider>
-            <EventProvider>
-                <PlantProvider>
-                    <Route exact path="/events">
-                        <EventList />
-                    </Route>
-                    <Route exact path="/addevent" render={
-                        props => <EventForm {...props}/>
-                        }/>
-                </PlantProvider>
-            </EventProvider>
+
             <TrefleProvider>
                 <PlantProvider>
+                    <Route exact path="/plants" render={
+                        props => <PlantList {...props} />
+                    } />
                     <Route exact path="/addplant">
-                        <PlantForm />
+                        <PlantForm props={props} />
                         <TrefleForm />
                         <TrefleList />
                     </Route>
                 </PlantProvider>
             </TrefleProvider>
+
+            <EventProvider>
+                <PlantProvider>
+                    <Route exact path="/events" render={
+                        props => <EventList {...props} />
+                    } />
+                    <Route exact path="/addevent" render={
+                        props => <EventForm {...props} />
+                    } />
+                </PlantProvider>
+            </EventProvider>
         </>
     )
 }

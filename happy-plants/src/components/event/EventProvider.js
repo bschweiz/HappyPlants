@@ -22,11 +22,16 @@ export const EventProvider = (props) => {
             .then(getEvents)
     }
 
-    // will add addEvent later
+    const releaseEvent = id => {
+        return fetch(`http://localhost:8088/events/${id}`, {
+            method: "DELETE"
+        })
+            .then(getEvents)
+    }
 
     return (
         <EventContext.Provider value={{
-            events, getEvents, addEvent
+            events, getEvents, addEvent, releaseEvent
         }}>
             {props.children}
         </EventContext.Provider>

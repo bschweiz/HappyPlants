@@ -1,27 +1,31 @@
 import React, { useContext, useRef } from "react"
-// import {TrefleContext} from "./trefle/TrefleProvider"
 import {PlantContext} from "./PlantProvider"
 
-export const PlantForm = (props) => {
-    const { addPlantData } = useContext(PlantContext)
+export const PlantForm = ({props}) => {
+    const { addTrefleNames, addPlantData } = useContext(PlantContext)
 
     const petName = useRef(null)
-    const commonName = useRef(null)
-    const scienceName = useRef(null)
     const imageURL = useRef(null)
     const TrefleId = useRef(null)
+    const commonName = useRef(null)
+    const scienceName = useRef(null)
 
     const constructNewPlant= () => {
         
-    
+    console.log(props)
             addPlantData({
+                trefleId: parseInt(TrefleId.current.value),
                 userId: parseInt(localStorage.getItem("app_user_id")),   
                 petName: petName.current.value,
-                imageURL: imageURL.current.value,
-                trefleId: parseInt(TrefleId.current.value)
+                imageURL: imageURL.current.value
             })
-        
-    }
+            .then(addTrefleNames({
+                id: parseInt(TrefleId.current.value),
+                commonName: commonName.current.value,
+                scientificName:  scienceName.current.value         
+            }))
+            .then(() => props.history.push("/plants"))
+        }
     return (
         <form className="plantForm">
             <h2 className="plantForm__title">New Plant</h2>

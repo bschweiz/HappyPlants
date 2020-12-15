@@ -5,10 +5,10 @@ import { WeatherCard } from "./WeatherCard"
 export const WeatherList = () => {
 
     const { weatherData, getWeather } = useContext(WeatherContext)
-    // const [ weather, setWeather] = useState([])
+    const [ weather, setWeather] = useState([])
 
     useEffect(() => {
-        getWeather()
+        getWeather().then(setWeather)
     }, [])
 
     useEffect(() => {
@@ -17,7 +17,7 @@ export const WeatherList = () => {
     }, [weatherData])
 
     const weatherRender = () => { 
-    if (weatherData.length) {
+    if (weather.length) {
         let weatherList = weatherData.list
         console.log(weatherList)
         return <div className="weather_results">
