@@ -7,20 +7,18 @@ export const EventForm = (props) => {
 
     const plantId = useRef(null)
     const date = useRef(null)
-    const waterYes = useRef(null)
-    const waterNo = useRef(null)
+    const water = useRef(null)
     const completedYes = useRef(null)
     const completedNo = useRef(null)
     const careNote = useRef(null)
 
     const constructNewEvent = () => {
-
+debugger
         const completeStatus = completedYes.current.value ? true : false;
-        const waterStatus = waterYes.current.value ? true : false;
+        const waterStatus = water.current.value
         console.log(completeStatus)
         console.log(waterStatus)
-        // const plantId = parseInt(plantId.current.value)
-        // const date = date.current.value
+
         const notes = careNote.current.value
         addEvent({
             plantId: parseInt(plantId.current.value),
@@ -29,7 +27,7 @@ export const EventForm = (props) => {
             complete: completeStatus,
             notes,
         })
-        .then(() => props.history.push("/events"))
+            .then(() => props.history.push("/events"))
 
     }
     return (
@@ -48,18 +46,11 @@ export const EventForm = (props) => {
                 </div>
             </fieldset>
             <fieldset>
-                <label htmlFor="plantCommonName">Watering?  </label>
-            
-                    <div className="watering-buttons">
-                        <label htmlFor="wateringYes">
-                            Yes
-                    <input type="radio" id="waterYes" ref={waterYes} required className="form-control" autoFocus />
-                        </label>
-                        <label htmlFor="wateringNo">No
-                    <input type="radio" id="waterNO" ref={waterNo} required className="form-control" autoFocus />
-                        </label>
-                    </div>
-                
+                <div className="watering-checkbox">
+                    <label htmlFor="plantCommonName">Watering?  </label>
+                    <input type="checkbox" id="waterSelect" ref={water} autoFocus className="form-control" />
+                </div>
+
             </fieldset>
             <fieldset>
                 <div className="form-group">

@@ -139,6 +139,30 @@
       "complete": true,
       "notes": "christmas eve (no radios clicked)",
       "id": 10
+    },
+    {
+      "plantId": 4,
+      "date": "2020-12-15",
+      "water": true,
+      "complete": true,
+      "notes": "watering yes",
+      "id": 11
+    },
+    {
+      "plantId": 4,
+      "date": "2020-12-17",
+      "water": true,
+      "complete": true,
+      "notes": "no watering",
+      "id": 12
+    },
+    {
+      "plantId": 4,
+      "date": "2020-12-19",
+      "water": "on",
+      "complete": true,
+      "notes": "no watering",
+      "id": 13
     }
   ]
 }

@@ -36,9 +36,7 @@ export const EventList = () => {
             <div className="events">
                 {
                     filteredEvents.map(event => {
-                        return <section className="card-body">
-                            <EventCard key={event.id} event={event}/>
-                        </section>
+                        return <EventCard key={event.id} event={event}/>
                     })
                 }
             </div>)} else {return <div></div>}
