@@ -3,7 +3,7 @@ import { EventContext } from "./EventProvider"
 import { PlantContext}  from "../plant/PlantProvider"
 import { EventCard } from './EventCard'
 
-export const EventList = () => {
+export const EventList = (props) => {
     const { getPlantData, plants } = useContext(PlantContext)
     const { getEvents, events } = useContext(EventContext)
     const [ filteredEvents, setFilteredEvents ] = useState([])
@@ -21,22 +21,22 @@ export const EventList = () => {
             const matchingEventArray = events.filter(e => e.plantId === p.id)
             return matchingEventArray}
         )
-        let stuff = []
-        const taco = (subsetEvents) => {
-            return subsetEvents.map(a => a.forEach(e => stuff.push(e)))
+        let userFilteredEvents = []
+        const combineArrays = (subsetEvents) => {
+            return subsetEvents.map(a => a.forEach(e => userFilteredEvents.push(e)))
         }
-        taco(subsetEvents)
-        console.log("subset Events, should be 3 of them: Fred, Snake, Mary", subsetEvents, stuff)
+        combineArrays(subsetEvents)
+        console.log("subset Events, should be 3 of them: Fred, Snake, Mary", subsetEvents, userFilteredEvents)
         
-        setFilteredEvents(stuff)
-    }, [plants])
+        setFilteredEvents(userFilteredEvents)
+    }, [plants, events])
 
     if (events.length && plants.length) {console.log(filteredEvents)
         return (
             <div className="events">
                 {
                     filteredEvents.map(event => {
-                        return <EventCard key={event.id} event={event}/>
+                        return <EventCard key={event.id} event={event} props={props}/>
                     })
                 }
             </div>)} else {return <div></div>}

@@ -13,7 +13,7 @@ export const EventForm = (props) => {
     const careNote = useRef(null)
 
     const constructNewEvent = () => {
-debugger
+// debugger
         const completeStatus = completedYes.current.value ? true : false;
         const waterStatus = water.current.value
         console.log(completeStatus)
