@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react"
+import React, { useContext, useRef, useState } from "react"
 // import {TrefleContext} from "./trefle/TrefleProvider"
 import { EventContext } from "./EventProvider"
 
@@ -7,17 +7,11 @@ export const EventForm = (props) => {
 
     const plantId = useRef(null)
     const date = useRef(null)
-    const water = useRef(null)
-    const completedYes = useRef(null)
-    const completedNo = useRef(null)
     const careNote = useRef(null)
+    let waterStatus = false
+    let completeStatus = false
 
     const constructNewEvent = () => {
-// debugger
-        const completeStatus = completedYes.current.value ? true : false;
-        const waterStatus = water.current.value
-        console.log(completeStatus)
-        console.log(waterStatus)
 
         const notes = careNote.current.value
         addEvent({
@@ -28,8 +22,17 @@ export const EventForm = (props) => {
             notes,
         })
             .then(() => props.history.push("/events"))
-
     }
+
+    const waterControl = (evt) => {
+        console.log(evt)
+        return waterStatus = evt.target.checked
+    }
+    const completedControl = (evt) => {
+        console.log(evt)
+        return completeStatus = evt.target.checked
+    }
+
     return (
         <form className="plantForm">
             <h2 className="plantForm__title">New Event</h2>
@@ -47,25 +50,21 @@ export const EventForm = (props) => {
             </fieldset>
             <fieldset>
                 <div className="watering-checkbox">
-                    <label htmlFor="plantCommonName">Watering?  </label>
-                    <input type="checkbox" id="waterSelect" ref={water} autoFocus className="form-control" />
+                    <label htmlFor="waterQuery">Watering?  </label>
+                    <input type="checkbox" id="waterSelect" autoFocus className="form-control"
+                        onChange={evt => {
+                            waterControl(evt)
+                        }} />
                 </div>
 
             </fieldset>
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="plantcomplete">Completed?</label>
-
-                    <div className="watering-buttons">
-                        <label htmlFor="completedYes">
-                            Yes
-                    <input type="radio" id="completeYes" ref={completedYes} required className="form-control" autoFocus />
-                        </label>
-                        <label htmlFor="copmletedNo">No
-                    <input type="radio" id="completNO" ref={completedNo} required className="form-control" autoFocus />
-                        </label>
-                    </div>
-
+                <div className="watering-checkbox">
+                    <label htmlFor="completedQuery">Completed? </label>
+                    <input type="checkbox" id="completeSelect" autoFocus className="form-control"
+                        onChange={evt => {
+                            completedControl(evt)
+                        }} />
                 </div>
             </fieldset>
             <fieldset>

@@ -42,7 +42,7 @@
       "userId": 1,
       "petName": "Snake",
       "imageURL": "https://bs.floristic.org/image/o/3b39ae0843fb6bacb96cee2d7342bb84144311d5",
-      "id": 6
+      "id": 4
     }
   ],
   "trefles": [
@@ -82,36 +82,36 @@
       "notes": "I should check on Bruce."
     },
     {
-      "plantId": 1,
-      "date": "2020-12-14",
+      "plantId": 4,
+      "date": "2020-12-01",
+      "water": false,
+      "complete": false,
+      "notes": "no all",
+      "id": 3
+    },
+    {
+      "plantId": 4,
+      "date": "2020-12-02",
       "water": true,
       "complete": true,
-      "notes": "I just checked on Fred",
-      "id": 7
+      "notes": "yes all",
+      "id": 4
     },
     {
-      "plantId": 1,
-      "date": "2020-12-13",
+      "plantId": 4,
+      "date": "2020-12-03",
       "water": true,
-      "complete": true,
-      "notes": "I just checked on Fred yesterday",
-      "id": 8
+      "complete": false,
+      "notes": "water yes comp no",
+      "id": 5
     },
     {
-      "plantId": 1,
-      "date": "2020-12-14",
-      "water": "on",
+      "plantId": 4,
+      "date": "2020-12-04",
+      "water": false,
       "complete": true,
-      "notes": "nothing selected",
-      "id": 9
-    },
-    {
-      "plantId": 5,
-      "date": "2020-12-15",
-      "water": "on",
-      "complete": true,
-      "notes": "Check on Stevie",
-      "id": 10
+      "notes": "no water yes comp",
+      "id": 6
     }
   ]
 }

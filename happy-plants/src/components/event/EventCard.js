@@ -6,14 +6,14 @@ import {PlantContext} from "../plant/PlantProvider"
 
 export const EventCard = ( {event, props} ) => {
     const {plants,getPlants} = useContext(PlantContext)
-    const { releaseEvent, events, getEvents } = useContext(EventContext)
+    const { releaseEvent, getEvents } = useContext(EventContext)
 // debugger
     useEffect(() => {
         getEvents().then(getPlants)
     }, [])
 
     const matchingPlant = plants.find(p => p.id === event.plantId)
-    console.log(matchingPlant)
+
     return (
 
     <section className="event">
