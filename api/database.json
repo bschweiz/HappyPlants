@@ -104,6 +104,14 @@
       "complete": true,
       "notes": "nothing selected",
       "id": 9
+    },
+    {
+      "plantId": 5,
+      "date": "2020-12-15",
+      "water": "on",
+      "complete": true,
+      "notes": "Check on Stevie",
+      "id": 10
     }
   ]
 }
