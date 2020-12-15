@@ -32,24 +32,10 @@
     },
     {
       "userId": 1,
-      "petName": "Snake",
-      "imageURL": "https://bs.floristic.org/image/o/0a864ad583d95ce8e7b1afcfddded16db142d3f",
-      "trefleId": 1258091,
-      "id": 3
-    },
-    {
-      "userId": 1,
       "petName": "Mary",
       "imageURL": "https://bs.floristic.org/image/o/2d84d9e058ef190dcaa5cbe4de88f66f1d080764",
       "trefleId": 154631,
       "id": 4
-    },
-    {
-      "trefleId": 211541,
-      "userId": 1,
-      "petName": "stevie",
-      "imageURL": "https://bs.floristic.org/image/o/2d84d9e058ef190dcaa5cbe4de88f66f1d080764",
-      "id": 5
     }
   ],
   "trefles": [
@@ -72,11 +58,6 @@
       "id": 154631,
       "commonName": "planttt 4",
       "scientificName": "4th option"
-    },
-    {
-      "id": 211541,
-      "commonName": "fern",
-      "scientificName": "Dracaena trifasciata"
     }
   ],
   "events": [
@@ -95,14 +76,6 @@
       "water": false,
       "complete": false,
       "notes": "I should check on Bruce."
-    },
-    {
-      "id": 3,
-      "plantId": 3,
-      "date": "2020-12-23",
-      "water": true,
-      "complete": false,
-      "notes": "I should check on Snake."
     },
     {
       "id": 4,

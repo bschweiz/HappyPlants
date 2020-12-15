@@ -23,9 +23,9 @@ export const ApplicationViews = (props) => {
             </WeatherProvider>
             <PlantProvider>
                 <TrefleProvider>
-                    <Route exact path="/plants">
-                        <PlantList />
-                    </Route>
+                    <Route exact path="/plants" render={
+                        props => <PlantList {...props}/>
+                    }/>
                 </TrefleProvider>
             <TrefleProvider>
                 <PlantProvider>

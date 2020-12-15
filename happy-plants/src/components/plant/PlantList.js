@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import {PlantContext} from "./PlantProvider"
 import {PlantCard} from "./PlantCard"
 
-export const PlantList = () => {
+export const PlantList = (props) => {
     const { getPlantData, plants } = useContext(PlantContext)
     // const { }
     const [ filteredPlants, setFiltered ] = useState([])
@@ -40,7 +40,7 @@ export const PlantList = () => {
             <div className="plants">
                 {
                     filteredPlants.map(p => {
-                        return <PlantCard key={p.id} plant={p} />
+                        return <PlantCard key={p.id} plant={p} props={props}/>
                     })
                 }
             </div>

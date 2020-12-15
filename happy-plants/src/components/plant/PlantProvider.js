@@ -31,6 +31,13 @@ export const PlantProvider = (props) => {
         
     }
 
+    const releasePlant = id => {
+        return fetch(`http://localhost:8088/plants/${id}`, {
+            method: "DELETE"
+        })
+            .then(getPlantData)
+    }
+
     const getPlantNames = () => {
         return fetch(`http://localhost:8088/trefles`)
         .then(res => res.json())
@@ -55,7 +62,7 @@ export const PlantProvider = (props) => {
     */
     return (
         <PlantContext.Provider value={{
-            plants, addPlantData, getPlantData, getPlantNames, names, addTrefleNames
+            plants, addPlantData, getPlantData, releasePlant, getPlantNames, names, addTrefleNames
         }}>
             {props.children}
         </PlantContext.Provider>
