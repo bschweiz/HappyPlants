@@ -9,6 +9,14 @@ export const EventCard = ( {event} ) => (
         </div>
         <div className="event_notes">{event.notes}</div>
         <button>Edit Event</button>
-        <button>Delete Event</button>
+        <button className="btn--delete--Plant"
+                    onClick={
+                        () => {
+                            releaseEvent(plant.id)
+                                .then(() => {
+                                    props.history.push("/plants")
+                                })
+                        }
+                    }>Delete Event</button>
     </section>
 )
