@@ -36,6 +36,13 @@
       "imageURL": "https://bs.floristic.org/image/o/2d84d9e058ef190dcaa5cbe4de88f66f1d080764",
       "trefleId": 154631,
       "id": 4
+    },
+    {
+      "trefleId": 1258091,
+      "userId": 1,
+      "petName": "stevie",
+      "imageURL": "https://bs.floristic.org/image/o/0a864ad583d95ce8e7b1af5cfddded16db142d3f",
+      "id": 5
     }
   ],
   "trefles": [
@@ -45,19 +52,19 @@
       "scientificName": "Echeveria quitensis"
     },
     {
-      "id": 1258091,
-      "commonName": "African bow Hemp",
-      "scientificName": "seomthing cool"
-    },
-    {
       "id": 103921,
-      "commonName": "planttt 3",
+      "commonName": "plant 3",
       "scientificName": "Thrid option"
     },
     {
       "id": 154631,
-      "commonName": "planttt 4",
-      "scientificName": "4th option"
+      "commonName": "Prayer Plant",
+      "scientificName": "Maranta leuconeura"
+    },
+    {
+      "id": 1258091,
+      "commonName": "African bowstring-hemp",
+      "scientificName": "Dracaena trifasciata"
     }
   ],
   "events": [
