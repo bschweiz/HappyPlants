@@ -4,7 +4,6 @@ import {PlantCard} from "./PlantCard"
 
 export const PlantList = (props) => {
     const { getPlantData, plants } = useContext(PlantContext)
-    // const { }
     const [ filteredPlants, setFiltered ] = useState([])
 
     useEffect(() => {
@@ -12,12 +11,8 @@ export const PlantList = (props) => {
     }, [])
 
     useEffect (()=> {
-
         const subset = plants.filter(p => p.userId === parseInt(localStorage.getItem("app_user_id")))
         setFiltered(subset)
-
-
-        // add logic for filtering matching trefle data table objects
     }, [plants])
 
     return (

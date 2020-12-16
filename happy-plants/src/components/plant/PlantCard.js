@@ -10,18 +10,18 @@ export const PlantCard = ({ plant, props }) => {
         getPlantNames()
     }, [])
 
-    const matchNames = names.find(n => n.id === plant.trefleId)
-    console.log(matchNames)
+    const matchName = names.find(n => n.id === plant.trefleId)
+    // console.log(matchName)
     // debugger
-    if (matchNames == null) { return <div></div> } else {
+    if (matchName == null) { return <div></div> } else {
         // debugger
         return (
             <section className="plant_info">
                 <h2>Pet Name: {plant.petName}</h2>
                 <h3 className="common__name">Trefle ID: {plant.trefleId}</h3>
                 <img src={plant.imageURL} alt={plant.petName} />
-                <div>{matchNames.commonName}</div>
-                <div>{matchNames.scientificName}</div>
+                <div>{matchName.commonName}</div>
+                <div>{matchName.scientificName}</div>
                 <button className="btn--edit--Plant">Edit Plant</button>
                 <button className="btn--delete--Plant"
                     onClick={

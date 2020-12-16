@@ -33,16 +33,16 @@
     {
       "trefleId": 1258091,
       "userId": 1,
-      "petName": "stevie",
+      "petName": "Snake",
       "imageURL": "https://bs.floristic.org/image/o/0a864ad583d95ce8e7b1af5cfddded16db142d3f",
       "id": 5
     },
     {
       "trefleId": 130506,
       "userId": 1,
-      "petName": "Snake",
+      "petName": "Fernando",
       "imageURL": "https://bs.floristic.org/image/o/3b39ae0843fb6bacb96cee2d7342bb84144311d5",
-      "id": 6
+      "id": 4
     }
   ],
   "trefles": [
@@ -82,28 +82,52 @@
       "notes": "I should check on Bruce."
     },
     {
-      "plantId": 1,
-      "date": "2020-12-14",
+      "plantId": 4,
+      "date": "2020-12-01",
+      "water": false,
+      "complete": false,
+      "notes": "no all",
+      "id": 3
+    },
+    {
+      "plantId": 4,
+      "date": "2020-12-02",
       "water": true,
       "complete": true,
-      "notes": "I just checked on Fred",
+      "notes": "yes all",
+      "id": 4
+    },
+    {
+      "plantId": 4,
+      "date": "2020-12-03",
+      "water": true,
+      "complete": false,
+      "notes": "water yes comp no",
+      "id": 5
+    },
+    {
+      "plantId": 4,
+      "date": "2020-12-04",
+      "water": false,
+      "complete": true,
+      "notes": "no water yes comp",
+      "id": 6
+    },
+    {
+      "plantId": 4,
+      "date": "2020-12-15",
+      "water": true,
+      "complete": true,
+      "notes": "yes all, snake, id 4",
       "id": 7
     },
     {
-      "plantId": 1,
-      "date": "2020-12-13",
+      "plantId": 4,
+      "date": "2020-12-04",
       "water": true,
       "complete": true,
-      "notes": "I just checked on Fred yesterday",
+      "notes": "i watered Fernando last week",
       "id": 8
-    },
-    {
-      "plantId": 1,
-      "date": "2020-12-14",
-      "water": "on",
-      "complete": true,
-      "notes": "nothing selected",
-      "id": 9
     }
   ]
 }
