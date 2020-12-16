@@ -5,7 +5,7 @@ import {PlantContext} from "../plant/PlantProvider"
 
 
 export const EventCard = ( {event, props} ) => {
-    const {plants,getPlants} = useContext(PlantContext)
+    const { plants,getPlants } = useContext(PlantContext)
     const { releaseEvent, getEvents } = useContext(EventContext)
 // debugger
     useEffect(() => {

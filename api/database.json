@@ -128,6 +128,14 @@
       "complete": true,
       "notes": "i watered Fernando last week",
       "id": 8
+    },
+    {
+      "plantId": 5,
+      "date": "2020-12-16",
+      "water": true,
+      "complete": true,
+      "notes": "yes all",
+      "id": 9
     }
   ]
 }

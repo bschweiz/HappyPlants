@@ -28,7 +28,7 @@ return (
                     searchTrefleByName()
                 }}
                 className="btn btn-primary">
-                Save Plant
+                Search for Plant
         </button>
     </form>
 )
