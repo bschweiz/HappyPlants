@@ -11,7 +11,7 @@ export const PlantCard = ({ plant, props }) => {
     }, [])
 
     const matchName = names.find(n => n.id === plant.trefleId)
-    console.log(matchName)
+    // console.log(matchName)
     // debugger
     if (matchName == null) { return <div></div> } else {
         // debugger

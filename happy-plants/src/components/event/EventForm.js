@@ -1,13 +1,26 @@
-import React, { useContext, useRef, useState } from "react"
-// import {TrefleContext} from "./trefle/TrefleProvider"
+import React, { useContext, useRef, useState, useEffect } from "react"
+import { PlantContext } from "../plant/PlantProvider"
 import { EventContext } from "./EventProvider"
+
 
 export const EventForm = (props) => {
     const { addEvent } = useContext(EventContext)
+    const { plants, getPlantData } = useContext(PlantContext)
 
-    const plantId = useRef(null)
+    const [ filteredPlants, setFiltered ] = useState([])
+    useEffect(() => {
+        getPlantData()
+    }, [])
+
+    useEffect (()=> {
+        const subset = plants.filter(p => p.userId === parseInt(localStorage.getItem("app_user_id")))
+        setFiltered(subset)
+    }, [plants])
+
+
     const date = useRef(null)
     const careNote = useRef(null)
+    const plant = useRef(null)
     let waterStatus = false
     let completeStatus = false
 
@@ -15,7 +28,7 @@ export const EventForm = (props) => {
 
         const notes = careNote.current.value
         addEvent({
-            plantId: parseInt(plantId.current.value),
+            plantId: parseInt(plant.current.value),
             date: date.current.value,
             water: waterStatus,
             complete: completeStatus,
@@ -25,21 +38,32 @@ export const EventForm = (props) => {
     }
 
     const waterControl = (evt) => {
-        console.log(evt)
+        // console.log(evt, parseInt(plant.current.value))
         return waterStatus = evt.target.checked
     }
     const completedControl = (evt) => {
-        console.log(evt)
+        // console.log(evt)
         return completeStatus = evt.target.checked
     }
-
+    
     return (
         <form className="plantForm">
             <h2 className="plantForm__title">New Event</h2>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="plantName">Plant Id for the event: </label>
-                    <input type="text" id="plantName" ref={plantId} required autoFocus className="form-control" placeholder="Pet plant ID" />
+                    <select required
+                        defaultValue=""
+                        name="plantName"
+                        ref={plant}
+                        id="plantPetName"
+                        className="form-control"
+                        >
+                            <option value="0">Select a Plant to check on </option>
+                            {filteredPlants.map((p) => (
+                                <option key={p.id} value={p.id}>{p.petName}</option>
+                            ))}
+                        </select>
                 </div>
             </fieldset>
             <fieldset>

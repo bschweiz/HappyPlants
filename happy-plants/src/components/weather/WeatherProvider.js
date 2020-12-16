@@ -8,6 +8,7 @@ let zip = 37203
 // export const useWeather = () => weather
 
 export const WeatherProvider = (props) => {
+
     const [weatherData, setWeather] = useState([])
 
     const getWeather = () => {
