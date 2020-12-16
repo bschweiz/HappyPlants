@@ -16,7 +16,7 @@ export const PlantForm = (props) => {
                 trefleId: parseInt(props.location.state.chosenPlant.id),
                 userId: parseInt(localStorage.getItem("app_user_id")),   
                 petName: petName.current.value,
-                imageURL: props.location.state.image_url
+                imageURL: props.location.state.chosenPlant.image_url
             })
             .then(addTrefleNames({
                 id: parseInt(props.location.state.chosenPlant.id),
@@ -36,6 +36,7 @@ export const PlantForm = (props) => {
                     />
                 </div>
             </fieldset>
+            {/* add logic to check if chosenPlant.common_name exists, if it does don't render the field below */}
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="plantCommonName">Common plant name (from/to Trefle): </label>
@@ -45,7 +46,7 @@ export const PlantForm = (props) => {
                     />
                 </div>
             </fieldset>
-            <fieldset>
+            {/* <fieldset>
                 <div className="form-group">
                     <label htmlFor="plantScientificName">Scientific name (from/to Trefle): </label>
                     <input type="text" id="plantScientificName" ref={scienceName} required autoFocus className="form-control" 
@@ -53,7 +54,7 @@ export const PlantForm = (props) => {
                     defaultValue={props.location.state.chosenPlant.scientific_name}
                     />
                 </div>
-            </fieldset>
+            </fieldset> */}
             {/* <fieldset>
                 <div className="form-group">
                     <label htmlFor="plantTrefleId">Trefle ID: </label>

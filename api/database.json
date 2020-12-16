@@ -45,10 +45,18 @@
       "id": 4
     },
     {
-      "trefleId": 173327,
+      "trefleId": 1123020,
       "userId": 1,
-      "petName": "Oaky",
+      "petName": "Kim Dee",
+      "imageURL": "https://bs.floristic.org/image/o/1382ba50f9dea4271111f8263be8d2f3e952ae0a",
       "id": 6
+    },
+    {
+      "trefleId": 933268,
+      "userId": 1,
+      "petName": "Piney",
+      "imageURL": "https://bs.floristic.org/image/o/fd996188e4c78137bc32993c87a14dc939971dc0",
+      "id": 7
     }
   ],
   "trefles": [
@@ -56,11 +64,6 @@
       "id": 538258,
       "commonName": "Stonecrop",
       "scientificName": "Echeveria quitensis"
-    },
-    {
-      "id": 103921,
-      "commonName": "plant 3",
-      "scientificName": "Thrid option"
     },
     {
       "id": 154631,
@@ -78,9 +81,19 @@
       "scientificName": "Dryopteris filix-mas"
     },
     {
-      "id": 173327,
+      "id": 103921,
       "commonName": "English oak",
       "scientificName": "Quercus robur"
+    },
+    {
+      "id": 1123020,
+      "commonName": "Hollowheart",
+      "scientificName": "Iochroma arborescens"
+    },
+    {
+      "id": 933268,
+      "commonName": "Austrian pine",
+      "scientificName": "Pinus nigra"
     }
   ],
   "events": [
