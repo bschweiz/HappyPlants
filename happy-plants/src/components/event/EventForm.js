@@ -38,11 +38,11 @@ export const EventForm = (props) => {
     }
 
     const waterControl = (evt) => {
-        // console.log(evt, parseInt(plant.current.value))
+        console.log(evt)
         return waterStatus = evt.target.checked
     }
     const completedControl = (evt) => {
-        // console.log(evt)
+        console.log(evt)
         return completeStatus = evt.target.checked
     }
     
