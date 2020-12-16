@@ -16,11 +16,10 @@ export const TrefleList = () => {
         console.log(fuzzyResultArray)
         }, [fuzzyResultArray])
         
-    if (fuzzyResultArray.length) {    
     return <div className="trefle_results">Your Results:
     {
         fuzzyResultArray.map(pla => <TrefleCard key={pla.id} plant={pla} />)
     }
     </div>
-    } else {return <div>Enter a plant name</div>}
+    
     }

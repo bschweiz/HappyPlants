@@ -43,6 +43,12 @@
       "petName": "Fernando",
       "imageURL": "https://bs.floristic.org/image/o/3b39ae0843fb6bacb96cee2d7342bb84144311d5",
       "id": 4
+    },
+    {
+      "trefleId": 173327,
+      "userId": 1,
+      "petName": "Oaky",
+      "id": 6
     }
   ],
   "trefles": [
@@ -70,6 +76,11 @@
       "id": 130506,
       "commonName": "Male fern",
       "scientificName": "Dryopteris filix-mas"
+    },
+    {
+      "id": 173327,
+      "commonName": "English oak",
+      "scientificName": "Quercus robur"
     }
   ],
   "events": [
