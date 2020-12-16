@@ -8,6 +8,7 @@ export const EventForm = (props) => {
     const { plants, getPlantData } = useContext(PlantContext)
 
     const [ filteredPlants, setFiltered ] = useState([])
+    
     useEffect(() => {
         getPlantData()
     }, [])

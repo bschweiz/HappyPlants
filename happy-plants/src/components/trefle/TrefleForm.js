@@ -26,6 +26,7 @@ return (
                 onClick={evt => {
                     evt.preventDefault() 
                     searchTrefleByName()
+                    
                 }}
                 className="btn btn-primary">
                 Search for Plant

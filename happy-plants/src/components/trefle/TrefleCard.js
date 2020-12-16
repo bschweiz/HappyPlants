@@ -17,7 +17,7 @@ export const TrefleCard = ({plant, props}) => {
         onClick={evt=>{
             console.log(evt)
             setPlant({
-                
+                plant
             })
         }
         }
