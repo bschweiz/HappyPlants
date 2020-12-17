@@ -45,13 +45,6 @@
       "id": 4
     },
     {
-      "trefleId": 1123020,
-      "userId": 1,
-      "petName": "Kim Dee",
-      "imageURL": "https://bs.floristic.org/image/o/1382ba50f9dea4271111f8263be8d2f3e952ae0a",
-      "id": 6
-    },
-    {
       "trefleId": 933268,
       "userId": 1,
       "petName": "Piney",
@@ -94,6 +87,11 @@
       "id": 933268,
       "commonName": "Austrian pine",
       "scientificName": "Pinus nigra"
+    },
+    {
+      "id": 141663,
+      "commonName": "False bird of paradise",
+      "scientificName": "Heliconia rostrata"
     }
   ],
   "events": [

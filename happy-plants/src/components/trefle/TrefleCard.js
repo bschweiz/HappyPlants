@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { PlantCard } from "../plant/PlantCard"
 import { PlantForm } from "../plant/PlantForm"
-import { PlantContext } from "../plant/PlantProvider"
+
 
 
 export const TrefleCard = ({ plant, props }) => {

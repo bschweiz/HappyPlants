@@ -1,10 +1,11 @@
 import React, { useContext, useEffect } from "react"
+import { Link } from "react-router-dom"
 import { PlantContext } from "./PlantProvider"
 
 
 export const PlantCard = ({ plant, props }) => {
 
-    const { releasePlant, getPlantNames, names } = useContext(PlantContext)
+    const { getPlantNames, names } = useContext(PlantContext)
 
     useEffect(() => {
         getPlantNames()
@@ -17,12 +18,22 @@ export const PlantCard = ({ plant, props }) => {
         // debugger
         return (
             <section className="plant_info">
-                <h2>Pet Name: {plant.petName}</h2>
-                <h3 className="common__name">Trefle ID: {plant.trefleId}</h3>
+                <Link className="card-link"
+                    to={{
+                        pathname: `/plants/${plant.id}`,
+                        state: { chosenPlant: plant }
+                    }}>
+                    <h2>{plant.petName}</h2>
+                </Link>
+
+
+
+
                 <img src={plant.imageURL} alt={plant.petName} />
+                <h3 className="card-title">Trefle ID # {plant.trefleId}</h3>
                 <div>{matchName.commonName}</div>
                 <div>{matchName.scientificName}</div>
-                <button className="btn--edit--Plant">Edit Plant</button>
+                {/* <button className="btn--edit--Plant">Edit Plant</button>
                 <button className="btn--delete--Plant"
                     onClick={
                         () => {
@@ -31,7 +42,7 @@ export const PlantCard = ({ plant, props }) => {
                                     props.history.push("/plants")
                                 })
                         }
-                    }>Delete Plant</button>
+                    }>Delete Plant</button> */}
             </section>
         )
     }
