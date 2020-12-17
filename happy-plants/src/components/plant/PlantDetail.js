@@ -1,10 +1,26 @@
-import React, { useContext } from "react"
+import React, { useContext, useEffect } from "react"
 import { PlantContext } from "../plant/PlantProvider"
+import { TrefleContext } from "../trefle/TrefleProvider"
+
+
 
 export const PlantDetail = (props) => {
     // debugger
-    const { releasePlant, getPlantNames, names } = useContext(PlantContext)
-    const { }
+    const { releasePlant } = useContext(PlantContext)
+    const { singlePlant, getPlantById } = useContext(TrefleContext)
+
+    let plantData = {}
+    const id = props.location.state.chosenPlant.trefleId
+    useEffect(() => {
+        getPlantById(id)
+        console.log(id)
+        }, [])
+        
+    useEffect(() => {
+        console.log("test to see if the single plant came back")
+        console.log(singlePlant)
+        return plantData = singlePlant
+        }, [singlePlant])
 
     return (
 
@@ -22,6 +38,7 @@ export const PlantDetail = (props) => {
                                 })
                         }
                     }>Delete Plant</button>
+                    <h3>{plantData.common_name}</h3>
         </section>
     )
 
