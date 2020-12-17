@@ -43,6 +43,13 @@
       "petName": "Fernando",
       "imageURL": "https://bs.floristic.org/image/o/3b39ae0843fb6bacb96cee2d7342bb84144311d5",
       "id": 4
+    },
+    {
+      "trefleId": 933268,
+      "userId": 1,
+      "petName": "Piney",
+      "imageURL": "https://bs.floristic.org/image/o/fd996188e4c78137bc32993c87a14dc939971dc0",
+      "id": 7
     }
   ],
   "trefles": [
@@ -50,11 +57,6 @@
       "id": 538258,
       "commonName": "Stonecrop",
       "scientificName": "Echeveria quitensis"
-    },
-    {
-      "id": 103921,
-      "commonName": "plant 3",
-      "scientificName": "Thrid option"
     },
     {
       "id": 154631,
@@ -70,6 +72,26 @@
       "id": 130506,
       "commonName": "Male fern",
       "scientificName": "Dryopteris filix-mas"
+    },
+    {
+      "id": 103921,
+      "commonName": "English oak",
+      "scientificName": "Quercus robur"
+    },
+    {
+      "id": 1123020,
+      "commonName": "Hollowheart",
+      "scientificName": "Iochroma arborescens"
+    },
+    {
+      "id": 933268,
+      "commonName": "Austrian pine",
+      "scientificName": "Pinus nigra"
+    },
+    {
+      "id": 141663,
+      "commonName": "False bird of paradise",
+      "scientificName": "Heliconia rostrata"
     }
   ],
   "events": [
@@ -128,6 +150,14 @@
       "complete": true,
       "notes": "i watered Fernando last week",
       "id": 8
+    },
+    {
+      "plantId": 5,
+      "date": "2020-12-16",
+      "water": true,
+      "complete": true,
+      "notes": "yes all",
+      "id": 9
     }
   ]
 }

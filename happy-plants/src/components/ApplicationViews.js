@@ -7,6 +7,7 @@ import { TrefleList } from './trefle/TrefleList'
 import { PlantProvider } from "./plant/PlantProvider"
 import { PlantForm } from "./plant/PlantForm"
 import { PlantList } from "./plant/PlantList"
+import { PlantDetail } from "./plant/PlantDetail"
 import { EventProvider } from "./event/EventProvider"
 import { EventForm } from "./event/EventForm"
 import { EventList } from "./event/EventList"
@@ -24,16 +25,33 @@ export const ApplicationViews = (props) => {
 
             <TrefleProvider>
                 <PlantProvider>
+                    <Route path="/addplant" render={
+                        props => <TrefleForm {...props} />
+                    } />
+                    <Route exact path="/addplant/list" render={
+                        props => <TrefleList {...props} />
+                    } />
+                    <Route exact path="/addplant/list/:trefleId(\d+)" render={
+                        props => {
+                            console.log("props to PlantForm", props)
+                            return <PlantForm {...props} />
+                        }} />
+                </PlantProvider>
+            </TrefleProvider>
+
+            <EventProvider>
+                <PlantProvider>
                     <Route exact path="/plants" render={
                         props => <PlantList {...props} />
                     } />
-                    <Route exact path="/addplant">
-                        <PlantForm props={props} />
-                        <TrefleForm />
-                        <TrefleList />
-                    </Route>
+                    <Route path="/plants/:plantId(\d+)" render={
+                        props => {
+                            console.log("props", props)
+                            return <PlantDetail {...props} />
+                        }
+                    } />
                 </PlantProvider>
-            </TrefleProvider>
+            </EventProvider>
 
             <EventProvider>
                 <PlantProvider>

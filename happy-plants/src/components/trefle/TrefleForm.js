@@ -11,7 +11,7 @@ export const TrefleForm = (props) => {
         window.alert('Please enter a plant name')
     } else {
         getPlantByFuzzy(searchName.current.value)
-        // .then(() => props.history.push())
+        .then(() => props.history.push(`/addplant/list`))
     }
     }
 
@@ -26,9 +26,10 @@ return (
                 onClick={evt => {
                     evt.preventDefault() 
                     searchTrefleByName()
+                    
                 }}
                 className="btn btn-primary">
-                Save Plant
+                Search for Plant
         </button>
     </form>
 )
