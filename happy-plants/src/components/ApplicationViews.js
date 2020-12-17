@@ -10,8 +10,9 @@ import { PlantList } from "./plant/PlantList"
 import { PlantDetail } from "./plant/PlantDetail"
 import { EventProvider } from "./event/EventProvider"
 import { EventForm } from "./event/EventForm"
-import { EventList } from "./event/EventList"
+import { EventDetail } from "./event/EventDetail"
 import { WeatherProvider } from "./weather/WeatherProvider"
+import { EventList } from "./event/EventList"
 import { WeatherList } from "./weather/WeatherList"
 
 export const ApplicationViews = (props) => {
@@ -55,6 +56,12 @@ export const ApplicationViews = (props) => {
 
             <EventProvider>
                 <PlantProvider>
+                    <Route path="/events/:eventId(\d+)" render={
+                        props => {
+                            console.log("props", props)
+                            return <EventDetail {...props} />
+                        }
+                    } />
                     <Route exact path="/events" render={
                         props => <EventList {...props} />
                     } />

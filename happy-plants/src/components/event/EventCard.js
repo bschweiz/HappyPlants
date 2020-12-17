@@ -1,39 +1,33 @@
 import React, { useContext, useEffect } from "react"
-import {EventContext} from "./EventProvider"
-import {PlantContext} from "../plant/PlantProvider"
+import { Link } from "react-router-dom"
+import { EventContext } from "./EventProvider"
+import { PlantContext } from "../plant/PlantProvider"
 
 
 
-export const EventCard = ( {event, props} ) => {
-    const { plants,getPlants } = useContext(PlantContext)
+export const EventCard = ({ event, props }) => {
+
+    const { plants, getPlants } = useContext(PlantContext)
     const { releaseEvent, getEvents } = useContext(EventContext)
-// debugger
+    // debugger
     useEffect(() => {
         getEvents().then(getPlants)
     }, [])
 
     const matchingPlant = plants.find(p => p.id === event.plantId)
+    if (matchingPlant == null) { return <div></div> } else {
+        return (
 
-    return (
-
-    <section className="event">
-        <h3 className="event__date"> Date of Care Event: {event.date}</h3>
-        <h4 className="event__petName"> Checking on {matchingPlant.petName}</h4>
-        <div className="event__water">Is this a watering?</div>
-        <div>
-            {event.water ? "Yes, check to make sure soil is dry" : "No, should not need watering, but check in-case"}
-        </div>
-        <div className="event_notes">{event.notes}</div>
-        <button>Edit Event</button>
-        <button className="btn--delete--Event"
-                    onClick={
-                        () => {
-                            releaseEvent(event.id)
-                                .then(() => {
-                                    props.history.push("/events")
-                                })
-                        }
-                    }>Delete Event</button>
-    </section>
-    )
+            <section className="event_info">
+                <Link className="card-link"
+                    to={{
+                        pathname: `/events/${event.id}`,
+                        state: { chosenEvent: event, chosenPlant: matchingPlant }
+                    }}>
+                    <h4 className="event__date"> Date of Care Event: {event.date}</h4>
+                </Link>
+                    <h4 className="event__petName"> Checking on {matchingPlant.petName}</h4>
+            </section>
+        )
+    }
 }
