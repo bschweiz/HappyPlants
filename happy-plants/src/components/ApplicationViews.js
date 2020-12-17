@@ -14,15 +14,19 @@ import { EventDetail } from "./event/EventDetail"
 import { WeatherProvider } from "./weather/WeatherProvider"
 import { EventList } from "./event/EventList"
 import { WeatherList } from "./weather/WeatherList"
+import { UserProvider } from "./user/UserProvider"
 
 export const ApplicationViews = (props) => {
     return (
         <>
-            <WeatherProvider>
-                <Route exact path="/">
-                    <WeatherList />
-                </Route>
-            </WeatherProvider>
+            <UserProvider>
+                <WeatherProvider>
+                    <Route exact path="/">
+                        <WeatherList />
+                    </Route>
+                </WeatherProvider>
+            </UserProvider>
+
 
             <TrefleProvider>
                 <PlantProvider>
