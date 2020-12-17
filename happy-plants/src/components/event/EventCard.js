@@ -24,26 +24,9 @@ export const EventCard = ({ event, props }) => {
                         pathname: `/events/${event.id}`,
                         state: { chosenEvent: event }
                     }}>
-                    <h2>{event.date}</h2>
+                    <h4 className="event__date"> Date of Care Event: {event.date}</h4>
                 </Link>
-                <h3 className="event__date"> Date of Care Event: {event.date}</h3>
-                <h4 className="event__petName"> Checking on {matchingPlant.petName}</h4>
-                <h5 className="event__water">Is this a watering?</h5>
-                <div>
-                    {event.water ? "Yes, check to make sure soil is dry" : "No, should not need watering, but check in-case"}
-                </div>
-                <h5 className="event_notes">Notes:</h5>
-                <p>{event.notes}</p>
-                <button>Edit Event</button>
-                <button className="btn--delete--Event"
-                    onClick={
-                        () => {
-                            releaseEvent(event.id)
-                                .then(() => {
-                                    props.history.push("/events")
-                                })
-                        }
-                    }>Delete Event</button>
+                    <h4 className="event__petName"> Checking on {matchingPlant.petName}</h4>
             </section>
         )
     }
