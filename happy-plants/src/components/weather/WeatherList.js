@@ -14,9 +14,10 @@ export const WeatherList = (props) => {
     }, [])
 
     useEffect(() => {
-        getWeather(parseInt(activeUser.zip))
-        console.log(activeUser.zip);
-        // setWeather(weatherData.list)
+        if (activeUser) {
+            getWeather(parseInt(activeUser.zip))
+            console.log(activeUser.zip);
+        } else {return}
     }, [activeUser])
 
     useEffect(() => {
