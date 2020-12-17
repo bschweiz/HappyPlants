@@ -12,12 +12,14 @@ export const WeatherProvider = (props) => {
     const [weatherData, setWeather] = useState([])
 
     const getWeather = (zip) => {
-        return fetch(`http://api.openweathermap.org/data/2.5/forecast?zip=${zip},us&exclude=hourly,minutely,current&appid=${keys.weatherKey}`)
+        if (zip) {
+            return fetch(`http://api.openweathermap.org/data/2.5/forecast?zip=${zip},us&exclude=hourly,minutely,current&appid=${keys.weatherKey}`)
             .then(res => res.json())
             .then( parsedWeather => {
                 setWeather(parsedWeather)
                 // console.log(parsedWeather)
             })
+        } else {return}
     }
 
     return (

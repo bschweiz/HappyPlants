@@ -1,5 +1,5 @@
 import React from "react"
-import {Link} from "react-router-dom"
+import {Link} from "react-router-dom" 
 
 export const NavBar = (props) => {
     return (
@@ -18,6 +18,9 @@ export const NavBar = (props) => {
         </li>
         <li className="navbar__item">
             <Link className="navbar__link" to="/addevent">Add Event</Link>
+        </li>
+        <li className="navbar__item">
+            <Link className="navbar__link" to="/logout">Log Out</Link>
         </li>
     </ul>
     )

@@ -15,7 +15,8 @@ import { WeatherProvider } from "./weather/WeatherProvider"
 import { EventList } from "./event/EventList"
 import { WeatherList } from "./weather/WeatherList"
 import { UserProvider } from "./user/UserProvider"
-import { Logout } from './auth/LogOut';
+import { Logout } from "./auth/LogOut"
+
 
 export const ApplicationViews = (props) => {
     return (
@@ -25,7 +26,7 @@ export const ApplicationViews = (props) => {
                     <Route exact path="/">
                         <WeatherList />
                     </Route>
-                    <Logout/>
+                    <Route exact path="/login" render={props => <Logout {...props} />} />
                 </WeatherProvider>
             </UserProvider>
 
@@ -78,6 +79,9 @@ export const ApplicationViews = (props) => {
                     } />
                 </PlantProvider>
             </EventProvider>
+
+
+            <Route exact path="/logout" render={props => <Logout {...props} />} />
         </>
     )
 }
