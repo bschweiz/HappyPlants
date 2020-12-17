@@ -22,7 +22,7 @@ export const EventCard = ({ event, props }) => {
                 <Link className="card-link"
                     to={{
                         pathname: `/events/${event.id}`,
-                        state: { chosenEvent: event }
+                        state: { chosenEvent: event, chosenPlant: matchingPlant }
                     }}>
                     <h4 className="event__date"> Date of Care Event: {event.date}</h4>
                 </Link>
