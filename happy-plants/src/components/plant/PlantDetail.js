@@ -17,11 +17,10 @@ export const PlantDetail = (props) => {
         }, [])
         
     useEffect(() => {
-        console.log("test to see if the single plant came back")
-        console.log(singlePlant)
-        return plantData = singlePlant
-        }, [singlePlant])
+        console.log("test to see if the single plant came back:",singlePlant)
 
+        }, [singlePlant])
+debugger
     return (
 
         <section className="plant">
@@ -38,7 +37,7 @@ export const PlantDetail = (props) => {
                                 })
                         }
                     }>Delete Plant</button>
-                    <h3>{plantData.common_name}</h3>
+                    <h3>{singlePlant.slug}</h3>
         </section>
     )
 

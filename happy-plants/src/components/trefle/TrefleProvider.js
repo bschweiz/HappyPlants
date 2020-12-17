@@ -21,14 +21,14 @@ export const TrefleProvider = (props) => {
 
     }
     const getPlantById = (id) => {
-        if (id) {
-        return fetch(`https://trefle.io/api/v1/plants/?${id}&token=${trefleKey}`)
+    
+        return fetch(`https://trefle.io/api/v1/plants/${id}?&token=${trefleKey}`)
             .then(res => res.json())
             .then(dat => {
                 setSinglePlant(dat.data)
                 console.log(dat.data)
             })
-        } else {return}
+        
 
     }
 
