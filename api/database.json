@@ -13,6 +13,13 @@
       "zip": 96950,
       "name": "Ken",
       "id": 2
+    },
+    {
+      "email": "joe@email.com",
+      "password": "blabla",
+      "zip": 80020,
+      "name": "Joe Bob",
+      "id": 3
     }
   ],
   "plants": [
@@ -57,6 +64,20 @@
       "petName": "Old Saint Nick",
       "imageURL": "https://bs.floristic.org/image/o/442fb1f9889fe93ece38072d15a88499993be7d7",
       "id": 9
+    },
+    {
+      "trefleId": 167073,
+      "userId": 3,
+      "petName": "Bill",
+      "imageURL": "https://bs.floristic.org/image/o/ac5c0cd692b6b87b468af909339bae3c84178963",
+      "id": 10
+    },
+    {
+      "trefleId": 678281,
+      "userId": 3,
+      "petName": "carl",
+      "imageURL": "https://bs.floristic.org/image/o/1a03948baf0300da25558c2448f086d39b41ca30",
+      "id": 11
     }
   ],
   "trefles": [
@@ -109,6 +130,21 @@
       "id": 179715,
       "commonName": "False christmas trefle",
       "scientificName": "Schlumbergera truncata"
+    },
+    {
+      "id": 367660,
+      "commonName": "Greathead's aloe",
+      "scientificName": "Aloe greatheadii"
+    },
+    {
+      "id": 167073,
+      "commonName": "Maritime pine",
+      "scientificName": "Pinus pinaster"
+    },
+    {
+      "id": 678281,
+      "commonName": "Evergreen oak",
+      "scientificName": "Quercus rotundifolia"
     }
   ],
   "events": [
@@ -121,12 +157,36 @@
       "notes": "I should check on Bruce."
     },
     {
-      "plantId": 5,
+      "plantId": 1,
       "date": "2020-12-17",
       "water": true,
-      "complete": true,
-      "notes": "I just watered Snake",
+      "complete": false,
+      "notes": "check on Fred",
       "id": 3
+    },
+    {
+      "plantId": 10,
+      "date": "2020-12-18",
+      "water": true,
+      "complete": false,
+      "notes": "watering yes",
+      "id": 4
+    },
+    {
+      "plantId": 11,
+      "date": "2020-12-18",
+      "water": false,
+      "complete": false,
+      "notes": "carl",
+      "id": 5
+    },
+    {
+      "plantId": 10,
+      "date": "2020-11-29",
+      "water": true,
+      "complete": true,
+      "notes": "yes all",
+      "id": 6
     }
   ]
 }

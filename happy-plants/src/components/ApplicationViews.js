@@ -15,6 +15,7 @@ import { WeatherProvider } from "./weather/WeatherProvider"
 import { EventList } from "./event/EventList"
 import { WeatherList } from "./weather/WeatherList"
 import { UserProvider } from "./user/UserProvider"
+import { Logout } from './auth/LogOut';
 
 export const ApplicationViews = (props) => {
     return (
@@ -24,6 +25,7 @@ export const ApplicationViews = (props) => {
                     <Route exact path="/">
                         <WeatherList />
                     </Route>
+                    <Logout/>
                 </WeatherProvider>
             </UserProvider>
 

@@ -22,8 +22,8 @@ export const HappyPlants = () => (
 
     }} />
 
-    <Route path="/login" render={props => <Login {...props} />} />
-    <Route path="/register" render={props => <Register {...props} />} />
+    <Route exact path="/login" render={props => <Login {...props} />} />
+    <Route exact path="/register" render={props => <Register {...props} />} />
   </>
 )
 
