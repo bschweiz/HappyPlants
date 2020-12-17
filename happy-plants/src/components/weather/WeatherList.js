@@ -1,17 +1,26 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { WeatherContext } from "./WeatherProvider";
 import { WeatherCard } from "./WeatherCard"
+import { UserContext } from '../user/UserProvider';
 
 export const WeatherList = (props) => {
-    const { getWeather, weatherData } = useContext(WeatherContext)
+    const { weatherData, getWeather } = useContext(WeatherContext)
+    const { activeUser, getActiveUser } = useContext(UserContext)
     const [ weather, setWeather] = useState([])
+    const [ user, setUser] = useState([])
 // debugger
     useEffect(() => {
-        getWeather()
+        getActiveUser()
     }, [])
 
     useEffect(() => {
-        // console.log("test to see if the array of results came back", weatherData.list)
+        getWeather(parseInt(activeUser.zip))
+        console.log(activeUser.zip);
+        // setWeather(weatherData.list)
+    }, [activeUser])
+
+    useEffect(() => {
+        
         setWeather(weatherData.list)
     }, [weatherData])
 

@@ -7,6 +7,7 @@ const trefleKey = keys.trefleKey
 
 export const TrefleProvider = (props) => {
     const [fuzzyResultArray, setSearchResults] = useState([])
+    const [singlePlant, setSinglePlant] = useState([])
 
     const getPlantByFuzzy = (fuzzyName) => {
         if (fuzzyName) {
@@ -19,12 +20,23 @@ export const TrefleProvider = (props) => {
         } else {return}
 
     }
+    const getPlantById = (id) => {
+    
+        return fetch(`https://trefle.io/api/v1/plants/${id}?&token=${trefleKey}`)
+            .then(res => res.json())
+            .then(dat => {
+                setSinglePlant(dat.data)
+                console.log(dat.data)
+            })
+        
+
+    }
 
     
 
     return (
         <TrefleContext.Provider value={{
-            fuzzyResultArray, getPlantByFuzzy
+            fuzzyResultArray, getPlantByFuzzy, singlePlant, getPlantById
         }}>
             {props.children}
         </TrefleContext.Provider>

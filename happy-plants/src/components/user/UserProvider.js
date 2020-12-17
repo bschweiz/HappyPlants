@@ -1,12 +1,12 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 
 export const UserContext = React.createContext()
 
 export const UserProvider = (props) => {
     const activeUserId = parseInt(localStorage.getItem("app_user_id"))
     console.log(activeUserId)
-    const [users, activeUser, setUsers, setActiveUser] = useState([])
-
+    const [users, setUsers] = useState([])
+    const [activeUser, setActiveUser] = useState([])
     const getUsers = () => {
         return fetch('http://localhost:8088/users')
             .then(res => res.json())

@@ -45,11 +45,18 @@
       "id": 4
     },
     {
-      "trefleId": 933268,
+      "trefleId": 115653,
       "userId": 1,
-      "petName": "Piney",
-      "imageURL": "https://bs.floristic.org/image/o/fd996188e4c78137bc32993c87a14dc939971dc0",
-      "id": 7
+      "petName": "Hot Thom",
+      "imageURL": "https://bs.floristic.org/image/o/77580828aea73ee908c488e2d216e15cb8b587a5",
+      "id": 8
+    },
+    {
+      "trefleId": 179715,
+      "userId": 1,
+      "petName": "Old Saint Nick",
+      "imageURL": "https://bs.floristic.org/image/o/442fb1f9889fe93ece38072d15a88499993be7d7",
+      "id": 9
     }
   ],
   "trefles": [
@@ -92,6 +99,16 @@
       "id": 141663,
       "commonName": "False bird of paradise",
       "scientificName": "Heliconia rostrata"
+    },
+    {
+      "id": 115653,
+      "commonName": "Cayenne pepper",
+      "scientificName": "Capsicum annuum"
+    },
+    {
+      "id": 179715,
+      "commonName": "False christmas trefle",
+      "scientificName": "Schlumbergera truncata"
     }
   ],
   "events": [
