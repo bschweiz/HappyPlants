@@ -4,6 +4,7 @@ import { PlantContext } from "../plant/PlantProvider"
 export const PlantDetail = (props) => {
     // debugger
     const { releasePlant, getPlantNames, names } = useContext(PlantContext)
+    const { }
 
     return (
 

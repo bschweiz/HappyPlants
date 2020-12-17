@@ -50,6 +50,13 @@
       "petName": "Piney",
       "imageURL": "https://bs.floristic.org/image/o/fd996188e4c78137bc32993c87a14dc939971dc0",
       "id": 7
+    },
+    {
+      "trefleId": 115653,
+      "userId": 1,
+      "petName": "Hot Thom",
+      "imageURL": "https://bs.floristic.org/image/o/77580828aea73ee908c488e2d216e15cb8b587a5",
+      "id": 8
     }
   ],
   "trefles": [
@@ -92,6 +99,11 @@
       "id": 141663,
       "commonName": "False bird of paradise",
       "scientificName": "Heliconia rostrata"
+    },
+    {
+      "id": 115653,
+      "commonName": "Cayenne pepper",
+      "scientificName": "Capsicum annuum"
     }
   ],
   "events": [

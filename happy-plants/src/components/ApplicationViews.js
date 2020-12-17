@@ -40,19 +40,21 @@ export const ApplicationViews = (props) => {
                 </PlantProvider>
             </TrefleProvider>
 
-            <EventProvider>
-                <PlantProvider>
-                    <Route exact path="/plants" render={
-                        props => <PlantList {...props} />
-                    } />
-                    <Route path="/plants/:plantId(\d+)" render={
-                        props => {
-                            console.log("props", props)
-                            return <PlantDetail {...props} />
-                        }
-                    } />
-                </PlantProvider>
-            </EventProvider>
+            <TrefleProvider>
+                <EventProvider>
+                    <PlantProvider>
+                        <Route exact path="/plants" render={
+                            props => <PlantList {...props} />
+                        } />
+                        <Route path="/plants/:plantId(\d+)" render={
+                            props => {
+                                console.log("props", props)
+                                return <PlantDetail {...props} />
+                            }
+                        } />
+                    </PlantProvider>
+                </EventProvider>
+            </TrefleProvider>
 
             <EventProvider>
                 <PlantProvider>
