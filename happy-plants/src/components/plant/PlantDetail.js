@@ -11,7 +11,7 @@ export const PlantDetail = (props) => {
             <h2 className="plant__name">{props.location.state.chosenPlant.petName}</h2>
             <img src={props.location.state.chosenPlant.imageURL} alt={props.location.state.chosenPlant.petName} />
             <h3 className="trefleId">Trefle ID: {props.location.state.chosenPlant.trefleId}</h3>
-            <button className="btn--edit--Plant">Edit Plant</button>
+            {/* <button className="btn--edit--Plant">Edit Plant</button> */}
                 <button className="btn--delete--Plant"
                     onClick={
                         () => {
@@ -21,8 +21,6 @@ export const PlantDetail = (props) => {
                                 })
                         }
                     }>Delete Plant</button>
-
-
         </section>
     )
 
