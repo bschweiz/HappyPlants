@@ -181,7 +181,7 @@
       "id": 3,
       "plantId": 1,
       "date": "2020-12-17",
-      "water": false,
+      "water": true,
       "complete": false,
       "notes": "check on Fred"
     },
@@ -222,7 +222,7 @@
       "plantId": 4,
       "date": "2020-12-18",
       "water": false,
-      "complete": true,
+      "complete": false,
       "notes": "watering yes"
     },
     {
@@ -240,14 +240,6 @@
       "water": true,
       "complete": true,
       "notes": "haa"
-    },
-    {
-      "plantId": 1,
-      "date": "2020-11-11",
-      "water": false,
-      "complete": true,
-      "notes": "11/11 baby",
-      "id": 13
     }
   ]
 }

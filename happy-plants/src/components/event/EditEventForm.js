@@ -138,7 +138,10 @@ export const EditEventForm = (props) => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="plantcareNote">Notes:</label>
-                    <input type="text" id="plantcareNote" ref={careNote} required autoFocus className="form-control" placeholder="some notes..." />
+                    <input type="text" id="plantcareNote" ref={careNote} required autoFocus className="form-control" placeholder="some notes..."
+                        onChange={handleControlledInputChange}
+                        value={event.notes}
+                    />
                 </div>
             </fieldset>
 
