@@ -26,12 +26,7 @@ export const EventCard = ({ event, props }) => {
     if (matchingPlant == null) { return <div></div> } else {
         return (
             <section className="event_info">
-            {/* <button
-                onClick={evt => {
-                    // console.log(evt)
-                    // showCompleted({ plant })
-                }}
-            >View Completed Cares </button> */}
+        
                 <Link className="card-link"
                     to={{
                         pathname: `/events/${event.id}`,

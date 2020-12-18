@@ -252,7 +252,7 @@
       "plantId": 1,
       "date": "2020-11-29",
       "water": false,
-      "complete": false,
+      "complete": true,
       "notes": "haa",
       "id": 11
     },

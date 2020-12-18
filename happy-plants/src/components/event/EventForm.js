@@ -4,13 +4,37 @@ import { EventContext } from "./EventProvider"
 
 
 export const EventForm = (props) => {
-    const { addEvent } = useContext(EventContext)
+    const { addEvent, events, getEvents } = useContext(EventContext)
     const { plants, getPlantData } = useContext(PlantContext)
 
     const [ filteredPlants, setFiltered ] = useState([])
+    const [ event, setEvent] = useState({})
+
+    // check for URL parameter
+    const editMode = props.match.params.hasOwnProperty("eventId")
     
+    const handleControlledInputChange = evt => {
+        console.log(evt.target)
+        console.log("current state variable event", event)
+        const newEvent = Object.assign({}, event)
+        console.log("current state variable ",newEvent);
+        newEvent[evt.target.name] = evt.target.value;
+        console.log("newEvent after modification", newEvent);
+
+        setEvent(newEvent)
+    }
+
+    const getEventInEditMode = () => {
+        if (editMode) {
+            const eventId = parseInt(props.match.params.eventId)
+            const selectedEvent = events.find(e => e.id === eventId) || {}
+            setEvent(selectedEvent)
+        }
+    }
+
     useEffect(() => {
         getPlantData()
+        getEvents()
     }, [])
 
     useEffect (()=> {

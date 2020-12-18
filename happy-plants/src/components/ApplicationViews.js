@@ -73,7 +73,10 @@ export const ApplicationViews = (props) => {
                         props => <EventForm {...props} />
                     } />
                     <Route path="/events/edit/:eventId(\d+)" render={
-                        props => <EventForm {...props} />
+                        props => {
+                        console.log(props)
+                        return <EventForm {...props} />
+                        }
                     } />
                 </PlantProvider>
             </EventProvider>
