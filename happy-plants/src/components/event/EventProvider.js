@@ -29,6 +29,17 @@ export const EventProvider = (props) => {
             .then(getEvents)
     }
 
+    const updateEvent = event => {
+        return fetch(`http://localhost:8088/events/${event.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(event)
+        })
+            .then(getEvents)
+    }
+
     const updateCompleted = (eventId, eventObj) => {
         return fetch(`http://localhost:8088/events/${eventId}`, {
             method: "PATCH",
@@ -42,7 +53,7 @@ export const EventProvider = (props) => {
 
     return (
         <EventContext.Provider value={{
-            events, getEvents, addEvent, releaseEvent, updateCompleted
+            events, getEvents, addEvent, releaseEvent, updateEvent, updateCompleted
         }}>
             {props.children}
         </EventContext.Provider>

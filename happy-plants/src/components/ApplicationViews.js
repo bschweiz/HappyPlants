@@ -64,14 +64,15 @@ export const ApplicationViews = (props) => {
             <EventProvider>
                 <PlantProvider>
                     <Route path="/events/:eventId(\d+)" render={
-                        props => {
-                            return <EventDetail {...props} />
-                        }
+                        props => <EventDetail {...props} />
                     } />
                     <Route exact path="/events" render={
                         props => <EventList {...props} />
                     } />
                     <Route exact path="/addevent" render={
+                        props => <EventForm {...props} />
+                    } />
+                    <Route path="/events/edit/:eventId(\d+)" render={
                         props => <EventForm {...props} />
                     } />
                 </PlantProvider>
