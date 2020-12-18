@@ -3,8 +3,9 @@ import { EventContext } from "../event/EventProvider"
 
 export const EventDetail = (props) => {
     // debugger
-    const { releaseEvent, getEvents, events } = useContext(EventContext)
-    return (<section className="event">
+    const { releaseEvent } = useContext(EventContext)
+    return (
+    <section className="event">
         <h3 className="event__date"> Date of Care Event: {props.location.state.chosenEvent.date}</h3>
         <h4 className="event__petName"> Checking On: {props.location.state.chosenPlant.petName}</h4>
         <h5 className="event__water">Is this a watering?</h5>
@@ -31,3 +32,4 @@ export const EventDetail = (props) => {
     </section>
     )
 }
+

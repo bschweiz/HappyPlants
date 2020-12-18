@@ -4,7 +4,6 @@ export const UserContext = React.createContext()
 
 export const UserProvider = (props) => {
     const activeUserId = parseInt(localStorage.getItem("app_user_id"))
-    console.log(activeUserId)
     const [users, setUsers] = useState([])
     const [activeUser, setActiveUser] = useState([])
     const getUsers = () => {

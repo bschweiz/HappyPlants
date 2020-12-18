@@ -15,7 +15,8 @@ import { WeatherProvider } from "./weather/WeatherProvider"
 import { EventList } from "./event/EventList"
 import { WeatherList } from "./weather/WeatherList"
 import { UserProvider } from "./user/UserProvider"
-import { Logout } from './auth/LogOut';
+import { Logout } from "./auth/LogOut"
+
 
 export const ApplicationViews = (props) => {
     return (
@@ -25,7 +26,7 @@ export const ApplicationViews = (props) => {
                     <Route exact path="/">
                         <WeatherList />
                     </Route>
-                    <Logout/>
+                    <Route exact path="/login" render={props => <Logout {...props} />} />
                 </WeatherProvider>
             </UserProvider>
 
@@ -40,7 +41,6 @@ export const ApplicationViews = (props) => {
                     } />
                     <Route exact path="/addplant/list/:trefleId(\d+)" render={
                         props => {
-                            console.log("props to PlantForm", props)
                             return <PlantForm {...props} />
                         }} />
                 </PlantProvider>
@@ -54,7 +54,6 @@ export const ApplicationViews = (props) => {
                         } />
                         <Route path="/plants/:plantId(\d+)" render={
                             props => {
-                                console.log("props", props)
                                 return <PlantDetail {...props} />
                             }
                         } />
@@ -66,7 +65,6 @@ export const ApplicationViews = (props) => {
                 <PlantProvider>
                     <Route path="/events/:eventId(\d+)" render={
                         props => {
-                            console.log("props", props)
                             return <EventDetail {...props} />
                         }
                     } />
@@ -78,6 +76,9 @@ export const ApplicationViews = (props) => {
                     } />
                 </PlantProvider>
             </EventProvider>
+
+
+            <Route exact path="/logout" render={props => <Logout {...props} />} />
         </>
     )
 }
