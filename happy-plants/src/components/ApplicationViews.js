@@ -10,6 +10,7 @@ import { PlantList } from "./plant/PlantList"
 import { PlantDetail } from "./plant/PlantDetail"
 import { EventProvider } from "./event/EventProvider"
 import { EventForm } from "./event/EventForm"
+import { EditEventForm } from "./event/EditEventForm"
 import { EventDetail } from "./event/EventDetail"
 import { WeatherProvider } from "./weather/WeatherProvider"
 import { EventList } from "./event/EventList"
@@ -75,7 +76,7 @@ export const ApplicationViews = (props) => {
                     <Route path="/events/edit/:eventId(\d+)" render={
                         props => {
                         console.log(props)
-                        return <EventForm {...props} />
+                        return <EditEventForm {...props} />
                         }
                     } />
                 </PlantProvider>

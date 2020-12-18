@@ -3,21 +3,48 @@ import { PlantContext } from "../plant/PlantProvider"
 import { EventContext } from "./EventProvider"
 
 
-export const EventForm = (props) => {
-    const { addEvent } = useContext(EventContext)
+export const EditEventForm = (props) => {
+    const { addEvent, events, getEvents, updateEvent } = useContext(EventContext)
     const { plants, getPlantData } = useContext(PlantContext)
 
-    const [ filteredPlants, setFiltered ] = useState([])
-    
+    const [filteredPlants, setFiltered] = useState([])
+    const [event, setEvent] = useState({})
+
+    // check for URL parameter
+    const editMode = props.match.params.hasOwnProperty("eventId")
+
+    const handleControlledInputChange = evt => {
+        console.log(evt.target)
+        console.log("current state variable event", event)
+        const newEvent = Object.assign({}, event)
+        console.log("current state variable ", newEvent);
+        newEvent[evt.target.name] = evt.target.value;
+        console.log("newEvent after modification", newEvent);
+
+        setEvent(newEvent)
+    }
+
+    const getEventInEditMode = () => {
+        if (editMode) {
+            const eventId = parseInt(props.match.params.eventId)
+            const selectedEvent = events.find(e => e.id === eventId) || {}
+            setEvent(selectedEvent)
+        }
+    }
+
     useEffect(() => {
         getPlantData()
+        getEvents()
     }, [])
 
-    useEffect (()=> {
+    useEffect(() => {
         const subset = plants.filter(p => p.userId === parseInt(localStorage.getItem("app_user_id")))
         setFiltered(subset)
     }, [plants])
 
+    useEffect(() => {
+        getEventInEditMode()
+    }, [events])
 
     const date = useRef(null)
     const careNote = useRef(null)
@@ -26,28 +53,43 @@ export const EventForm = (props) => {
     let completeStatus = false
 
     const constructNewEvent = () => {
+        const eventId = parseInt(event.eventId)
 
-        const notes = careNote.current.value
-        addEvent({
-            plantId: parseInt(plant.current.value),
-            date: date.current.value,
-            water: waterStatus,
-            complete: completeStatus,
-            notes,
-        })
-            .then(() => props.history.push("/events"))
+        if (eventId === 0) {
+            window.alert("please choose a plant")
+        } else {
+            if (editMode) {
+                updateEvent({
+                    id: event.id,
+                    plantId: event.plantId,
+                    date: event.date,
+                    water: waterStatus,
+                    complete: completeStatus,
+                    notes: event.notes
+                })
+                    .then(() => props.history.push("/events"))
+            } else {
+                addEvent({
+                    plantId: event.plantId,
+                    date: event.date,
+                    water: waterStatus,
+                    complete: completeStatus,
+                    notes: event.notes
+                })
+                    .then(() => props.history.push("/events"))
+            }
+        }
     }
-
     const waterControl = (evt) => {
         return waterStatus = evt.target.checked
     }
     const completedControl = (evt) => {
         return completeStatus = evt.target.checked
     }
-    
+
     return (
         <form className="plantForm">
-            <h2 className="plantForm__title">New Event</h2>
+            <h2 className="plantForm__title">{editMode ? "Update Care Event" : "Create New Care Event"}</h2>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="plantName">Plant Id for the event: </label>
@@ -57,12 +99,12 @@ export const EventForm = (props) => {
                         ref={plant}
                         id="plantPetName"
                         className="form-control"
-                        >
-                            <option value="0">Select a Plant to check on </option>
-                            {filteredPlants.map((p) => (
-                                <option key={p.id} value={p.id}>{p.petName}</option>
-                            ))}
-                        </select>
+                    >
+                        <option value="0">Select a Plant to check on </option>
+                        {filteredPlants.map((p) => (
+                            <option key={p.id} value={p.id}>{p.petName}</option>
+                        ))}
+                    </select>
                 </div>
             </fieldset>
             <fieldset>
