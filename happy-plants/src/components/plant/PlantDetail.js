@@ -4,6 +4,11 @@ import { TrefleContext } from "../trefle/TrefleProvider"
 import { EventContext } from "../event/EventProvider"
 import { EventCard } from "../event/EventCard"
 
+const sortedAttempt = (events) => {
+    let sorted = events.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    console.log(sorted)
+    return sorted
+}
 
 export const PlantDetail = (props) => {
     // debugger
@@ -23,7 +28,7 @@ export const PlantDetail = (props) => {
 useEffect(() => {
     if (events.length == 0) return 
     console.log(" events", events)
-    const matching = events.filter(e => e.plantId === props.location.state.chosenPlant.id)
+    const matching = (events.filter(e => e.plantId === props.location.state.chosenPlant.id)).sort((a, b) => b.date - a.date)
     setEvents(matching)
     console.log("related events", matching)
     }, [events])
@@ -49,7 +54,7 @@ useEffect(() => {
             </section>
             <section className="events">
                 {
-                    relatedEvents.map(event => {
+                    sortedAttempt(relatedEvents).map(event => {
                         return <EventCard key={event.id} event={event} props={props} />
                     })
                 }
