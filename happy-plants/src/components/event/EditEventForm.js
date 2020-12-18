@@ -1,13 +1,13 @@
 import React, { useContext, useRef, useState, useEffect } from "react"
-import { PlantContext } from "../plant/PlantProvider"
+// import { PlantContext } from "../plant/PlantProvider"
 import { EventContext } from "./EventProvider"
 
 
 export const EditEventForm = (props) => {
-    const { addEvent, events, getEvents, updateEvent } = useContext(EventContext)
-    const { plants, getPlantData } = useContext(PlantContext)
+    const { addEvent, events, getEvents, updateEvent, updateCompleted } = useContext(EventContext)
+    // const { plants, getPlantData } = useContext(PlantContext)
 
-    const [filteredPlants, setFiltered] = useState([])
+    // const [filteredPlants, setFiltered] = useState([])
     const [event, setEvent] = useState({})
 
     // check for URL parameter
@@ -15,7 +15,7 @@ export const EditEventForm = (props) => {
 
     const handleControlledInputChange = evt => {
         console.log(evt.target)
-        console.log("current state variable event", event)
+        console.log("current state variable event", evt)
         const newEvent = Object.assign({}, event)
         console.log("current state variable ", newEvent);
         newEvent[evt.target.name] = evt.target.value;
@@ -33,14 +33,14 @@ export const EditEventForm = (props) => {
     }
 
     useEffect(() => {
-        getPlantData()
+        // getPlantData()
         getEvents()
     }, [])
 
-    useEffect(() => {
-        const subset = plants.filter(p => p.userId === parseInt(localStorage.getItem("app_user_id")))
-        setFiltered(subset)
-    }, [plants])
+    // useEffect(() => {
+    //     const subset = plants.filter(p => p.userId === parseInt(localStorage.getItem("app_user_id")))
+    //     setFiltered(subset)
+    // }, [plants])
 
     useEffect(() => {
         getEventInEditMode()
@@ -63,8 +63,8 @@ export const EditEventForm = (props) => {
                     id: event.id,
                     plantId: event.plantId,
                     date: event.date,
-                    water: waterStatus,
-                    complete: completeStatus,
+                    // water: waterStatus,
+                    // complete: completeStatus,
                     notes: event.notes
                 })
                     .then(() => props.history.push("/events"))
@@ -81,32 +81,31 @@ export const EditEventForm = (props) => {
         }
     }
     const waterControl = (evt) => {
-        return waterStatus = evt.target.checked
+        if (evt.target.checked === true) {
+            updateCompleted(parseInt(props.match.params.eventId), { water: true })
+        } else {
+            updateCompleted(parseInt(props.match.params.eventId), { water: false })
+        }
     }
     const completedControl = (evt) => {
-        return completeStatus = evt.target.checked
+        if (evt.target.checked === true) {
+            updateCompleted(parseInt(props.match.params.eventId), { complete: true })
+        } else {
+            updateCompleted(parseInt(props.match.params.eventId), { complete: false })
+        }
     }
+
+    // const checkboxControl = (evt) => {
+    //     if(evt.target.checked === true){
+    //         updateCompleted(parseInt(event.id), {complete: true})
+    //     } else {
+    //         updateCompleted(parseInt(event.id), {complete: false})
+    //     }
+    // }
 
     return (
         <form className="plantForm">
             <h2 className="plantForm__title">{editMode ? "Update Care Event for " : "Create New Care Event"}</h2>
-            {/* <fieldset>
-                <div className="form-group">
-                    <label htmlFor="plantName">Plant Id for the event: </label>
-                    <select required
-                        defaultValue=""
-                        name="plantName"
-                        ref={plant}
-                        id="plantPetName"
-                        className="form-control"
-                    >
-                        <option value="0">Select a Plant to check on </option>
-                        {filteredPlants.map((p) => (
-                            <option key={p.id} value={p.id}>{p.petName}</option>
-                        ))}
-                    </select>
-                </div>
-            </fieldset> */}
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="plantCommonName">Date for the event:</label>
@@ -120,6 +119,7 @@ export const EditEventForm = (props) => {
                 <div className="watering-checkbox">
                     <label htmlFor="waterQuery">Watering?  </label>
                     <input type="checkbox" id="waterSelect" autoFocus className="form-control"
+                        checked={event.water ? "checked" : ""}
                         onChange={evt => {
                             waterControl(evt)
                         }} />
@@ -130,6 +130,7 @@ export const EditEventForm = (props) => {
                 <div className="watering-checkbox">
                     <label htmlFor="completedQuery">Completed? </label>
                     <input type="checkbox" id="completeSelect" autoFocus className="form-control"
+                        checked={event.complete ? "checked" : ""}
                         onChange={evt => {
                             completedControl(evt)
                         }} />
@@ -139,7 +140,7 @@ export const EditEventForm = (props) => {
                 <div className="form-group">
                     <label htmlFor="plantcareNote">Notes:</label>
                     <input type="text" id="plantcareNote" ref={careNote} required autoFocus className="form-control" placeholder="some notes..."
-                        onChange={handleControlledInputChange}
+                        onEdit={handleControlledInputChange}
                         value={event.notes}
                     />
                 </div>

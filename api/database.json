@@ -181,8 +181,6 @@
       "id": 3,
       "plantId": 1,
       "date": "2020-12-17",
-      "water": true,
-      "complete": false,
       "notes": "check on Fred"
     },
     {
@@ -237,9 +235,21 @@
       "id": 11,
       "plantId": 1,
       "date": "2020-11-29",
-      "water": true,
-      "complete": true,
       "notes": "haa"
+    },
+    {
+      "plantId": 0,
+      "date": "2020-12-30",
+      "water": false,
+      "complete": false,
+      "notes": "no all",
+      "id": 12
+    },
+    {
+      "id": 13,
+      "plantId": 4,
+      "date": "2020-12-30",
+      "notes": "no all fernando"
     }
   ]
 }
