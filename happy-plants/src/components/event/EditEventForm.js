@@ -89,8 +89,8 @@ export const EditEventForm = (props) => {
 
     return (
         <form className="plantForm">
-            <h2 className="plantForm__title">{editMode ? "Update Care Event" : "Create New Care Event"}</h2>
-            <fieldset>
+            <h2 className="plantForm__title">{editMode ? "Update Care Event for " : "Create New Care Event"}</h2>
+            {/* <fieldset>
                 <div className="form-group">
                     <label htmlFor="plantName">Plant Id for the event: </label>
                     <select required
@@ -106,11 +106,14 @@ export const EditEventForm = (props) => {
                         ))}
                     </select>
                 </div>
-            </fieldset>
+            </fieldset> */}
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="plantCommonName">Date for the event:</label>
-                    <input type="date" id="plantCommonName" ref={date} required autoFocus className="form-control" placeholder="Event Date" />
+                    <input type="date" id="plantCommonName" ref={date} required autoFocus className="form-control"
+                        onChange={handleControlledInputChange}
+                        value={event.date}
+                    />
                 </div>
             </fieldset>
             <fieldset>
