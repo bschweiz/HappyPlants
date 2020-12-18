@@ -29,9 +29,20 @@ export const EventProvider = (props) => {
             .then(getEvents)
     }
 
+    const updateCompleted = (eventId, eventObj) => {
+        return fetch(`http://localhost:8088/events/${eventId}`, {
+            method: "PATCH",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify(eventObj)
+        })
+        .then(getEvents)
+    }
+
     return (
         <EventContext.Provider value={{
-            events, getEvents, addEvent, releaseEvent
+            events, getEvents, addEvent, releaseEvent, updateCompleted
         }}>
             {props.children}
         </EventContext.Provider>

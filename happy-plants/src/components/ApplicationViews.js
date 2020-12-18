@@ -41,7 +41,6 @@ export const ApplicationViews = (props) => {
                     } />
                     <Route exact path="/addplant/list/:trefleId(\d+)" render={
                         props => {
-                            console.log("props to PlantForm", props)
                             return <PlantForm {...props} />
                         }} />
                 </PlantProvider>
@@ -55,7 +54,6 @@ export const ApplicationViews = (props) => {
                         } />
                         <Route path="/plants/:plantId(\d+)" render={
                             props => {
-                                console.log("props", props)
                                 return <PlantDetail {...props} />
                             }
                         } />
@@ -67,7 +65,6 @@ export const ApplicationViews = (props) => {
                 <PlantProvider>
                     <Route path="/events/:eventId(\d+)" render={
                         props => {
-                            console.log("props", props)
                             return <EventDetail {...props} />
                         }
                     } />

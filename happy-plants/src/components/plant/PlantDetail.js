@@ -1,33 +1,41 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { PlantContext } from "../plant/PlantProvider"
 import { TrefleContext } from "../trefle/TrefleProvider"
-
+import { EventContext } from "../event/EventProvider"
+import { EventCard } from "../event/EventCard"
 
 
 export const PlantDetail = (props) => {
     // debugger
     const { releasePlant } = useContext(PlantContext)
     const { singlePlant, getPlantById } = useContext(TrefleContext)
+    const { events, getEvents } = useContext(EventContext)
 
-    let plantData = {}
+    const [relatedEvents, setEvents] = useState([])
+
     const id = props.location.state.chosenPlant.trefleId
+
     useEffect(() => {
         getPlantById(id)
-        console.log(id)
-        }, [])
-        
-    useEffect(() => {
-        console.log("test to see if the single plant came back:",singlePlant)
+        .then(getEvents)
+    }, [])
+// debugger
+useEffect(() => {
+    if (events.length == 0) return 
+    console.log(" events", events)
+    const matching = events.filter(e => e.plantId === props.location.state.chosenPlant.id)
+    setEvents(matching)
+    console.log("related events", matching)
+    }, [events])
 
-        }, [singlePlant])
-debugger
-    return (
-
-        <section className="plant">
-            <h2 className="plant__name">{props.location.state.chosenPlant.petName}</h2>
-            <img src={props.location.state.chosenPlant.imageURL} alt={props.location.state.chosenPlant.petName} />
-            <h3 className="trefleId">Trefle ID: {props.location.state.chosenPlant.trefleId}</h3>
-            {/* <button className="btn--edit--Plant">Edit Plant</button> */}
+    // if (relatedEvents.length) {
+        return (
+            <>
+            <section className="plant">
+                <h2 className="plant__name">{props.location.state.chosenPlant.petName}</h2>
+                <img src={props.location.state.chosenPlant.imageURL} alt={props.location.state.chosenPlant.petName} />
+                <h3 className="trefleId">Trefle ID: {props.location.state.chosenPlant.trefleId}</h3>
+                {/* <button className="btn--edit--Plant">Edit Plant</button> */}
                 <button className="btn--delete--Plant"
                     onClick={
                         () => {
@@ -37,28 +45,16 @@ debugger
                                 })
                         }
                     }>Delete Plant</button>
-                    <h3>{singlePlant.slug}</h3>
-        </section>
-    )
-
-    {/* <h2 className="card-title">Trefle ID # {plant.id}</h2>
-                
-                
-                <div>{matchName.commonName}</div>
-                <div>{matchName.scientificName}</div>
-                
-         */}
-
-    {/* <div>
-                <h4>Employees</h4>
-                {props.location.state.chosenLocation.employees.map(e => e.name).join(", ")}
-            </div>
-            <div>
-                <h4>Current Residents</h4>
+                <h3>{singlePlant.slug}</h3>
+            </section>
+            <section className="events">
                 {
-                    props.location.state.chosenLocation.animals.map(a => a.name).join(", ")
+                    relatedEvents.map(event => {
+                        return <EventCard key={event.id} event={event} props={props} />
+                    })
                 }
-            </div>
-       */}
-
+            </section>
+        </>
+    )
+// } else {return <div></div>}
 }

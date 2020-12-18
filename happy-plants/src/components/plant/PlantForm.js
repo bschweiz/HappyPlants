@@ -11,7 +11,7 @@ export const PlantForm = (props) => {
 
     const constructNewPlant= () => {
         
-    console.log(props)
+    // console.log(props)
             addPlantData({
                 trefleId: parseInt(props.location.state.chosenPlant.id),
                 userId: parseInt(localStorage.getItem("app_user_id")),   
@@ -20,7 +20,7 @@ export const PlantForm = (props) => {
             })
             .then(addTrefleNames({
                 id: parseInt(props.location.state.chosenPlant.id),
-                commonName: commonName.current.value,
+                commonName: props.location.state.chosenPlant.common_name,
                 scientificName:  props.location.state.chosenPlant.scientific_name         
             }))
             .then(() => props.history.push("/plants"))
@@ -36,34 +36,6 @@ export const PlantForm = (props) => {
                     />
                 </div>
             </fieldset>
-            {/* add logic to check if chosenPlant.common_name exists, if it does don't render the field below */}
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="plantCommonName">Common plant name (from/to Trefle): </label>
-                    <input type="text" id="plantCommonName" ref={commonName} required autoFocus className="form-control" 
-                    placeholder="No common name found, please enter" 
-                    defaultValue={props.location.state.chosenPlant.common_name}
-                    />
-                </div>
-            </fieldset>
-            {/* <fieldset>
-                <div className="form-group">
-                    <label htmlFor="plantScientificName">Scientific name (from/to Trefle): </label>
-                    <input type="text" id="plantScientificName" ref={scienceName} required autoFocus className="form-control" 
-                    placeholder="Plant scientific name" 
-                    defaultValue={props.location.state.chosenPlant.scientific_name}
-                    />
-                </div>
-            </fieldset> */}
-            {/* <fieldset>
-                <div className="form-group">
-                    <label htmlFor="plantTrefleId">Trefle ID: </label>
-                    <input type="text" id="plantTrefleId" ref={TrefleId} required autoFocus className="form-control" 
-                    placeholder="trefle ID goes here" 
-                    defaultValue={props.location.state.id}
-                    />
-                </div>
-            </fieldset> */}
             
             <button type="submit"
                 onClick={evt => {

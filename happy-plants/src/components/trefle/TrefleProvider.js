@@ -15,7 +15,7 @@ export const TrefleProvider = (props) => {
             .then(res => res.json())
             .then(data => {
                 setSearchResults(data.data)
-                console.log(data)
+                // console.log(data)
             })
         } else {return}
 
@@ -26,7 +26,7 @@ export const TrefleProvider = (props) => {
             .then(res => res.json())
             .then(dat => {
                 setSinglePlant(dat.data)
-                console.log(dat.data)
+                // console.log(dat.data)
             })
         
 
