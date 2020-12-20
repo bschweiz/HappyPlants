@@ -29,6 +29,7 @@ export const EditEventForm = (props) => {
             const eventId = parseInt(props.match.params.eventId)
             const selectedEvent = events.find(e => e.id === eventId) || {}
             setEvent(selectedEvent)
+            console.log("just read THIS event:", event)
         }
     }
 
@@ -55,36 +56,24 @@ export const EditEventForm = (props) => {
     const constructNewEvent = () => {
         const eventId = parseInt(event.eventId)
 
-        if (eventId === 0) {
-            window.alert("please choose a plant")
-        } else {
+    
             if (editMode) {
                 updateEvent({
                     id: event.id,
                     plantId: event.plantId,
                     date: event.date,
-                    // water: waterStatus,
-                    // complete: completeStatus,
+                    water: event.water,
+                    complete: event.complete,
                     notes: event.notes
                 })
                     .then(() => props.history.push("/events"))
-            } else {
-                addEvent({
-                    plantId: event.plantId,
-                    date: event.date,
-                    water: waterStatus,
-                    complete: completeStatus,
-                    notes: event.notes
-                })
-                    .then(() => props.history.push("/events"))
-            }
-        }
+            } else {return}
     }
     const waterControl = (evt) => {
         if (evt.target.checked === true) {
-            updateCompleted(parseInt(props.match.params.eventId), { water: true })
-        } else {
             updateCompleted(parseInt(props.match.params.eventId), { water: false })
+        } else {
+            updateCompleted(parseInt(props.match.params.eventId), { water: true })
         }
     }
     const completedControl = (evt) => {
@@ -119,10 +108,10 @@ export const EditEventForm = (props) => {
                 <div className="watering-checkbox">
                     <label htmlFor="waterQuery">Watering?  </label>
                     <input type="checkbox" id="waterSelect" autoFocus className="form-control"
-                        checked={event.water ? "checked" : ""}
-                        onChange={evt => {
-                            waterControl(evt)
-                        }} />
+                        onChange={evt=> waterControl(evt)}
+                        // checked={event.water ? "checked" : ""}
+                        value={event.water}
+                        />
                 </div>
 
             </fieldset>
@@ -130,18 +119,17 @@ export const EditEventForm = (props) => {
                 <div className="watering-checkbox">
                     <label htmlFor="completedQuery">Completed? </label>
                     <input type="checkbox" id="completeSelect" autoFocus className="form-control"
-                        checked={event.complete ? "checked" : ""}
-                        onChange={evt => {
-                            completedControl(evt)
-                        }} />
+                        // checked={event.complete ? "checked" : ""}
+                        onChange={handleControlledInputChange}
+                        defaultValue={event.complete}/>
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="plantcareNote">Notes:</label>
                     <input type="text" id="plantcareNote" ref={careNote} required autoFocus className="form-control" placeholder="some notes..."
-                        onEdit={handleControlledInputChange}
-                        value={event.notes}
+                        onChange={handleControlledInputChange}
+                        defaultValue={event.notes}
                     />
                 </div>
             </fieldset>

@@ -178,12 +178,6 @@
   ],
   "events": [
     {
-      "id": 3,
-      "plantId": 1,
-      "date": "2020-12-17",
-      "notes": "check on Fred"
-    },
-    {
       "plantId": 10,
       "date": "2020-12-18",
       "water": true,
@@ -208,12 +202,12 @@
       "id": 6
     },
     {
+      "id": 7,
       "plantId": 12,
       "date": "2020-12-18",
-      "water": true,
-      "complete": true,
+      "water": false,
       "notes": "I watered Manny the Mango today, he looks real healthy",
-      "id": 7
+      "complete": false
     },
     {
       "id": 8,
@@ -224,32 +218,13 @@
       "notes": "watering yes"
     },
     {
-      "plantId": 13,
-      "date": "2020-12-01",
-      "water": true,
-      "complete": true,
-      "notes": "watering yes",
-      "id": 9
-    },
-    {
-      "id": 11,
-      "plantId": 1,
-      "date": "2020-11-29",
-      "notes": "haa"
-    },
-    {
-      "plantId": 0,
-      "date": "2020-12-30",
+      "id": 9,
+      "plantId": 12,
+      "date": "2020-12-21",
+      "notes": "no all manny",
       "water": false,
       "complete": false,
-      "notes": "no all",
-      "id": 12
-    },
-    {
-      "id": 13,
-      "plantId": 4,
-      "date": "2020-12-30",
-      "notes": "no all fernando"
+      "event": true
     }
   ]
 }

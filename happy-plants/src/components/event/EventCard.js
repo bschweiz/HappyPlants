@@ -23,6 +23,7 @@ export const EventCard = ({ event, props }) => {
             updateCompleted(parseInt(evt.target.id), {complete: false})
         }
     }
+    
     if (matchingPlant == null) { return <div></div> } else {
         return (
             <section className="event_info">
