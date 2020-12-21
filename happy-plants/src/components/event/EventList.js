@@ -5,7 +5,7 @@ import { EventCard } from './EventCard'
 
 const sortedAttempt = (events) => {
     let sorted = events.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    console.log(sorted)
+    // console.log(sorted)
     return sorted
 }
 
@@ -40,6 +40,12 @@ export const EventList = (props) => {
     if (events.length && plants.length) {
         return (
             <div className="events">
+            {/* <button
+                onClick={evt => {
+                    // console.log(evt)
+                    // showCompleted({ plant })
+                }}
+            >View Completed Cares </button> */}
                 {
                     sortedAttempt(filteredEvents).map(event => {
                         return <EventCard key={event.id} event={event} props={props}/>

@@ -26,7 +26,7 @@ export const PlantCard = ({ plant, props }) => {
                     <h2>{plant.petName}</h2>
                 </Link>
                 <img src={plant.imageURL} alt={plant.petName} />
-                <h3 className="card-title">Trefle ID # {plant.trefleId}</h3>
+                {/* <h3 className="card-title">Trefle ID # {plant.trefleId}</h3> */}
                 <div>{matchName.commonName}</div>
                 <div>{matchName.scientificName}</div>
             </section>

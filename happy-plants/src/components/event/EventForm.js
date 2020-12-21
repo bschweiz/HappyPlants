@@ -27,13 +27,13 @@ export const EventForm = (props) => {
 
     const constructNewEvent = () => {
 
-        const notes = careNote.current.value
+        const note= careNote.current.value
         addEvent({
             plantId: parseInt(plant.current.value),
             date: date.current.value,
             water: waterStatus,
             complete: completeStatus,
-            notes,
+            note,
         })
             .then(() => props.history.push("/events"))
     }

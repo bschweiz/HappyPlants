@@ -87,16 +87,9 @@
       "id": 13
     },
     {
-      "trefleId": 168522,
-      "userId": 2,
-      "petName": "Peggy",
-      "imageURL": "https://bs.floristic.org/image/o/ba80326efe3b4d41d34b017e571199cac3a6be91",
-      "id": 14
-    },
-    {
       "trefleId": 168516,
       "userId": 2,
-      "petName": "Peggy",
+      "petName": "Pluumy",
       "imageURL": "https://bs.floristic.org/image/o/aa57d1770a1020d9edc6735f7daba6ef649fe0ae",
       "id": 15
     }
@@ -185,19 +178,11 @@
   ],
   "events": [
     {
-      "plantId": 1,
-      "date": "2020-12-17",
-      "water": true,
-      "complete": true,
-      "notes": "check on Fred",
-      "id": 3
-    },
-    {
       "plantId": 10,
       "date": "2020-12-18",
       "water": true,
       "complete": false,
-      "notes": "watering yes",
+      "note": "watering yes",
       "id": 4
     },
     {
@@ -205,7 +190,7 @@
       "date": "2020-12-18",
       "water": false,
       "complete": false,
-      "notes": "carl",
+      "note": "carl",
       "id": 5
     },
     {
@@ -213,64 +198,48 @@
       "date": "2020-11-29",
       "water": true,
       "complete": true,
-      "notes": "yes all",
+      "note": "yes all",
       "id": 6
     },
     {
+      "id": 7,
       "plantId": 12,
       "date": "2020-12-18",
-      "water": true,
-      "complete": true,
-      "notes": "I watered Manny the Mango today, he looks real healthy",
-      "id": 7
+      "water": false,
+      "note": "I watered Manny the Mango today, he looks real healthy",
+      "complete": false
     },
     {
+      "id": 8,
       "plantId": 4,
       "date": "2020-12-18",
-      "water": true,
-      "complete": true,
-      "notes": "watering yes",
-      "id": 8
+      "water": false,
+      "complete": false,
+      "note": "watering yes"
     },
     {
+      "id": 9,
+      "plantId": 12,
+      "date": "2020-12-21",
+      "note": "no all manny",
+      "water": false,
+      "complete": false,
+      "event": true
+    },
+    {
+      "id": 10,
+      "water": true,
       "plantId": 13,
-      "date": "2020-12-01",
+      "note": "yes all",
+      "date": "2020-12-14"
+    },
+    {
+      "id": 11,
       "water": true,
-      "complete": true,
-      "notes": "watering yes",
-      "id": 9
-    },
-    {
-      "plantId": 8,
-      "date": "2020-12-26",
-      "water": true,
-      "complete": false,
-      "notes": "needs some water he does",
-      "id": 10
-    },
-    {
-      "plantId": 1,
-      "date": "2020-11-29",
-      "water": false,
-      "complete": false,
-      "notes": "haa",
-      "id": 11
-    },
-    {
-      "plantId": 1,
-      "date": "2020-12-31",
-      "water": true,
-      "complete": true,
-      "notes": "NYE  Watering",
-      "id": 12
-    },
-    {
-      "plantId": 1,
-      "date": "2020-11-11",
-      "water": false,
-      "complete": true,
-      "notes": "11/11 baby",
-      "id": 13
+      "plantId": 15,
+      "note": "yes all, third attempt to edit this ",
+      "date": "2020-12-21",
+      "complete": true
     }
   ]
 }

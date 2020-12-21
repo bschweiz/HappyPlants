@@ -28,7 +28,6 @@ export const PlantProvider = (props) => {
             body: JSON.stringify(plant)
         })
             .then(getPlantData)
-        
     }
 
     const releasePlant = id => {
@@ -36,6 +35,17 @@ export const PlantProvider = (props) => {
             method: "DELETE"
         })
             .then(getPlantData)
+    }
+
+    const updatePlant = (plant, plantObj) => {
+        return fetch(`http://localhost:8088/plants/${plant.id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(plantObj)
+        })
+        .then(getPlantData)
     }
 
     const getPlantNames = () => {
@@ -54,15 +64,10 @@ export const PlantProvider = (props) => {
         })
             .then(getPlantNames)
     }
-    /*
-        You return a context provider which has the
-        `customers` state, the `addPlant` function,
-        and the `getPlant` function as keys. This
-        allows any child elements to access them.
-    */
+    
     return (
         <PlantContext.Provider value={{
-            plants, addPlantData, getPlantData, releasePlant, getPlantNames, names, addTrefleNames
+            plants, addPlantData, getPlantData, releasePlant, updatePlant, getPlantNames, names, addTrefleNames
         }}>
             {props.children}
         </PlantContext.Provider>
