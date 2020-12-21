@@ -29,13 +29,13 @@ export const EventProvider = (props) => {
             .then(getEvents)
     }
 
-    const updateEvent = event => {
+    const updateEvent = (event, eventObj) => {
         return fetch(`http://localhost:8088/events/${event.id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(event)
+            body: JSON.stringify(eventObj)
         })
             .then(getEvents)
     }

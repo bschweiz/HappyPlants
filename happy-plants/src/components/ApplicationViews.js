@@ -10,13 +10,14 @@ import { PlantList } from "./plant/PlantList"
 import { PlantDetail } from "./plant/PlantDetail"
 import { EventProvider } from "./event/EventProvider"
 import { EventForm } from "./event/EventForm"
-import { EditEventForm } from "./event/EditEventForm"
+import { EditEventNote } from "./event/EditEventNote"
 import { EventDetail } from "./event/EventDetail"
 import { WeatherProvider } from "./weather/WeatherProvider"
 import { EventList } from "./event/EventList"
 import { WeatherList } from "./weather/WeatherList"
 import { UserProvider } from "./user/UserProvider"
 import { Logout } from "./auth/LogOut"
+import { EditPlantName } from "./plant/EditPlantName"
 
 
 export const ApplicationViews = (props) => {
@@ -31,7 +32,6 @@ export const ApplicationViews = (props) => {
                 </WeatherProvider>
             </UserProvider>
 
-
             <TrefleProvider>
                 <PlantProvider>
                     <Route path="/addplant" render={
@@ -41,9 +41,8 @@ export const ApplicationViews = (props) => {
                         props => <TrefleList {...props} />
                     } />
                     <Route exact path="/addplant/list/:trefleId(\d+)" render={
-                        props => {
-                            return <PlantForm {...props} />
-                        }} />
+                        props => <PlantForm {...props} />
+                    } />
                 </PlantProvider>
             </TrefleProvider>
 
@@ -54,9 +53,10 @@ export const ApplicationViews = (props) => {
                             props => <PlantList {...props} />
                         } />
                         <Route path="/plants/:plantId(\d+)" render={
-                            props => {
-                                return <PlantDetail {...props} />
-                            }
+                            props => <PlantDetail {...props} />
+                        } />
+                        <Route path="/plants/edit/:plantId(\d+)" render={
+                            props => <EditPlantName {...props} />
                         } />
                     </PlantProvider>
                 </EventProvider>
@@ -64,20 +64,17 @@ export const ApplicationViews = (props) => {
 
             <EventProvider>
                 <PlantProvider>
+                    <Route exact path="/addevent" render={
+                        props => <EventForm {...props} />
+                    } />
                     <Route path="/events/:eventId(\d+)" render={
                         props => <EventDetail {...props} />
                     } />
                     <Route exact path="/events" render={
                         props => <EventList {...props} />
                     } />
-                    <Route exact path="/addevent" render={
-                        props => <EventForm {...props} />
-                    } />
                     <Route path="/events/edit/:eventId(\d+)" render={
-                        props => {
-                        console.log(props)
-                        return <EditEventForm {...props} />
-                        }
+                        props => <EditEventNote {...props} />
                     } />
                 </PlantProvider>
             </EventProvider>

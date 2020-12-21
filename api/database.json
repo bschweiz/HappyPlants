@@ -89,7 +89,7 @@
     {
       "trefleId": 168516,
       "userId": 2,
-      "petName": "Peggy",
+      "petName": "Pluumy",
       "imageURL": "https://bs.floristic.org/image/o/aa57d1770a1020d9edc6735f7daba6ef649fe0ae",
       "id": 15
     }
@@ -182,7 +182,7 @@
       "date": "2020-12-18",
       "water": true,
       "complete": false,
-      "notes": "watering yes",
+      "note": "watering yes",
       "id": 4
     },
     {
@@ -190,7 +190,7 @@
       "date": "2020-12-18",
       "water": false,
       "complete": false,
-      "notes": "carl",
+      "note": "carl",
       "id": 5
     },
     {
@@ -198,7 +198,7 @@
       "date": "2020-11-29",
       "water": true,
       "complete": true,
-      "notes": "yes all",
+      "note": "yes all",
       "id": 6
     },
     {
@@ -206,7 +206,7 @@
       "plantId": 12,
       "date": "2020-12-18",
       "water": false,
-      "notes": "I watered Manny the Mango today, he looks real healthy",
+      "note": "I watered Manny the Mango today, he looks real healthy",
       "complete": false
     },
     {
@@ -215,16 +215,31 @@
       "date": "2020-12-18",
       "water": false,
       "complete": false,
-      "notes": "watering yes"
+      "note": "watering yes"
     },
     {
       "id": 9,
       "plantId": 12,
       "date": "2020-12-21",
-      "notes": "no all manny",
+      "note": "no all manny",
       "water": false,
       "complete": false,
       "event": true
+    },
+    {
+      "id": 10,
+      "water": true,
+      "plantId": 13,
+      "note": "yes all",
+      "date": "2020-12-14"
+    },
+    {
+      "id": 11,
+      "water": true,
+      "plantId": 15,
+      "note": "yes all, third attempt to edit this ",
+      "date": "2020-12-21",
+      "complete": true
     }
   ]
 }

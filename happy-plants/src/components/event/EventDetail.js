@@ -17,10 +17,10 @@ export const EventDetail = (props) => {
                 {props.location.state.chosenEvent.complete ? "Yep" : "Nope"}
             </div>
             <h5 className="event_notes">Notes:</h5>
-            <p>{props.location.state.chosenEvent.notes}</p>
+            <p>{props.location.state.chosenEvent.note}</p>
             <button onClick={() => {
                 props.history.push(`/events/edit/${props.location.state.chosenEvent.id}`)
-            }}>Edit Event</button>
+            }}>Edit Note</button>
             <button className="btn--delete--Event"
                 onClick={
                     () => {

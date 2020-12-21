@@ -6,7 +6,6 @@ import { EventCard } from "../event/EventCard"
 
 const sortedAttempt = (events) => {
     let sorted = events.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    console.log(sorted)
     return sorted
 }
 
@@ -17,39 +16,30 @@ export const PlantDetail = (props) => {
     const { events, getEvents } = useContext(EventContext)
 
     const [relatedEvents, setEvents] = useState([])
-
-    const id = props.location.state.chosenPlant.trefleId
+debugger
+    if (props.location.state.chosenPlant.trefleId) {
+        const trefleId = props.location.state.chosenPlant.trefleId
+    } else {const trefleId = props.match.params.plantId}
 
     useEffect(() => {
-        getPlantById(id)
-        .then(getEvents)
+        getPlantById(trefleId)
+            .then(getEvents)
     }, [])
-// debugger
-useEffect(() => {
-    if (events.length == 0) return 
-    console.log(" events", events)
-    const matching = (events.filter(e => e.plantId === props.location.state.chosenPlant.id)).sort((a, b) => b.date - a.date)
-    setEvents(matching)
-    console.log("related events", matching)
+    // debugger
+    useEffect(() => {
+        if (events.length == 0) return
+        console.log(" events", events)
+        const matching = (events.filter(e => e.plantId === props.location.state.chosenPlant.id)).sort((a, b) => b.date - a.date)
+        setEvents(matching)
+        console.log("related events", matching)
     }, [events])
 
-    // if (relatedEvents.length) {
-        return (
-            <>
+    return (
+        <>
             <section className="plant">
                 <h2 className="plant__name">{props.location.state.chosenPlant.petName}</h2>
                 <img src={props.location.state.chosenPlant.imageURL} alt={props.location.state.chosenPlant.petName} />
                 <h3 className="trefleId">Trefle ID: {props.location.state.chosenPlant.trefleId}</h3>
-                {/* <button className="btn--edit--Plant">Edit Plant</button> */}
-                <button className="btn--delete--Plant"
-                    onClick={
-                        () => {
-                            releasePlant(props.location.state.chosenPlant.id)
-                                .then(() => {
-                                    props.history.push("/plants")
-                                })
-                        }
-                    }>Delete Plant</button>
                 <h3>{singlePlant.slug}</h3>
             </section>
             <section className="events">
@@ -59,7 +49,21 @@ useEffect(() => {
                     })
                 }
             </section>
+            <button className="btn--edit--Plant"
+            onClick={() => {
+                props.history.push(`/plants/edit/${props.location.state.chosenPlant.id}`)}}
+            >Edit Plant's "Pet" Name
+            </button>
+            <button className="btn--delete--Plant"
+                onClick={
+                    () => {
+                        releasePlant(props.location.state.chosenPlant.id)
+                            .then(() => {
+                                props.history.push("/plants")
+                            })
+                    }
+                }>Delete Plant</button>
         </>
     )
-// } else {return <div></div>}
+
 }
