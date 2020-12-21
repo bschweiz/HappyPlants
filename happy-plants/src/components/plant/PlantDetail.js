@@ -16,13 +16,14 @@ export const PlantDetail = (props) => {
     const { events, getEvents } = useContext(EventContext)
 
     const [relatedEvents, setEvents] = useState([])
-debugger
-    if (props.location.state.chosenPlant.trefleId) {
-        const trefleId = props.location.state.chosenPlant.trefleId
-    } else {const trefleId = props.match.params.plantId}
+// debugger
+//     if (props.location.state.chosenPlant.trefleId) {
+//         const trefleId = props.location.state.chosenPlant.trefleId
+//         // this is trying to handle navigating to this page via editPlantName module
+//     } else {const trefleId = props.match.params.plantId}
 
     useEffect(() => {
-        getPlantById(trefleId)
+        getPlantById(props.location.state.chosenPlant.trefleId)
             .then(getEvents)
     }, [])
     // debugger
