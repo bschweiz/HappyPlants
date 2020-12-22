@@ -31,14 +31,14 @@ const Modal = ( { props, isShowing, hide }) => isShowing ? ReactDOM.createPortal
                     </button>
                     <button className="btn--add--Plant"
                         onClick={() => {
-                            props.history.push(`/plants/addplant`)
+                            props.history.push(`/addplant`)
                         }}
                     >Create New Plant
             </button>
                     <button className="btn--add--Event"
                         onClick={
                             () => {
-                                props.history.push("/events/addevent")}
+                                props.history.push("/addevent")}
                         }
                         
                         >Create New Event</button>

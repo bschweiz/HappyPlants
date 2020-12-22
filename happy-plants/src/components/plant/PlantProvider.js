@@ -12,11 +12,20 @@ export const PlantContext = React.createContext()
 export const PlantProvider = (props) => {
     const [plants, setPlants] = useState([])
     const [names, setNames] = useState([])
+    const [plant, setPlant] =useState({})
+    const [ chosenPlant, setChosenPlant ] = useState({})
+
 
     const getPlantData = () => {
         return fetch("http://localhost:8088/plants")
             .then(res => res.json())
             .then(setPlants)
+    }
+
+    const getPlantDataById = (id) => {
+        return fetch(`http://localhost:8088/plants/${id}`)
+            .then(res => res.json())
+            .then(setPlant)
     }
 
     const addPlantData= plant => {
@@ -67,7 +76,7 @@ export const PlantProvider = (props) => {
     
     return (
         <PlantContext.Provider value={{
-            plants, addPlantData, getPlantData, releasePlant, updatePlant, getPlantNames, names, addTrefleNames
+            plants, addPlantData, getPlantData, releasePlant, updatePlant, getPlantNames, names, addTrefleNames, plant, getPlantDataById, chosenPlant, setChosenPlant
         }}>
             {props.children}
         </PlantContext.Provider>

@@ -21,7 +21,7 @@ export const PlantList = (props) => {
             <div className="plants">
                 {
                     filteredPlants.map(p => {
-                        return <PlantCard key={p.id} plant={p} props={props}/>
+                        return <PlantCard key={p.id} plant={p} props={props} />
                     })
                 }
             </div>
