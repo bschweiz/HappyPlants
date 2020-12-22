@@ -240,6 +240,14 @@
       "note": "yes all, third attempt to edit this ",
       "date": "2020-12-21",
       "complete": true
+    },
+    {
+      "plantId": 8,
+      "date": "2020-12-21",
+      "water": true,
+      "complete": true,
+      "note": "watered hot Thom today",
+      "id": 12
     }
   ]
 }
