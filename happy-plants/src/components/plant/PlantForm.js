@@ -1,4 +1,5 @@
 import React, { useContext, useRef } from "react"
+import { Modal } from "../nav/Modal"
 import {PlantContext} from "./PlantProvider"
 
 export const PlantForm = (props) => {
