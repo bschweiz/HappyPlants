@@ -47,7 +47,7 @@
     {
       "trefleId": 115653,
       "userId": 1,
-      "petName": "Hot Thom",
+      "petName": "Tom",
       "imageURL": "https://bs.floristic.org/image/o/77580828aea73ee908c488e2d216e15cb8b587a5",
       "id": 8
     },
@@ -75,7 +75,7 @@
     {
       "trefleId": 154534,
       "userId": 2,
-      "petName": "Manny",
+      "petName": "Manny the Mango",
       "imageURL": "https://bs.floristic.org/image/o/f66180904a69549f1fc77d8eab151dc2b69be83a",
       "id": 12
     },
@@ -240,6 +240,14 @@
       "note": "yes all, third attempt to edit this ",
       "date": "2020-12-21",
       "complete": true
+    },
+    {
+      "plantId": 8,
+      "date": "2020-12-21",
+      "water": true,
+      "complete": true,
+      "note": "watered hot Thom today",
+      "id": 12
     }
   ]
 }

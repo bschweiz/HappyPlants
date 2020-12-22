@@ -3,7 +3,7 @@ import { PlantContext } from "./PlantProvider"
 
 export const EditPlantName = (props) => {
     // get plant data so we can display the pet name
-    const { plants, getPlantData, updatePlant } = useContext(PlantContext)
+    const { plants, getPlantData, updatePlant, setChosenPlant } = useContext(PlantContext)
     // component state
     const [plant, setPlant] = useState({})
 
@@ -45,10 +45,11 @@ export const EditPlantName = (props) => {
     }, [plants])
 
     const constructEditedPlant = () => {
+        setChosenPlant(plant)
         updatePlant( plant , {
             petName: plant.petName
         })
-            .then(() => props.history.push(`/plants/${plant.id}`))
+        .then(() => props.history.push(`/plants/${plant.id}`))
     }
     return (
         <form className="editPlantPetName">
