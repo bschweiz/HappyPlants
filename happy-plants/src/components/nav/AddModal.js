@@ -15,39 +15,6 @@ const useModal = () => {
     }
 };
 
-// ------ "Modal.js" #####
-
-const Modal = ( { props, isShowing, hide }) => isShowing ? ReactDOM.createPortal(
-    <React.Fragment>
-        <div className="modal-overlay" />
-        <div className="modal-wrapper" aria-modal aria-hidden tabIndex={-1} role="dialog">
-            <div className="modal">
-                <div className="modal-header">
-                    <p>
-                        Select an option:
-        </p>
-                    <button type="button" className="modal-close-button" data-dismiss="modal" aria-label="Close" onClick={hide}>
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <button className="btn--add--Plant"
-                        onClick={() => {
-                            props.history.push(`/addplant`)
-                        }}
-                    >Create New Plant
-            </button>
-                    <button className="btn--add--Event"
-                        onClick={
-                            () => {
-                                props.history.push("/addevent")}
-                        }
-                        
-                        >Create New Event</button>
-                </div>
-            </div>
-        </div>
-    </React.Fragment>, document.body
-) : null;
-
 // ------ "AddModal.js" #####
 
 export const AddModal = (props) => {
@@ -63,4 +30,40 @@ export const AddModal = (props) => {
         </div>
     );
 };
+
+// ------ "Modal.js" #####
+
+const Modal = ( { props, isShowing, setIsShowing, hide }) => isShowing ? ReactDOM.createPortal(
+    <React.Fragment>
+        <div className="modal-overlay" />
+        <div className="modal-wrapper" aria-modal aria-hidden tabIndex={-1} role="dialog">
+            <div className="modal">
+                <div className="modal-header">
+                    <p>
+                        Select an option:
+        </p>
+                    <button type="button" className="modal-close-button" data-dismiss="modal" aria-label="Close" onClick={hide}>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <button className="btn--add--Plant"
+                        onClick={() =>
+                            props.history.push(`/addplant`)
+                            .then(
+
+                            setIsShowing(!isShowing)
+                            )
+                            }
+                    >Create New Plant
+            </button>
+                    <button className="btn--add--Event"
+                        onClick={
+                            () => props.history.push("/addevent")
+                            }
+                        >Create New Event</button>
+                </div>
+            </div>
+        </div>
+    </React.Fragment>, document.body
+) : null;
+
 

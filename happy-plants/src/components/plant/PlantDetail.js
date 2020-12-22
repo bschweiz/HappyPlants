@@ -10,38 +10,37 @@ const sortedAttempt = (events) => {
 }
 
 export const PlantDetail = (props) => {
-    // debugger
 
-    const { plant, releasePlant, getPlantDataById, chosenPlant } = useContext(PlantContext)
+    const { plant, releasePlant, getPlantDataById } = useContext(PlantContext)
     const { singlePlant, getPlantById } = useContext(TrefleContext)
     const { events, getEvents } = useContext(EventContext)
 
     const [relatedEvents, setEvents] = useState([])
 
-
     useEffect(() => {
-        getPlantById(chosenPlant.trefleId)
-            .then(getEvents)
+        getPlantDataById(props.match.params.plantId)
     }, [])
 
+    useEffect(() => {
+        if (plant.trefleId) {
+        getPlantById(plant.trefleId)}
+        getEvents()
+    }, [plant])
 
-
-
-
-    // debugger
     useEffect(() => {
         if (events.length == 0) return
-        const matching = (events.filter(e => e.plantId === chosenPlant.id)).sort((a, b) => b.date - a.date)
+        const matching = (events.filter(e => e.plantId === plant.id)).sort((a, b) => b.date - a.date)
         setEvents(matching)
     }, [events])
 
     return (
         <>
             <section className="plant">
-                <h2 className="plant__name">{chosenPlant.petName}</h2>
-                <img src={chosenPlant.imageURL} alt={chosenPlant.petName} />
-                <h3 className="trefleId">Trefle ID: {chosenPlant.trefleId}</h3>
+                <h2 className="plant__name">{plant.petName}</h2>
+                <img src={plant.imageURL} alt={plant.petName}/>
+                <h3 className="trefleId">Trefle ID: {plant.trefleId}</h3>
                 <h3>{singlePlant.slug}</h3>
+                <h3>{singlePlant.common_name}</h3>
             </section>
             <section className="events">
                 {
@@ -52,14 +51,14 @@ export const PlantDetail = (props) => {
             </section>
             <button className="btn--edit--Plant"
                 onClick={() => {
-                    props.history.push(`/plants/edit/${chosenPlant.id}`)
+                    props.history.push(`/plants/edit/${plant.id}`)
                 }}
             >Edit Plant's "Pet" Name
             </button>
             <button className="btn--delete--Plant"
                 onClick={
                     () => {
-                        releasePlant(chosenPlant.id)
+                        releasePlant(plant.id)
                             .then(() => {
                                 props.history.push("/plants")
                             })

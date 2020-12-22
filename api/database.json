@@ -26,7 +26,7 @@
     {
       "id": 1,
       "userId": 1,
-      "petName": "Fred",
+      "petName": "Freddie",
       "imageURL": "https://bs.floristic.org/image/o/41209423ff14232d85b05a4f6ff7d267cd161905",
       "trefleId": 538258
     },
@@ -92,88 +92,20 @@
       "petName": "Pluumy",
       "imageURL": "https://bs.floristic.org/image/o/aa57d1770a1020d9edc6735f7daba6ef649fe0ae",
       "id": 15
-    }
-  ],
-  "trefles": [
-    {
-      "id": 538258,
-      "commonName": "Stonecrop",
-      "scientificName": "Echeveria quitensis"
     },
     {
-      "id": 154631,
-      "commonName": "Prayer Plant",
-      "scientificName": "Maranta leuconeura"
+      "trefleId": 173327,
+      "userId": 1,
+      "petName": " Oaky",
+      "imageURL": "https://bs.floristic.org/image/o/2292b670683abdaac354389514105df0018d9ef8",
+      "id": 16
     },
     {
-      "id": 1258091,
-      "commonName": "African bowstring-hemp",
-      "scientificName": "Dracaena trifasciata"
-    },
-    {
-      "id": 130506,
-      "commonName": "Male fern",
-      "scientificName": "Dryopteris filix-mas"
-    },
-    {
-      "id": 103921,
-      "commonName": "English oak",
-      "scientificName": "Quercus robur"
-    },
-    {
-      "id": 1123020,
-      "commonName": "Hollowheart",
-      "scientificName": "Iochroma arborescens"
-    },
-    {
-      "id": 933268,
-      "commonName": "Austrian pine",
-      "scientificName": "Pinus nigra"
-    },
-    {
-      "id": 141663,
-      "commonName": "False bird of paradise",
-      "scientificName": "Heliconia rostrata"
-    },
-    {
-      "id": 115653,
-      "commonName": "Cayenne pepper",
-      "scientificName": "Capsicum annuum"
-    },
-    {
-      "id": 179715,
-      "commonName": "False christmas trefle",
-      "scientificName": "Schlumbergera truncata"
-    },
-    {
-      "id": 367660,
-      "commonName": "Greathead's aloe",
-      "scientificName": "Aloe greatheadii"
-    },
-    {
-      "id": 167073,
-      "commonName": "Maritime pine",
-      "scientificName": "Pinus pinaster"
-    },
-    {
-      "id": 678281,
-      "commonName": "Evergreen oak",
-      "scientificName": "Quercus rotundifolia"
-    },
-    {
-      "id": 154534,
-      "commonName": "Mango",
-      "scientificName": "Mangifera indica"
-    },
-    {
-      "id": 505307,
-      "commonName": "Mountain papaya",
-      "scientificName": "Vasconcellea pubescens"
-    },
-    {
-      "id": 168516,
-      "commonName": "Nosegaytree",
-      "scientificName": "Plumeria alba"
+      "trefleId": 131710,
+      "userId": 1,
+      "petName": "Cadi B",
+      "imageURL": "https://bs.floristic.org/image/o/612814c2d5fbd90fc91c81de2e15f94083c64b2d",
+      "id": 17
     }
   ],
   "events": [
@@ -246,8 +178,40 @@
       "date": "2020-12-21",
       "water": true,
       "complete": true,
-      "note": "watered hot Thom today",
+      "note": "Thom was watered today",
       "id": 12
+    },
+    {
+      "plantId": 1,
+      "date": "2020-12-22",
+      "water": true,
+      "complete": false,
+      "note": "huzzah watered",
+      "id": 13
+    },
+    {
+      "plantId": 1,
+      "date": "2020-12-24",
+      "water": false,
+      "complete": false,
+      "note": " xmas eve",
+      "id": 14
+    },
+    {
+      "plantId": 1,
+      "date": "2020-12-23",
+      "water": false,
+      "complete": false,
+      "note": "23rd is when i'd like to water Fred",
+      "id": 15
+    },
+    {
+      "plantId": 1,
+      "date": "2020-11-30",
+      "water": true,
+      "complete": true,
+      "note": "watered Fred",
+      "id": 16
     }
   ]
 }
