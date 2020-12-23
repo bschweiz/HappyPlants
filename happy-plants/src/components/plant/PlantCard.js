@@ -1,5 +1,4 @@
-import React, { useContext } from "react"
-import { PlantContext } from "./PlantProvider"
+import React from "react"
 
 
 export const PlantCard = ({ plant, props }) => {
@@ -10,13 +9,13 @@ export const PlantCard = ({ plant, props }) => {
     
         return (
             <section className="plant_info">
+                <img src={plant.imageURL} alt={plant.petName} />
                 <button className="plant-detail"
                     onClick={
                         choosePlant
                     }>
-                    {plant.petName} details
+                    Details about {plant.petName}
                 </button>
-                <img src={plant.imageURL} alt={plant.petName} />
             </section>
         )
     

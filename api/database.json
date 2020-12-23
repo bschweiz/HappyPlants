@@ -146,7 +146,7 @@
       "plantId": 4,
       "date": "2020-12-18",
       "water": false,
-      "complete": false,
+      "complete": true,
       "note": "watering yes"
     },
     {
@@ -185,7 +185,7 @@
       "plantId": 1,
       "date": "2020-12-22",
       "water": true,
-      "complete": false,
+      "complete": true,
       "note": "huzzah watered",
       "id": 13
     },
@@ -204,14 +204,6 @@
       "complete": false,
       "note": "23rd is when i'd like to water Fred",
       "id": 15
-    },
-    {
-      "plantId": 1,
-      "date": "2020-11-30",
-      "water": true,
-      "complete": true,
-      "note": "watered Fred",
-      "id": 16
     }
   ]
 }

@@ -6,7 +6,7 @@ import { EventCard } from './EventCard'
 const sortedAttempt = (events) => {
     let sorted = events.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     // console.log(sorted)
-    return sorted
+    return sorted.reverse()
 }
 
 export const EventList = (props) => {
@@ -32,14 +32,13 @@ export const EventList = (props) => {
             return subsetEvents.map(a => a.forEach(e => userFilteredEvents.push(e)))
         }
         combineArrays(subsetEvents)
-        // console.log("subset Events, should be 3 of them: Fred, Snake, Mary", subsetEvents, userFilteredEvents)
         setFilteredEvents(userFilteredEvents)
         
     }, [plants, events])
 
     if (events.length && plants.length) {
         return (
-            <div className="events">
+            <div className="events"> <h3>Upcoming Care Events</h3>
             {/* <button
                 onClick={evt => {
                     // console.log(evt)

@@ -7,7 +7,6 @@ export const WeatherList = (props) => {
     const { weatherData, getWeather } = useContext(WeatherContext)
     const { activeUser, getActiveUser } = useContext(UserContext)
     const [ weather, setWeather] = useState([])
-    const [ user, setUser] = useState([])
 // debugger
     useEffect(() => {
         getActiveUser()
@@ -27,7 +26,8 @@ export const WeatherList = (props) => {
 
     if (weather) {
         // console.log(weather)
-        return <div className="weather_results">
+        return <div className="weather_results"> 5-day Local Forecast 
+        {/* for {activeUser.zip} */}
             {
                 weather.map(dayWeatherObj => <WeatherCard key={dayWeatherObj.dt} dayWeatherObj={dayWeatherObj} props={props}/>)
             }
