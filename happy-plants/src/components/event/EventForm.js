@@ -50,7 +50,7 @@ export const EventForm = (props) => {
             <h2 className="plantForm__title">New Event</h2>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="plantName">Plant Id for the event: </label>
+                    {/* <label htmlFor="plantName">Plant Id for the event: </label> */}
                     <select required
                         defaultValue=""
                         name="plantName"

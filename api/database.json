@@ -20,13 +20,20 @@
       "zip": 80020,
       "name": "Joe Bob",
       "id": 3
+    },
+    {
+      "email": "Bobberton@bob.com",
+      "password": "blabla",
+      "zip": 80020,
+      "name": "Bob",
+      "id": 4
     }
   ],
   "plants": [
     {
       "id": 1,
       "userId": 1,
-      "petName": "Freddie",
+      "petName": "Fred",
       "imageURL": "https://bs.floristic.org/image/o/41209423ff14232d85b05a4f6ff7d267cd161905",
       "trefleId": 538258
     },
@@ -36,13 +43,6 @@
       "petName": "Snake",
       "imageURL": "https://bs.floristic.org/image/o/0a864ad583d95ce8e7b1af5cfddded16db142d3f",
       "id": 5
-    },
-    {
-      "trefleId": 130506,
-      "userId": 1,
-      "petName": "Fernando",
-      "imageURL": "https://bs.floristic.org/image/o/3b39ae0843fb6bacb96cee2d7342bb84144311d5",
-      "id": 4
     },
     {
       "trefleId": 115653,
@@ -106,6 +106,13 @@
       "petName": "Cadi B",
       "imageURL": "https://bs.floristic.org/image/o/612814c2d5fbd90fc91c81de2e15f94083c64b2d",
       "id": 17
+    },
+    {
+      "trefleId": 167120,
+      "userId": 4,
+      "petName": "Piney the Elder",
+      "imageURL": "https://bs.floristic.org/image/o/33d84b84c09347d360afa0d610e220664cfb6d93",
+      "id": 18
     }
   ],
   "events": [
@@ -142,14 +149,6 @@
       "complete": false
     },
     {
-      "id": 8,
-      "plantId": 4,
-      "date": "2020-12-18",
-      "water": false,
-      "complete": true,
-      "note": "watering yes"
-    },
-    {
       "id": 9,
       "plantId": 12,
       "date": "2020-12-21",
@@ -174,22 +173,6 @@
       "complete": true
     },
     {
-      "plantId": 8,
-      "date": "2020-12-21",
-      "water": true,
-      "complete": true,
-      "note": "Thom was watered today",
-      "id": 12
-    },
-    {
-      "plantId": 1,
-      "date": "2020-12-22",
-      "water": true,
-      "complete": true,
-      "note": "huzzah watered",
-      "id": 13
-    },
-    {
       "plantId": 1,
       "date": "2020-12-24",
       "water": false,
@@ -201,9 +184,25 @@
       "plantId": 1,
       "date": "2020-12-23",
       "water": false,
-      "complete": false,
-      "note": "23rd is when i'd like to water Fred",
+      "complete": true,
+      "note": "23rd is when i'd like to water Fred, just did it",
       "id": 15
+    },
+    {
+      "plantId": 17,
+      "date": "2020-12-24",
+      "water": true,
+      "complete": false,
+      "note": "happy xmas eve",
+      "id": 16
+    },
+    {
+      "plantId": 18,
+      "date": "2020-12-23",
+      "water": false,
+      "complete": false,
+      "note": "check on him later this afternoon",
+      "id": 17
     }
   ]
 }
