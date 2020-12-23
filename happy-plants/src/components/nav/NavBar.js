@@ -30,9 +30,6 @@ export const NavBar = (props) => {
                         <li className="navbar__item">
                             <Link className="navbar__link" to="/logout">Log Out</Link>
                         </li>
-                        <li>
-                            <AddModal {...props} />
-                        </li>
                     </PlantProvider>
                 </EventProvider>
             </TrefleProvider>
