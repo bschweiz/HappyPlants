@@ -11,7 +11,7 @@ export const EventProvider = (props) => {
             .then(setEvents)
     }
 
-    const addEvent= plant => {
+    const addEvent = plant => {
         return fetch("http://localhost:8088/events", {
             method: "POST",
             headers: {

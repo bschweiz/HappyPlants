@@ -10,8 +10,8 @@ const sortedAttempt = (events) => {
 }
 
 export const EventList = (props) => {
-    const { getPlantData, plants } = useContext(PlantContext)
     const { getEvents, events } = useContext(EventContext)
+    const { getPlantData, plants } = useContext(PlantContext)
     const [ filteredEvents, setFilteredEvents ] = useState([])
     
     useEffect(() => {
