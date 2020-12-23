@@ -1,4 +1,5 @@
 import React, { useContext, useRef } from "react"
+import { Modal } from "../nav/Modal"
 import {PlantContext} from "./PlantProvider"
 
 export const PlantForm = (props) => {
@@ -6,8 +7,6 @@ export const PlantForm = (props) => {
     const { addTrefleNames, addPlantData } = useContext(PlantContext)
 
     const petName = useRef(null)
-    const commonName = useRef(null)
-    const scienceName = useRef(null)
 
     const constructNewPlant= () => {
         
@@ -18,13 +17,14 @@ export const PlantForm = (props) => {
                 petName: petName.current.value,
                 imageURL: props.location.state.chosenPlant.image_url
             })
-            .then(addTrefleNames({
-                id: parseInt(props.location.state.chosenPlant.id),
-                commonName: props.location.state.chosenPlant.common_name,
-                scientificName:  props.location.state.chosenPlant.scientific_name         
-            }))
+            // .then(addTrefleNames({
+            //     id: parseInt(props.location.state.chosenPlant.id),
+            //     commonName: props.location.state.chosenPlant.common_name,
+            //     scientificName:  props.location.state.chosenPlant.scientific_name         
+            // }))
             .then(() => props.history.push("/plants"))
         }
+    
     return (
         <form className="plantForm">
             <h2 className="plantForm__title">New Plant</h2>

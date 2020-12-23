@@ -12,7 +12,7 @@ export const PlantContext = React.createContext()
 export const PlantProvider = (props) => {
     const [plants, setPlants] = useState([])
     const [names, setNames] = useState([])
-    const [plant, setPlant] =useState({})
+    const [ plant, setPlant ] =useState({})
     const [ chosenPlant, setChosenPlant ] = useState({})
 
 
@@ -57,26 +57,26 @@ export const PlantProvider = (props) => {
         .then(getPlantData)
     }
 
-    const getPlantNames = () => {
-        return fetch(`http://localhost:8088/trefles`)
-        .then(res => res.json())
-        .then(setNames)
-    }
+    // const getPlantNames = () => {
+    //     return fetch(`http://localhost:8088/trefles`)
+    //     .then(res => res.json())
+    //     .then(setNames)
+    // }
 
-    const addTrefleNames = nameSet => {
-        return fetch("http://localhost:8088/trefles", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(nameSet)
-        })
-            .then(getPlantNames)
-    }
+    // const addTrefleNames = nameSet => {
+    //     return fetch("http://localhost:8088/trefles", {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         },
+    //         body: JSON.stringify(nameSet)
+    //     })
+    //         .then(getPlantNames)
+    // }
     
     return (
         <PlantContext.Provider value={{
-            plants, addPlantData, getPlantData, releasePlant, updatePlant, getPlantNames, names, addTrefleNames, plant, getPlantDataById, chosenPlant, setChosenPlant
+            plants, addPlantData, getPlantData, releasePlant, updatePlant, plant, getPlantDataById, chosenPlant, setChosenPlant
         }}>
             {props.children}
         </PlantContext.Provider>

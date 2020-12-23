@@ -24,17 +24,22 @@ export const ApplicationViews = (props) => {
     return (
         <>
             <UserProvider>
-                <WeatherProvider>
-                    <Route exact path="/">
-                        <WeatherList />
-                    </Route>
-                    <Route exact path="/login" render={props => <Logout {...props} />} />
-                </WeatherProvider>
+                <EventProvider>
+                    <PlantProvider>
+                        <WeatherProvider>
+                            <Route exact path="/">
+                                <WeatherList />
+                                <EventList />
+                            </Route>
+                            <Route exact path="/login" render={props => <Logout {...props} />} />
+                        </WeatherProvider>
+                    </PlantProvider>
+                </EventProvider>
             </UserProvider>
 
             <TrefleProvider>
                 <PlantProvider>
-                    <Route path="/addplant" render={
+                    <Route exact path="/addplant" render={
                         props => <TrefleForm {...props} />
                     } />
                     <Route exact path="/addplant/list" render={

@@ -31,7 +31,7 @@ export const EditEventNote = (props) => {
 
     // create a function that identifies the proper eventId
     const getSelectedEvent = () => {
-        debugger
+        // debugger
         const eventId = parseInt(props.match.params.eventId)
         const selectedEvent = events.find(e => e.id === eventId) || {}
         setEvent(selectedEvent)

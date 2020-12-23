@@ -5,16 +5,12 @@ import { TrefleCard } from "./TrefleCard"
 
 export const TrefleList = () => {
 
-    const { fuzzyResultArray, getPlantByFuzzy } = useContext(TrefleContext)
-
-    useEffect(() => {
-        getPlantByFuzzy()
-        }, [])
+    const { fuzzyResultArray } = useContext(TrefleContext)
         
-    useEffect(() => {
-        console.log("test to see if the array of results came back")
-        console.log(fuzzyResultArray)
-        }, [fuzzyResultArray])
+    // useEffect(() => {
+    //     console.log("test to see if the array of results came back")
+    //     console.log(fuzzyResultArray)
+    //     }, [fuzzyResultArray])
         
     return <div className="trefle_results">Your Results:
     {
