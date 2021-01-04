@@ -1,0 +1,8 @@
+.plant__list {
+    margin-top: 140px;
+}
+
+.plants {
+    display: flex;
+    flex-wrap: wrap;
+}

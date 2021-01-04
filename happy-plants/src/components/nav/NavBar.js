@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { AddModal } from "./AddModal"
+import "./NavBar.css"
 import { TrefleProvider } from '../trefle/TrefleProvider'
 import { PlantProvider } from '../plant/PlantProvider'
 import { EventProvider } from '../event/EventProvider'
@@ -12,7 +12,7 @@ export const NavBar = (props) => {
             <TrefleProvider>
                 <EventProvider>
                     <PlantProvider>
-                        <li className="navbar__item active">
+                        <li className="navbar__item">
                             <Link className="navbar__link" to="/">Home</Link>
                         </li>
                         <li className="navbar__item">
@@ -33,6 +33,7 @@ export const NavBar = (props) => {
                     </PlantProvider>
                 </EventProvider>
             </TrefleProvider>
+            <span></span>
         </ul>
     )
 }

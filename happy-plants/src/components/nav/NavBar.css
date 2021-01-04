@@ -1,0 +1,28 @@
+.navbar {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: left;
+    padding: 12px 0;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: seagreen;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    vertical-align: middle;
+    height: fit-content;
+}
+
+.navbar__item {
+    border: solid green 1px;
+    margin: .3em;
+    flex-basis: 20%;
+    list-style-type: none;
+    color: black;
+    height: fit-content;
+    padding: .2em;
+    background-color: limegreen
+}
+
+
+
