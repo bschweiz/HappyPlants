@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-
+import "../plant/PlantCard.css"
 
 
 
@@ -10,7 +10,7 @@ export const TrefleCard = ({ plant }) => {
     
     return (
 
-        <section className="plant_info">
+        <section className="plant__info">
             <Link className="card-link"
                 to={{
                     pathname: `/addplant/list/${plant.id}`,

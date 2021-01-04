@@ -113,6 +113,13 @@
       "petName": "Piney the Elder",
       "imageURL": "https://bs.floristic.org/image/o/33d84b84c09347d360afa0d610e220664cfb6d93",
       "id": 18
+    },
+    {
+      "trefleId": 157554,
+      "userId": 1,
+      "petName": "Monica",
+      "imageURL": "https://bs.floristic.org/image/o/e0526a4477c3b1b2c0b21e79d3ad563748a7ca4d",
+      "id": 19
     }
   ],
   "events": [
@@ -176,23 +183,15 @@
       "plantId": 1,
       "date": "2020-12-24",
       "water": false,
-      "complete": false,
+      "complete": true,
       "note": " xmas eve",
       "id": 14
-    },
-    {
-      "plantId": 1,
-      "date": "2020-12-23",
-      "water": false,
-      "complete": true,
-      "note": "23rd is when i'd like to water Fred, just did it",
-      "id": 15
     },
     {
       "plantId": 17,
       "date": "2020-12-24",
       "water": true,
-      "complete": false,
+      "complete": true,
       "note": "happy xmas eve",
       "id": 16
     },
@@ -203,6 +202,14 @@
       "complete": false,
       "note": "check on him later this afternoon",
       "id": 17
+    },
+    {
+      "plantId": 19,
+      "date": "2021-01-05",
+      "water": false,
+      "complete": false,
+      "note": "check Monica's general health, check soil moisture",
+      "id": 18
     }
   ]
 }

@@ -34,7 +34,7 @@ export const EventCard = ({ event, props }) => {
                         pathname: `/events/${event.id}`,
                         state: { chosenEvent: event, chosenPlant: matchingPlant }
                     }}>
-                    <h4 className="event__title">{event.date}:{matchingPlant.petName} {event.water ? "watering" : "check-up"}</h4>
+                    <h4 className="event__title">{event.water ? "Water" : "Check-up on"} {matchingPlant.petName} ({event.date})</h4>
                 </Link>
                     <label htmlFor={event.id}>{event.complete ? "Completed" : "Check to mark as completed"}</label>
                     <input type="checkbox" key={event.id} id={event.id} name="checkbox" checked=

@@ -1,5 +1,15 @@
 body {
     justify-content: center;
+    color: green ;
+}
+
+img {
+    margin-bottom: 1em;
+    max-width: 200px;
+}
+
+button {
+    margin: .5em
 }
 
 a:link {
