@@ -1,5 +1,5 @@
 import React from "react"
-
+import "./PlantCard.css"
 
 export const PlantCard = ({ plant, props }) => {
 
@@ -8,8 +8,8 @@ export const PlantCard = ({ plant, props }) => {
     }
     
         return (
-            <section className="plant_info">
-                <img src={plant.imageURL} alt={plant.petName} />
+            <section className="plant__info">
+                <img className="plant__pic" src={plant.imageURL} alt={plant.petName} />
                 <button className="plant-detail"
                     onClick={
                         choosePlant

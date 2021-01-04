@@ -1,13 +1,12 @@
 .navbar {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: left;
+    justify-content: center;
     padding: 12px 0;
     text-align: center;
     box-sizing: border-box;
     background-color: seagreen;
     top: 0;
-    position: fixed;
     width: 100%;
     vertical-align: middle;
     height: fit-content;
@@ -21,7 +20,8 @@
     color: black;
     height: fit-content;
     padding: .2em;
-    background-color: limegreen
+    background-color: limegreen;
+    border-radius: px
 }
 
 

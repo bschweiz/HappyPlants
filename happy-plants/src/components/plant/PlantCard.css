@@ -1,0 +1,12 @@
+.plant__info {
+    display: flex;
+    flex-direction: column;
+    border: solid 2px darkgreen;
+    flex-grow: 20;
+    flex-wrap: wrap;
+    heigth: 150px
+}
+
+/* .plant__pic {
+    max-width: 15%;
+} */

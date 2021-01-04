@@ -18,6 +18,7 @@ import { WeatherList } from "./weather/WeatherList"
 import { UserProvider } from "./user/UserProvider"
 import { Logout } from "./auth/LogOut"
 import { EditPlantName } from "./plant/EditPlantName"
+import "./ApplicationViews.css"
 
 
 export const ApplicationViews = (props) => {

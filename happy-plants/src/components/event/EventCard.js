@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { EventContext } from "./EventProvider"
 import { PlantContext } from "../plant/PlantProvider"
+import "./EventCard.css"
 
 
 
