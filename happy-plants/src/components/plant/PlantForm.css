@@ -1,0 +1,25 @@
+.wrapper {
+    justify-content: center;
+    flex-grow: 80%;
+}
+
+form {
+    margin-top: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: solid 1px limegreen;
+    padding: 1em;
+    border-radius: 3px;
+}
+
+.plantForm {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+input {
+    margin-bottom: 2px;
+}

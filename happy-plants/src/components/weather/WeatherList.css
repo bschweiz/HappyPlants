@@ -1,0 +1,10 @@
+.weather__results {
+    display: flex;
+}
+
+.weatherCard {
+    margin: 2px;
+    border: limegreen solid .5px;
+    flex-wrap: wrap;
+    flex-grow: 20%;
+}

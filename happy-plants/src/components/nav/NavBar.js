@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { AddModal } from "./AddModal"
+import "./NavBar.css"
 import { TrefleProvider } from '../trefle/TrefleProvider'
 import { PlantProvider } from '../plant/PlantProvider'
 import { EventProvider } from '../event/EventProvider'
@@ -12,20 +12,20 @@ export const NavBar = (props) => {
             <TrefleProvider>
                 <EventProvider>
                     <PlantProvider>
-                        <li className="navbar__item active">
-                            <Link className="navbar__link" to="/">Home</Link>
+                        <li className="navbar__item">
+                            <Link className="navbar__link" to="/">Home Page</Link>
                         </li>
                         <li className="navbar__item">
-                            <Link className="navbar__link" to="/plants">Plants</Link>
+                            <Link className="navbar__link" to="/plants">Plant List</Link>
                         </li>
                         <li className="navbar__item">
-                            <Link className="navbar__link" to="/events">Events</Link>
+                            <Link className="navbar__link" to="/events">Appt. List</Link>
                         </li>
                         <li className="navbar__item">
                             <Link className="navbar__link" to="/addplant">Add Plant</Link>
                         </li>
                         <li className="navbar__item">
-                            <Link className="navbar__link" to="/addevent">Add Event</Link>
+                            <Link className="navbar__link" to="/addevent">Make Appt.</Link>
                         </li>
                         <li className="navbar__item">
                             <Link className="navbar__link" to="/logout">Log Out</Link>
@@ -33,6 +33,7 @@ export const NavBar = (props) => {
                     </PlantProvider>
                 </EventProvider>
             </TrefleProvider>
+            <span></span>
         </ul>
     )
 }

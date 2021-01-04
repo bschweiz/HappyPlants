@@ -3,6 +3,7 @@ import { PlantContext } from "../plant/PlantProvider"
 import { TrefleContext } from "../trefle/TrefleProvider"
 import { EventContext } from "../event/EventProvider"
 import { EventCard } from "../event/EventCard"
+import "./PlantCard.css"
 
 const sortedAttempt = (events) => {
     let sorted = events.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
@@ -37,10 +38,9 @@ export const PlantDetail = (props) => {
         <>
             <section className="plant">
                 <h2 className="plant__name">{plant.petName}</h2>
-                <img src={plant.imageURL} alt={plant.petName}/>
-                <h3 className="trefleId">Trefle ID: {plant.trefleId}</h3>
-                <h3>{singlePlant.slug}</h3>
-                <h3>{singlePlant.common_name}</h3>
+                <img src={plant.imageURL} alt={singlePlant.slug}/>
+                <h3 className="trefleId">Scientific Name: {singlePlant.scientific_name}</h3>
+                <h3>Common Name: {singlePlant.common_name}</h3>
             </section>
             <section className="events">
                 {
