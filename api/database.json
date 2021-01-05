@@ -103,7 +103,7 @@
     {
       "trefleId": 131710,
       "userId": 1,
-      "petName": "Cadi B",
+      "petName": "Cardi B",
       "imageURL": "https://bs.floristic.org/image/o/612814c2d5fbd90fc91c81de2e15f94083c64b2d",
       "id": 17
     },
@@ -120,6 +120,13 @@
       "petName": "Monica",
       "imageURL": "https://bs.floristic.org/image/o/e0526a4477c3b1b2c0b21e79d3ad563748a7ca4d",
       "id": 19
+    },
+    {
+      "trefleId": 171825,
+      "userId": 1,
+      "petName": "Douglas Adams",
+      "imageURL": "https://bs.floristic.org/image/o/0b03dee5a131470715367387ec2ca3754eb28291",
+      "id": 20
     }
   ],
   "events": [
@@ -210,6 +217,14 @@
       "complete": false,
       "note": "check Monica's general health, check soil moisture",
       "id": 18
+    },
+    {
+      "plantId": 20,
+      "date": "2021-01-05",
+      "water": true,
+      "complete": false,
+      "note": "check on bla",
+      "id": 19
     }
   ]
 }

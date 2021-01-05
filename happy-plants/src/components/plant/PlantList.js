@@ -3,6 +3,7 @@ import {PlantContext} from "./PlantProvider"
 import {PlantCard} from "./PlantCard"
 import "./PlantList.css"
 
+
 export const PlantList = (props) => {
     const { plants, getPlantData } = useContext(PlantContext)
 

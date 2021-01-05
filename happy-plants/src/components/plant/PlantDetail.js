@@ -24,7 +24,8 @@ export const PlantDetail = (props) => {
 
     useEffect(() => {
         if (plant.trefleId) {
-        getPlantById(plant.trefleId)}
+            getPlantById(plant.trefleId)
+        }
         getEvents()
     }, [plant])
 
@@ -38,9 +39,11 @@ export const PlantDetail = (props) => {
         <>
             <section className="plant">
                 <h2 className="plant__name">{plant.petName}</h2>
-                <img src={plant.imageURL} alt={singlePlant.slug}/>
+                <img src={plant.imageURL} alt={singlePlant.slug} />
                 <h3 className="trefleId">Scientific Name: {singlePlant.scientific_name}</h3>
-                <h3>Common Name: {singlePlant.common_name}</h3>
+                {
+                    singlePlant.common_name && <h3>Common Name: {singlePlant.common_name}</h3>
+                }
             </section>
             <section className="events">
                 {
