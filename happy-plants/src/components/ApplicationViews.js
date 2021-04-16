@@ -26,11 +26,7 @@ import "./ApplicationViews.css"
 export const ApplicationViews = (props) => {
     return (
         <>
-            <AppBar position="sticky">
-                <Toolbar>
-                    
-                </Toolbar>
-            </AppBar>
+            
             <UserProvider>
                 <EventProvider>
                     <PlantProvider>
