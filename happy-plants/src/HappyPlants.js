@@ -14,10 +14,11 @@ export const HappyPlants = () => (
       if (localStorage.getItem("app_user_id")) {
         return (
           <>
-            <AppBar position="sticky">
+            <AppBar position="sticky" style={{backgroundColor: "green",
+                color:"lightgreen"}}>
               <Toolbar>
                 <IconButton aria-label="app" style={{backgroundColor: "green",
-                color:"yellow"}}>
+                color: "lightgreen"}}>
                   <Menu />
                 </IconButton>
                 <Typography variant="h5">Happy Plants</Typography>
