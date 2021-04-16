@@ -5,7 +5,7 @@ import { NavBar } from "./components/nav/NavBar"
 import { Login } from "./components/auth/Login"
 import { Register } from "./components/auth/Register"
 
-import {AppBar, Toolbar, Button, IconButton} from '@material-ui/core';
+import {AppBar, Toolbar, Button, IconButton, Typography} from '@material-ui/core';
 import Menu from "@material-ui/icons/Menu";
 
 export const HappyPlants = () => (
@@ -16,14 +16,11 @@ export const HappyPlants = () => (
           <>
             <AppBar position="sticky">
               <Toolbar>
-                <IconButton aria-label="app" color="inherit">
+                <IconButton aria-label="app" style={{backgroundColor: "green",
+                color:"yellow"}}>
                   <Menu />
                 </IconButton>
-                <Button>Home</Button>
-                <Button>Plants</Button>
-                <Button>Check-Ins</Button>
-                <Button>New Plant</Button>
-                <Button>New Check-In</Button>
+                <Typography variant="h5">Happy Plants</Typography>
               </Toolbar>
             </AppBar>
             <Route render={props => <NavBar {...props} />} />
