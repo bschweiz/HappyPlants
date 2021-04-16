@@ -1,7 +1,7 @@
 import React from "react"
 import { Route } from "react-router-dom"
 
-import {AppBar} from '@material-ui/core';
+import {AppBar, Toolbar} from '@material-ui/core';
 
 import { TrefleProvider } from './trefle/TrefleProvider'
 import { TrefleForm } from "./trefle/TrefleForm"
@@ -26,6 +26,11 @@ import "./ApplicationViews.css"
 export const ApplicationViews = (props) => {
     return (
         <>
+            <AppBar position="sticky">
+                <Toolbar>
+                    
+                </Toolbar>
+            </AppBar>
             <UserProvider>
                 <EventProvider>
                     <PlantProvider>
