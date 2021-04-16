@@ -38,13 +38,6 @@
       "id": 5
     },
     {
-      "trefleId": 115653,
-      "userId": 1,
-      "petName": "Tom",
-      "imageURL": "https://bs.floristic.org/image/o/77580828aea73ee908c488e2d216e15cb8b587a5",
-      "id": 8
-    },
-    {
       "trefleId": 179715,
       "userId": 1,
       "petName": "Old Saint Nick",
@@ -71,13 +64,6 @@
       "petName": " Oaky",
       "imageURL": "https://bs.floristic.org/image/o/2292b670683abdaac354389514105df0018d9ef8",
       "id": 16
-    },
-    {
-      "trefleId": 131710,
-      "userId": 1,
-      "petName": "Cardi B",
-      "imageURL": "https://bs.floristic.org/image/o/612814c2d5fbd90fc91c81de2e15f94083c64b2d",
-      "id": 17
     },
     {
       "trefleId": 167120,
@@ -113,6 +99,13 @@
       "petName": "Dave",
       "imageURL": "https://bs.plantnet.org/image/o/f01ce76acc1d8a86fc1a661b4234cc5d8aa506e8",
       "id": 22
+    },
+    {
+      "trefleId": 741585,
+      "userId": 1,
+      "petName": "Spicey Spice",
+      "imageURL": "https://bs.plantnet.org/image/o/1b5361e38d49b032aab6c6be6faa8c664de17dc3",
+      "id": 23
     }
   ],
   "events": [
@@ -139,14 +132,6 @@
       "complete": true,
       "note": "yes all",
       "id": 6
-    },
-    {
-      "plantId": 17,
-      "date": "2020-12-24",
-      "water": true,
-      "complete": true,
-      "note": "happy xmas eve",
-      "id": 16
     },
     {
       "plantId": 18,
