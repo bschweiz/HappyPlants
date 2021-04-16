@@ -1,6 +1,8 @@
 import React from "react"
 import { Route } from "react-router-dom"
 
+
+
 import { TrefleProvider } from './trefle/TrefleProvider'
 import { TrefleForm } from "./trefle/TrefleForm"
 import { TrefleList } from './trefle/TrefleList'
@@ -24,6 +26,7 @@ import "./ApplicationViews.css"
 export const ApplicationViews = (props) => {
     return (
         <>
+            
             <UserProvider>
                 <EventProvider>
                     <PlantProvider>

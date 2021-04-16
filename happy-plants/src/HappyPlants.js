@@ -5,13 +5,40 @@ import { NavBar } from "./components/nav/NavBar"
 import { Login } from "./components/auth/Login"
 import { Register } from "./components/auth/Register"
 
+import {AppBar, Toolbar, Button, IconButton, Typography, makeStyles} from '@material-ui/core';
+import { Menu as MenuIcon } from '@material-ui/icons';
+
+const useStyles = makeStyles((theme) => ({
+  toolbar: {
+    justifyContent: 'flex-end',
+  },
+  menuButton: {
+    // Push other menu elements to the right
+    marginRight: 'auto',
+    [theme.breakpoints.up('lg')]: {
+      display: 'none',
+    },
+  },
+}));
+
 export const HappyPlants = () => (
   <>
     <Route render={() => {
       if (localStorage.getItem("app_user_id")) {
         return (
           <>
-            <Route render={props => <NavBar {...props} />} />
+            <AppBar position="sticky" style={{backgroundColor: "green",
+                color:"lightgreen"}}>
+              <Toolbar>
+                <IconButton aria-label="app" 
+                            style={{backgroundColor: "green", color: "lightgreen"}}
+                            edge="start">
+                  <MenuIcon />
+                </IconButton>
+                <Typography variant="h5">Happy Plants</Typography>
+              </Toolbar>
+            </AppBar>
+            {/* <Route render={props => <NavBar {...props} />} /> */}
             <Route render={props => <ApplicationViews {...props} />} />
           </>
         )
