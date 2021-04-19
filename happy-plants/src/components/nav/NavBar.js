@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react'
 import { AppBar, IconButton, makeStyles, Toolbar } from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
 import Button from '@material-ui/core/Button';
@@ -19,22 +19,10 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function Navbar({ children }) {
+function Navbar() {
     const classes = useStyles();
 
-    const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
-
-    // Close drawer
-    const closeDrawer = () => {
-        setIsDrawerOpen(false);
-    };
-
-    // Toggle drawer
-    const onDrawerToggle = () => {
-        setIsDrawerOpen(!isDrawerOpen);
-    };
-
-    const [anchorEl, setAnchorEl] = React.useState(null);
+    const [anchorEl, setAnchorEl] = useState(null);
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget)
@@ -46,19 +34,18 @@ function Navbar({ children }) {
     };
 
     return (
-        <AppBar position="fixed">
+        <AppBar position="fixed" onClick={handleClick}>
             <Toolbar className={classes.toolbar}>
-                <IconButton
+                <Button
                     color="green"
                     aria-controls="simple-menu"
-                    aria-label="open-menu"
                     aria-haspopup="true"
                     edge="start"
                     onClick={handleClick}
                     className={classes.menuButton}
-                >
-                    <MenuIcon />
-                </IconButton>
+                > test
+                    <MenuIcon onClick={handleClick} />
+                </Button>
                 <Menu
                     id="simple-menu"
                     anchorEl={anchorEl}
@@ -70,7 +57,6 @@ function Navbar({ children }) {
                     <MenuItem onClick={handleClose}>My account</MenuItem>
                     <MenuItem onClick={handleClose}>Logout</MenuItem>
                 </Menu>
-                {children}
             </Toolbar>
         </AppBar>
     );
