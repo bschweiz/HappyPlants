@@ -4,6 +4,7 @@ import { ApplicationViews } from "./components/ApplicationViews"
 import { NavBar } from "./components/nav/NavBar"
 import { Login } from "./components/auth/Login"
 import { Register } from "./components/auth/Register"
+import { useDrawer } from './components/drawer/DrawerContext';
 
 import {AppBar, Toolbar, Button, IconButton, Typography, makeStyles} from '@material-ui/core';
 import { Menu as MenuIcon } from '@material-ui/icons';
