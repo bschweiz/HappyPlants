@@ -1,10 +1,14 @@
 .forecast-area {
     display: flex;
+    flex-direction: row;
+    overflow-x: auto;
 }
 
 .forecast-cell {
+    display: grid;
     margin: 4px;
     border-radius: 4px;
-    border: rgb(60, 116, 60) solid .5px;
+    background-color: #FFFBE6;
+    border: #B9E4C9 1px solid;
     flex-wrap: wrap;
 }

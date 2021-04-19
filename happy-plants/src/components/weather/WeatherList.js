@@ -30,8 +30,8 @@ export const WeatherList = (props) => {
     if (weather) {
 
         return <div>
-        <div className="horiz-menu">
-        <Toolbar>
+        
+        <Toolbar scrollable>
             <Tabs scrollable scrollButtons="auto" className="forecast-area">
 
             {
@@ -40,7 +40,7 @@ export const WeatherList = (props) => {
 
             </Tabs>
         </Toolbar>
-        </div>
+        
         </div>
     } else { return <div> </div> }
 }
