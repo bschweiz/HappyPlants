@@ -1,10 +1,10 @@
-.weather__results {
+.forecast-area {
     display: flex;
 }
 
-.weatherCard {
-    margin: 2px;
-    border: limegreen solid .5px;
+.forecast-cell {
+    margin: 4px;
+    border-radius: 4px;
+    border: rgb(60, 116, 60) solid .5px;
     flex-wrap: wrap;
-    flex-grow: 20%;
 }

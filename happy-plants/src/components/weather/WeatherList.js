@@ -35,7 +35,7 @@ export const WeatherList = (props) => {
             <Tabs scrollable scrollButtons="auto" className="forecast-area">
 
             {
-                weather.map(dayWeatherObj => <WeatherCard index= {index} dayWeatherObj={dayWeatherObj} props={props} />)
+                weather.map(dayWeatherObj => <WeatherCard index= {dayWeatherObj.id} dayWeatherObj={dayWeatherObj} props={props} />)
             }
 
             </Tabs>
