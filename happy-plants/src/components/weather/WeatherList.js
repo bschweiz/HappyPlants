@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { WeatherContext } from "./WeatherProvider";
 import { WeatherCard } from "./WeatherCard"
 import { UserContext } from '../user/UserProvider';
+import { ListItem, Toolbar, Tabs } from '@material-ui/core';
 import "./WeatherList.css"
 
 export const WeatherList = (props) => {
@@ -29,12 +30,17 @@ export const WeatherList = (props) => {
     if (weather) {
 
         return <div>
-        <h2>5 Day Forecast</h2>
-        <div className="weather__results">
+        
+        <Toolbar scrollable>
+            <Tabs scrollable scrollButtons="auto" className="forecast-area">
+
             {
-                weather.map(dayWeatherObj => <WeatherCard key={dayWeatherObj.dt} dayWeatherObj={dayWeatherObj} props={props} />)
+                weather.map(dayWeatherObj => <WeatherCard index= {dayWeatherObj.id} dayWeatherObj={dayWeatherObj} props={props} />)
             }
-        </div>
+
+            </Tabs>
+        </Toolbar>
+        
         </div>
     } else { return <div> </div> }
 }
