@@ -33,6 +33,11 @@ export const NavBar = (props) => {
         setAnchorEl(null);
     }
 
+    const handleHome = () => {
+        props.history.push(`/`)
+        handleClose()
+    }
+
     const handleCheckUps = () => {
         props.history.push(`/events`)
         handleClose()
@@ -45,6 +50,16 @@ export const NavBar = (props) => {
 
     const handleAddPlants = () => {
         props.history.push(`/addplant`)
+        handleClose()
+    }
+
+    const handleAddCheckUp = () => {
+        props.history.push(`/addevent`)
+        handleClose()
+    }
+
+    const handleLogout = () => {
+        props.history.push(`/addevent`)
         handleClose()
     }
 
@@ -75,8 +90,8 @@ export const NavBar = (props) => {
                     <MenuItem onClick={handleYourPlants}>Your Plants</MenuItem>
                     <MenuItem onClick={handleCheckUps}>Check-Ups</MenuItem>
                     <MenuItem onClick={handleAddPlants}>Add Plants</MenuItem>
-                    <MenuItem onClick={handleAddPlants}>Add Check-Up</MenuItem>
-                    <MenuItem onClick={handleAddPlants}>Logout</MenuItem>
+                    <MenuItem onClick={handleAddCheckUp}>Add Check-Up</MenuItem>
+                    <MenuItem onClick={handleLogout}>Logout</MenuItem>
                 </Menu>
                 <Typography variant="h5">Happy Plants</Typography>
             </Toolbar>
