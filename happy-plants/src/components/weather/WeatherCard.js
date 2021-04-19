@@ -21,3 +21,5 @@ export const WeatherCard = ({ dayWeatherObj }) => {
         )
     } else { return <div></div> }
 }
+
+
