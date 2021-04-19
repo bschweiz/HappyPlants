@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }))
 
-export const NavBar = () => {
+export const NavBar = (props) => {
     const classes = useStyles()
 
     const [anchorEl, setAnchorEl] = useState(null)
@@ -31,6 +31,21 @@ export const NavBar = () => {
 
     const handleClose = () => {
         setAnchorEl(null);
+    }
+
+    const handleCheckUps = () => {
+        props.history.push(`/events`)
+        handleClose()
+    }
+
+    const handleYourPlants = () => {
+        props.history.push(`/plants`)
+        handleClose()
+    }
+
+    const handleAddPlants = () => {
+        props.history.push(`/addplant`)
+        handleClose()
     }
 
     return (
@@ -56,9 +71,9 @@ export const NavBar = () => {
                     open={Boolean(anchorEl)}
                     onClose={handleClose}
                 >
-                    <MenuItem onClick={handleClose}>Profile</MenuItem>
-                    <MenuItem onClick={handleClose}>My account</MenuItem>
-                    <MenuItem onClick={handleClose}>Logout</MenuItem>
+                    <MenuItem onClick={handleCheckUps}>Check Ups</MenuItem>
+                    <MenuItem onClick={handleYourPlants}>Your Plants</MenuItem>
+                    <MenuItem onClick={handleAddPlants}>Add Plants</MenuItem>
                 </Menu>
                 <Typography variant="h5">Happy Plants</Typography>
             </Toolbar>
