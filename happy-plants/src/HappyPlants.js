@@ -27,14 +27,6 @@ export const HappyPlants = () => (
       if (localStorage.getItem("app_user_id")) {
         return (
           <>
-              {/* <Toolbar>
-                <IconButton aria-label="app" 
-                            style={{backgroundColor: "green", color: "lightgreen"}}
-                            edge="start">
-                  <MenuIcon />
-                </IconButton>
-                <Typography variant="h5">Happy Plants</Typography>
-              </Toolbar> */}
             <Route render={props => <NavBar {...props} />} />
             <Route render={props => <ApplicationViews {...props} />} />
           </>

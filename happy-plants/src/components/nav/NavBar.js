@@ -71,9 +71,12 @@ export const NavBar = (props) => {
                     open={Boolean(anchorEl)}
                     onClose={handleClose}
                 >
-                    <MenuItem onClick={handleCheckUps}>Check Ups</MenuItem>
+                    <MenuItem onClick={handleHome}>Home</MenuItem>
                     <MenuItem onClick={handleYourPlants}>Your Plants</MenuItem>
+                    <MenuItem onClick={handleCheckUps}>Check-Ups</MenuItem>
                     <MenuItem onClick={handleAddPlants}>Add Plants</MenuItem>
+                    <MenuItem onClick={handleAddPlants}>Add Check-Up</MenuItem>
+                    <MenuItem onClick={handleAddPlants}>Logout</MenuItem>
                 </Menu>
                 <Typography variant="h5">Happy Plants</Typography>
             </Toolbar>
