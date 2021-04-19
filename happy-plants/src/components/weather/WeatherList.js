@@ -30,13 +30,12 @@ export const WeatherList = (props) => {
     if (weather) {
 
         return <div>
-        <h2>5 Day Forecast</h2>
         <div className="horiz-menu">
         <Toolbar>
             <Tabs scrollable scrollButtons="auto" className="forecast-area">
 
             {
-                weather.map(dayWeatherObj => <WeatherCard key={dayWeatherObj.dt} dayWeatherObj={dayWeatherObj} props={props} />)
+                weather.map(dayWeatherObj => <WeatherCard index= {index} dayWeatherObj={dayWeatherObj} props={props} />)
             }
 
             </Tabs>

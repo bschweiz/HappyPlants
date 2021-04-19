@@ -2,11 +2,11 @@ import React from 'react'
 import "./WeatherList.css"
 import { ListItem } from '@material-ui/core';
 
-export const WeatherCard = ({ dayWeatherObj }) => {
+export const WeatherCard = ({ dayWeatherObj, index }) => {
     const URLAddress = `http://openweathermap.org/img/wn/${dayWeatherObj.weather[0].icon}.png`;
     if (dayWeatherObj.dt_txt.includes("12:00:00")) {
         return (
-            <ListItem className="weatherCard">
+            <ListItem key={index} className="forecast-cell">
                 <h3 className="weatherCard__date">
                     {new Date(dayWeatherObj.dt * 1000).toLocaleDateString('en-US', { weekday: "short" })}-   <br></br>
                     {new Date(dayWeatherObj.dt * 1000).toLocaleDateString('en-US', { month: "numeric", day: "numeric" })}
