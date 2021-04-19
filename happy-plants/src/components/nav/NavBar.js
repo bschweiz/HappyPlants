@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { AppBar, IconButton, makeStyles, Toolbar } from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
-import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 import Menu from '@material-ui/core/Menu';
 import { Menu as MenuIcon } from '@material-ui/icons';
 
@@ -17,35 +17,38 @@ const useStyles = makeStyles((theme) => ({
             display: 'none',
         },
     },
-}));
+}))
 
-function Navbar() {
-    const classes = useStyles();
+export const NavBar = () => {
+    const classes = useStyles()
 
-    const [anchorEl, setAnchorEl] = useState(null);
+    const [anchorEl, setAnchorEl] = useState(null)
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget)
-        console.log(anchorEl, "clicked");
-    };
+        console.log(anchorEl, "clicked")
+    }
 
     const handleClose = () => {
         setAnchorEl(null);
-    };
+    }
 
     return (
-        <AppBar position="fixed" onClick={handleClick}>
+        <AppBar position="sticky" style={{
+            backgroundColor: "green",
+            color: "lightgreen"
+        }}>
             <Toolbar className={classes.toolbar}>
-                <Button
-                    color="green"
+                <IconButton
+                    style={{ backgroundColor: "green", color: "lightgreen" }}
                     aria-controls="simple-menu"
                     aria-haspopup="true"
                     edge="start"
                     onClick={handleClick}
                     className={classes.menuButton}
-                > test
+                >
                     <MenuIcon onClick={handleClick} />
-                </Button>
+                </IconButton>
                 <Menu
                     id="simple-menu"
                     anchorEl={anchorEl}
@@ -57,9 +60,9 @@ function Navbar() {
                     <MenuItem onClick={handleClose}>My account</MenuItem>
                     <MenuItem onClick={handleClose}>Logout</MenuItem>
                 </Menu>
+                <Typography variant="h5">Happy Plants</Typography>
             </Toolbar>
         </AppBar>
-    );
+    )
 }
 
-export { Navbar };

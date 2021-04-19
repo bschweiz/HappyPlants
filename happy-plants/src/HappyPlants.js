@@ -29,16 +29,16 @@ export const HappyPlants = () => (
           <>
             <AppBar position="sticky" style={{backgroundColor: "green",
                 color:"lightgreen"}}>
-              <Toolbar>
+              {/* <Toolbar>
                 <IconButton aria-label="app" 
                             style={{backgroundColor: "green", color: "lightgreen"}}
                             edge="start">
                   <MenuIcon />
                 </IconButton>
                 <Typography variant="h5">Happy Plants</Typography>
-              </Toolbar>
+              </Toolbar> */}
             </AppBar>
-            {/* <Route render={props => <NavBar {...props} />} /> */}
+            <Route render={props => <NavBar {...props} />} />
             <Route render={props => <ApplicationViews {...props} />} />
           </>
         )
