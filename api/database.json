@@ -31,20 +31,6 @@
   ],
   "plants": [
     {
-      "trefleId": 1258091,
-      "userId": 1,
-      "petName": "Snake",
-      "imageURL": "https://bs.floristic.org/image/o/0a864ad583d95ce8e7b1af5cfddded16db142d3f",
-      "id": 5
-    },
-    {
-      "trefleId": 179715,
-      "userId": 1,
-      "petName": "Old Saint Nick",
-      "imageURL": "https://bs.floristic.org/image/o/442fb1f9889fe93ece38072d15a88499993be7d7",
-      "id": 9
-    },
-    {
       "trefleId": 167073,
       "userId": 3,
       "petName": "Bill",
@@ -59,39 +45,11 @@
       "id": 11
     },
     {
-      "trefleId": 173327,
-      "userId": 1,
-      "petName": " Oaky",
-      "imageURL": "https://bs.floristic.org/image/o/2292b670683abdaac354389514105df0018d9ef8",
-      "id": 16
-    },
-    {
       "trefleId": 167120,
       "userId": 4,
       "petName": "Piney the Elder",
       "imageURL": "https://bs.floristic.org/image/o/33d84b84c09347d360afa0d610e220664cfb6d93",
       "id": 18
-    },
-    {
-      "trefleId": 157554,
-      "userId": 1,
-      "petName": "Monica",
-      "imageURL": "https://bs.floristic.org/image/o/e0526a4477c3b1b2c0b21e79d3ad563748a7ca4d",
-      "id": 19
-    },
-    {
-      "trefleId": 171825,
-      "userId": 1,
-      "petName": "Douglas Adams",
-      "imageURL": "https://bs.floristic.org/image/o/0b03dee5a131470715367387ec2ca3754eb28291",
-      "id": 20
-    },
-    {
-      "trefleId": 171825,
-      "userId": 1,
-      "petName": "Doug",
-      "imageURL": "https://bs.floristic.org/image/o/0b03dee5a131470715367387ec2ca3754eb28291",
-      "id": 21
     },
     {
       "trefleId": 156186,
@@ -140,30 +98,6 @@
       "complete": false,
       "note": "check on him later this afternoon",
       "id": 17
-    },
-    {
-      "plantId": 19,
-      "date": "2021-01-05",
-      "water": false,
-      "complete": false,
-      "note": "check Monica's general health, check soil moisture",
-      "id": 18
-    },
-    {
-      "plantId": 20,
-      "date": "2021-01-05",
-      "water": true,
-      "complete": false,
-      "note": "check on bla",
-      "id": 19
-    },
-    {
-      "plantId": 21,
-      "date": "2021-01-04",
-      "water": true,
-      "complete": true,
-      "note": "water New Doug, he is looking healthy",
-      "id": 20
     },
     {
       "plantId": 22,
