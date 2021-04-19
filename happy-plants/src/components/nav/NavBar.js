@@ -59,7 +59,8 @@ export const NavBar = (props) => {
     }
 
     const handleLogout = () => {
-        props.history.push(`/addevent`)
+        localStorage.removeItem("app_user_id")
+        props.history.push(`/`)
         handleClose()
     }
 
