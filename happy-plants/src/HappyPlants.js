@@ -4,9 +4,9 @@ import { ApplicationViews } from "./components/ApplicationViews"
 import { NavBar } from "./components/nav/NavBar"
 import { Login } from "./components/auth/Login"
 import { Register } from "./components/auth/Register"
-import { useDrawer } from './components/drawer/DrawerContext';
 
-import {AppBar, Toolbar, Button, IconButton, Typography, makeStyles} from '@material-ui/core';
+
+import { AppBar, Toolbar, Button, IconButton, Typography, makeStyles } from '@material-ui/core';
 import { Menu as MenuIcon } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
@@ -22,29 +22,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+
+
 export const HappyPlants = () => (
   <>
     <Route render={() => {
       if (localStorage.getItem("app_user_id")) {
-        return (
-          <>
-            <AppBar position="sticky" style={{backgroundColor: "green",
-                color:"lightgreen"}}>
-              <Toolbar>
-                <IconButton aria-label="app" 
-                            style={{backgroundColor: "green", color: "lightgreen"}}
-                            edge="start"
-                            onClick={onDrawerToggle}
-                            className={classes.menuButton}>
-                  <MenuIcon />
-                </IconButton>
-                <Typography variant="h5">Happy Plants</Typography>
-              </Toolbar>
-            </AppBar>
-            {/* <Route render={props => <NavBar {...props} />} /> */}
-            <Route render={props => <ApplicationViews {...props} />} />
-          </>
-        )
+        return <ApplicationViews />
       } else {
         return <Redirect to="/login" />
       }

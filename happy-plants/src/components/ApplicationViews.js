@@ -22,11 +22,54 @@ import { Logout } from "./auth/LogOut"
 import { EditPlantName } from "./plant/EditPlantName"
 import "./ApplicationViews.css"
 
+import { useDrawer } from './drawer/DrawerContext';
+
+import { AppBar, Toolbar, Button, IconButton, Typography, makeStyles } from '@material-ui/core';
+import { Menu as MenuIcon } from '@material-ui/icons';
+
+const useStyles = makeStyles((theme) => ({
+    toolbar: {
+        justifyContent: 'flex-end',
+    },
+    menuButton: {
+        // Push other menu elements to the right
+        marginRight: 'auto',
+        [theme.breakpoints.up('lg')]: {
+            display: 'none',
+        },
+    },
+}));
+
+
 
 export const ApplicationViews = (props) => {
+    const classes = useStyles();
+
+
     return (
         <>
-            
+            (
+            <>
+                <AppBar position="sticky" style={{
+                    backgroundColor: "green",
+                    color: "lightgreen"
+                }}>
+                    <Toolbar>
+                        <IconButton aria-label="app"
+                            style={{ backgroundColor: "green", color: "lightgreen" }}
+                            edge="start"
+                            onClick={console.log('hello')}
+                            className={classes.menuButton}
+                            >
+                            <MenuIcon />
+                        </IconButton>
+                        <Typography variant="h5">Happy Plants</Typography>
+                    </Toolbar>
+                </AppBar>
+                {/* <Route render={props => <NavBar {...props} />} /> */}
+                <Route render={props => <ApplicationViews {...props} />} />
+            </>
+        )
             <UserProvider>
                 <EventProvider>
                     <PlantProvider>
